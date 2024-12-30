@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("src/assets/fonts/Orbitron/Orbitron-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("src/assets/fonts/Pretendard/Pretendard-Regular.woff2")
+    format("woff");
+  unicode-range: U+AC00-D7A3;
+}
+
+body {
+  font-family: "Orbitron", "Pretendard", sans-serif;
+}
