@@ -4,8 +4,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        orbitron: ["Orbitron", "sans-serif"],
+        orbitronRegular: ["Orbitron-Regular", "sans-serif"],
+        orbitronSemibold: ["Orbitron-SemiBold", "sans-serif"],
         pretendard: ["Pretendard", "sans-serif"],
+      },
+      animation: {
+        "spin-slow": "spin 20s linear infinite",
       },
     },
   },

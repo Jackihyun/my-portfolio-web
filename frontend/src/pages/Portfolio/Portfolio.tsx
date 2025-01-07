@@ -1,9 +1,10 @@
+import Layout from "../../layout/Layout";
 export default function Portfolio() {
   return (
     <div>
-      <Header />
-      <div>Portfolio page </div>
-      <Footer />
+      <Layout>
+        <div>Portfolio page </div>
+      </Layout>
     </div>
   );
 }

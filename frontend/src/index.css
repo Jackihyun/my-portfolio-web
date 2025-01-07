@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Orbitron";
+  font-family: "Orbitron-Regular";
   src: url("src/assets/fonts/Orbitron/Orbitron-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Orbitron-Semibold";
+  src: url("src/assets/fonts/Orbitron/Orbitron-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
