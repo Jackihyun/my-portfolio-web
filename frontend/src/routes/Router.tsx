@@ -5,7 +5,7 @@ import Contact from "../pages/Contact/Contact";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 export default function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/my-portfolio-web">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
