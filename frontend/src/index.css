@@ -4,17 +4,19 @@
 
 @font-face {
   font-family: "Orbitron-Regular";
-  src: url("src/assets/fonts/Orbitron/Orbitron-Regular.ttf") format("truetype");
+  src: url("../src/assets/fonts/Orbitron/Orbitron-Regular.ttf")
+    format("truetype");
 }
 
 @font-face {
   font-family: "Orbitron-Semibold";
-  src: url("src/assets/fonts/Orbitron/Orbitron-SemiBold.ttf") format("truetype");
+  src: url("../src/assets/fonts/Orbitron/Orbitron-SemiBold.ttf")
+    format("truetype");
 }
 
 @font-face {
   font-family: "Pretendard";
-  src: url("src/assets/fonts/Pretendard/Pretendard-Regular.woff2")
+  src: url("../src/assets/fonts/Pretendard/Pretendard-Regular.woff2")
     format("woff");
   unicode-range: U+AC00-D7A3;
 }
