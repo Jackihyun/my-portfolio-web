@@ -1,7 +1,11 @@
 import "./App.css";
 import Router from "./routes/Router";
 function App() {
-  return <Router />;
+  return (
+    <div className="dark:bg-black bg-white">
+      <Router />
+    </div>
+  );
 }
 
 export default App;
