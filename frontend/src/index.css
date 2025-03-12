@@ -18,6 +18,18 @@
 }
 
 @font-face {
+  font-family: "Orbitron-ExtraBold";
+  src: url("../src/assets/fonts/Orbitron/Orbitron-ExtraBold.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Orbitron-Medium";
+  src: url("../src/assets/fonts/Orbitron/Orbitron-Medium.ttf")
+    format("truetype");
+}
+
+@font-face {
   font-family: "Pretendard";
   src: url("../src/assets/fonts/Pretendard/Pretendard-Regular.woff2")
     format("woff");

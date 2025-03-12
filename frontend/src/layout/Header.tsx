@@ -24,7 +24,7 @@ export default function Header() {
   };
   return (
     <div className="flex sticky top-14 items-center justify-between">
-      <div className="flex rounded-xl font-openSans text-base font-light bg-white/40 backdrop-blur-lg border border-gray-300 overflow-hidden px-4">
+      <div className="grid grid-cols-4 w-full rounded-xl font-orbitronRegular text-xl backdrop-blur-xl overflow-hidden">
         {[
           {
             onClick: () => setSelectedTab("Home"),
@@ -39,33 +39,21 @@ export default function Header() {
             text: "Portfolio",
           },
           {
-            onClick: () => setSelectedTab("Blog"),
-            text: "Blog",
-          },
-          {
             onClick: () => setSelectedTab("Contact"),
             text: "Contact",
           },
         ].map((it) => (
           <div
             className={cn(
-              "text-gray-400 font-normal relative hover:text-black dark:text-gray-400 dark:hover:text-white dark:focus:border-white px-5 py-3 cursor-pointer",
+              "text-[#202020] hover:text-[#7AD154] dark:text-gray-400 dark:hover:text-white cursor-pointer",
               {
-                "text-black dark:text-white": selectedTab === it.text,
+                "text-[#7AD154] font-orbitronExtrabold text-2xl dark:text-white":
+                  selectedTab === it.text,
               }
             )}
             onClick={it.onClick}
           >
             {it.text}
-            <div
-              className={cn(
-                "absolute bottom-0 left-1/2 right-0 h-[4px] -translate-x-1/2 bg-black/80 rounded-full w-14 dark:bg-white transition-all -z-10",
-                {
-                  "opacity-0": selectedTab !== it.text,
-                  "opacity-100": selectedTab === it.text,
-                }
-              )}
-            ></div>
           </div>
         ))}
       </div>

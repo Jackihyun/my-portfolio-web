@@ -10,7 +10,7 @@ const Layout: React.FC<Props> = ({ className }) => {
   return (
     <div className={cn("flex px-20 py-14", className)}>
       <SideProfile />
-      <div className="flex flex-col pl-[400px] w-full  h-full relative">
+      <div className="flex flex-col pl-[400px] w-full h-full">
         <Header />
         <main className="flex-1 flex-col">
           <p className="text-[100px]">1</p>
