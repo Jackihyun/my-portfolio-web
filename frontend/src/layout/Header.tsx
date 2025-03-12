@@ -1,6 +1,6 @@
+import ModeToggle from "@/components/ModeToggle";
 import { cn } from "@/utils/classname";
 import { useState, useEffect } from "react";
-import { IoSunny, IoMoon } from "react-icons/io5";
 
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -58,7 +58,7 @@ export default function Header() {
         ))}
       </div>
       <div>
-        <button
+        {/* <button
           className="size-6 flex cursor-pointer"
           onClick={handleModeChange}
         >
@@ -67,7 +67,8 @@ export default function Header() {
           ) : (
             <IoMoon className="size-full text-black" />
           )}
-        </button>
+        </button> */}
+        <ModeToggle onClick={handleModeChange} />
       </div>
     </div>
   );
