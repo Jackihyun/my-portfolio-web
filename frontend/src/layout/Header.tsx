@@ -23,7 +23,7 @@ export default function Header() {
     setIsDarkMode(!isDarkMode);
   };
   return (
-    <div className="flex sticky top-10 items-center justify-between">
+    <div className="flex sticky top-14 items-center justify-between">
       <div className="flex rounded-xl font-openSans text-base font-light bg-white/40 backdrop-blur-lg border border-gray-300 overflow-hidden px-4">
         {[
           {
