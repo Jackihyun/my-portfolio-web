@@ -8,6 +8,8 @@ export default {
         orbitronRegular: ["Orbitron-Regular", "sans-serif"],
         orbitronSemibold: ["Orbitron-SemiBold", "sans-serif"],
         pretendard: ["Pretendard", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",
