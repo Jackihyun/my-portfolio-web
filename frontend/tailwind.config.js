@@ -16,6 +16,11 @@ export default {
       animation: {
         "spin-slow": "spin 20s linear infinite",
       },
+      colors: {
+        green: {
+          1: "#7AD154",
+        },
+      },
     },
   },
   plugins: [],

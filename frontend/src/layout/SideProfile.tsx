@@ -1,8 +1,12 @@
 import React from "react";
 import { cn } from "../utils/classname";
 import profileSrc from "../assets/imgs/FaceProfile.png";
-import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaCss3Alt, FaHtml5, FaInstagram, FaReact } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
+import { LuGithub } from "react-icons/lu";
+import { SiTypescript } from "react-icons/si";
+import { IoLogoJavascript } from "react-icons/io5";
+import { RiNextjsFill, RiSvelteFill, RiTailwindCssFill } from "react-icons/ri";
 
 type Props = {
   className?: string;
@@ -23,7 +27,7 @@ const SideProfile: React.FC<Props> = ({ className }) => {
         <p className="font-orbitronRegular text-black/50 dark:text-gray-100 text-[14px] font-medium">
           Frontend Developer
         </p>
-        <div className="w-full h-48 p-5 mt-4 border border-black/10 rounded-[30px]">
+        <div className="w-full h-48 px-5 pt-5 mt-4 border border-black/10 rounded-[30px]">
           <img src={profileSrc} className="size-full object-contain  " />
         </div>
         <div className="flex flex-col flex-1 text-left font-orbitronRegular w-full mt-5 gap-4">
@@ -50,11 +54,20 @@ const SideProfile: React.FC<Props> = ({ className }) => {
           </div>
           <div>
             <p className="text-[#7AD154] dark:text-gray-300 text-sm font-light">
-              Main Tech
+              Tech
             </p>
-            <p className="text-black dark:text-gray-100 text-lg font-medium">
-              React, TypeScript, Next.js(learning...)
-            </p>
+            <div className="flex mt-1 gap-2 text-black dark:text-gray-100 text-lg font-medium">
+              <FaHtml5 className="size-5" />
+              <FaCss3Alt className="size-5" />
+              <IoLogoJavascript className="size-5" />
+              <RiTailwindCssFill className="size-5" />
+            </div>
+            <div className="flex mt-1 gap-2 text-black dark:text-gray-100 text-lg font-medium">
+              <RiSvelteFill className="size-5" />
+              <FaReact className="size-5" />
+              <SiTypescript className="size-5" />
+              <RiNextjsFill className="size-5" />
+            </div>
           </div>
           <div>
             <p className="text-[#7AD154] dark:text-gray-300 text-sm font-light">
@@ -67,7 +80,7 @@ const SideProfile: React.FC<Props> = ({ className }) => {
         </div>
         <div className="flex w-full justify-start gap-7">
           {[
-            <FaGithub className="size-full" />,
+            <LuGithub className="size-full" />,
             <FaInstagram className="size-full" />,
             <BiLogoGmail className="size-full" />,
           ].map((it) => (

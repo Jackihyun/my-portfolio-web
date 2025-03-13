@@ -23,8 +23,8 @@ export default function Header() {
     setIsDarkMode(!isDarkMode);
   };
   return (
-    <div className="flex sticky top-14 items-center justify-between">
-      <div className="grid grid-cols-4 w-full rounded-xl font-orbitronRegular text-xl backdrop-blur-xl overflow-hidden">
+    <div className="flex sticky top-14 items-center justify-between backdrop-blur-3xl">
+      <div className="grid grid-cols-4 w-full rounded-xl font-orbitronRegular text-xl  overflow-hidden">
         {[
           {
             onClick: () => setSelectedTab("Home"),
@@ -45,7 +45,7 @@ export default function Header() {
         ].map((it) => (
           <div
             className={cn(
-              "text-[#202020] hover:text-[#7AD154] dark:text-gray-400 dark:hover:text-white cursor-pointer",
+              "text-[#202020] hover:text-[#7AD154] dark:text-gray-400  dark:hover:text-white cursor-pointer ",
               {
                 "text-[#7AD154] font-orbitronExtrabold text-2xl dark:text-white":
                   selectedTab === it.text,
@@ -58,16 +58,6 @@ export default function Header() {
         ))}
       </div>
       <div>
-        {/* <button
-          className="size-6 flex cursor-pointer"
-          onClick={handleModeChange}
-        >
-          {isDarkMode ? (
-            <IoSunny className="size-full text-white" />
-          ) : (
-            <IoMoon className="size-full text-black" />
-          )}
-        </button> */}
         <ModeToggle onClick={handleModeChange} />
       </div>
     </div>
