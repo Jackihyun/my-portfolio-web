@@ -20,36 +20,33 @@ const SideProfile: React.FC<Props> = ({ className }) => {
         <p className="font-orbitronMedium xl:text-4xl text-3xl text-[#7AD154]">
           Jackihyun
         </p>
-        <p className="font-orbitronRegular text-black/50 dark:text-gray-100 text-[16px] font-medium">
+        <p className="font-orbitronRegular text-black/50 dark:text-gray-100 text-[14px] font-medium">
           Frontend Developer
         </p>
-        <div className="w-full h-52 mt-4 border border-black/10 rounded-[30px]">
+        <div className="w-full h-48 p-5 mt-4 border border-black/10 rounded-[30px]">
           <img src={profileSrc} className="size-full object-contain  " />
         </div>
-        <div className="flex flex-col flex-1 text-left font-orbitronRegular w-full mt-4 gap-3">
+        <div className="flex flex-col flex-1 text-left font-orbitronRegular w-full mt-5 gap-4">
           <div>
-            <p className="text-[#7AD154] dark:text-gray-300 text-sm font-light">
+            <p className="text-[#7AD154] dark:text-gray-300 text-xs font-light">
               Name
             </p>
-            <p className="text-black dark:text-gray-100 text-lg font-medium">
+            <p className="text-black dark:text-gray-100 text- font-medium">
               Kihyun Park
             </p>
           </div>
-          <div className="grid grid-cols-2">
+          <div className="flex flex-col">
             <span className="text-[#7AD154] dark:text-gray-300 font-light text-sm">
-              Studied
+              Studied in,
             </span>
-            <span className="text-[#7AD154] dark:text-gray-300 font-light text-sm">
-              in,
-            </span>
-            <span className="text-black dark:text-gray-100 text-lg font-medium">
-              Computer Eng.
-            </span>
-            <span className="text-black dark:text-gray-100 text-lg font-medium">
-              MyongJi
-              <br />
-              Univ.
-            </span>
+            <div className="flex flex-col">
+              <span className="text-black dark:text-gray-100 text-lg font-medium">
+                Computer Eng.
+              </span>
+              <span className="text-black dark:text-gray-100 text-lg font-medium">
+                MyongJi Univ.
+              </span>
+            </div>
           </div>
           <div>
             <p className="text-[#7AD154] dark:text-gray-300 text-sm font-light">
