@@ -23,24 +23,20 @@ const Card: React.FC<Props> = ({
       style={style}
       onClick={onClick}
       className={cn(
-        "flex flex-col cursor-pointer hover:scale-105 duration-300 size-[30vw] relative rounded-3xl shadow-lg py-7 px-9 ",
+        "flex flex-col cursor-pointer hover:scale-105 duration-150 size-[30vw] relative rounded-3xl shadow-md overflow-hidden",
         className
       )}
     >
-      <div>
-        <p className="font-orbitronRegular text-xl mb-2 tracking-widest">
-          {title}
-        </p>
-      </div>
+      <p className="absolute top-5 left-7 font-orbitronRegular text-xl mb-2 tracking-widest">
+        {title}
+      </p>
       <img
         src={imgSrc}
         alt="project"
-        className="size-[15vw] m-auto pb-5 object-contain"
+        className="w-full m-auto object-contain"
       />
       <div className="absolute bottom-5 right-5">
-        <p className="text-right font-orbitronRegular text-[15px] mt-2">
-          {period}
-        </p>
+        <p className="text-right font-orbitronRegular text-[15px]">{period}</p>
       </div>
     </div>
   );

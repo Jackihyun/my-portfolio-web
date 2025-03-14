@@ -1,16 +1,30 @@
 [
   {
     "title": "KyungHee University<br/>Graduation Fashion<br/>Show Website",
-    "imgSrc": "src/assets/imgs/khu.png",
-    "period": "2024.3 - 2024.08",
+    "imgSrc": "src/assets/imgs/khucnt.png",
+    "period": "2024/03 ~ 2024/08",
     "bgColor": "#FFB167",
     "textColor": "white"
   },
   {
     "title": "Barojob<br/>Website",
-    "imgSrc": "src/assets/imgs/barojob.png",
-    "period": "2025.01 ~ in progress",
+    "imgSrc": "src/assets/imgs/barojobImg.png",
+    "period": "2025/01 ~ in progress",
+    "bgColor": "#618DFF",
+    "textColor": "white"
+  },
+  {
+    "title": "Jack's Blog<br/>Website",
+    "imgSrc": "src/assets/imgs/blog.png",
+    "period": "2024/07 ~ in progress",
     "bgColor": "#F4F4F4",
-    "textColor": "#376FFF"
+    "textColor": "#3FD100"
+  },
+  {
+    "title": "FIREAO<br/>Study Website",
+    "imgSrc": "src/assets/imgs/AO.png",
+    "period": "2023/12 ~ 2024/03",
+    "bgColor": "#F4F4F4",
+    "textColor": "white"
   }
 ]

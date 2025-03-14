@@ -18,10 +18,11 @@ const Portfolio: React.FC<Props> = ({ className }) => {
         <p>Welcome to my portfolio! 👨🏻‍💻</p>
         <p>Check out my projects</p>
       </div>
-      <div className="grid grid-cols-2 mt-10 gap-4">
+      <div className="grid grid-cols-2 mt-10 gap-6">
         {portfoliodata.map((project, index) => (
           <Card
             key={index}
+            className="mb-5"
             onClick={() => setSelectedProject(project)}
             title={<span dangerouslySetInnerHTML={{ __html: project.title }} />}
             imgSrc={project.imgSrc}

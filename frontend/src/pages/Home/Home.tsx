@@ -1,22 +1,27 @@
 import { cn } from "@/utils/classname";
 import React from "react";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { scroller } from "react-scroll";
 
 type Props = {
   className?: string;
 };
 
 const Home: React.FC<Props> = ({ className }) => {
+  // 예: 헤더 오프셋 값 (헤더 높이와 추가 보정값의 합) – 이 값은 Header와 일치해야 합니다.
+  const OFFSET = -133;
+
   const onClick = () => {
-    const portfolio = document.getElementById("Portfolio");
-    if (portfolio) {
-      portfolio.scrollIntoView({ behavior: "smooth" });
-    }
+    scroller.scrollTo("Portfolio", {
+      smooth: true,
+      duration: 500,
+      offset: OFFSET,
+    });
   };
 
   return (
     <div className={cn("w-full", className)}>
-      <div className="flex flex-col text-nowrap text-[#303030] dark:text-white font-orbitronRegular text-[45px] ">
+      <div className="flex flex-col text-nowrap text-[#303030] dark:text-[#FAFAFC] font-orbitronRegular text-[45px] ">
         <p>Nice to meet you! 👋</p>
         <p>I'm Jackihyun,</p>
         <p>Frontend developer based in Seoul</p>
