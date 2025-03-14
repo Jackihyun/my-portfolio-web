@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 import Modal from "./Modal";
 import portfoliodata from "./Portfolio.json";
+import imageMapping from "../../utils/imageMapping";
 
 type Props = {
   className?: string;
@@ -25,7 +26,7 @@ const Portfolio: React.FC<Props> = ({ className }) => {
             className="mb-5"
             onClick={() => setSelectedProject(project)}
             title={<span dangerouslySetInnerHTML={{ __html: project.title }} />}
-            imgSrc={project.imgSrc}
+            imgSrc={imageMapping[project.imgSrc]}
             period={project.period}
             style={{
               color: project.textColor,
