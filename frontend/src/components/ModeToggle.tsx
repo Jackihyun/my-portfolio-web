@@ -17,8 +17,8 @@ const ModeToggle: React.FC<Props> = ({ className, onClick }) => {
   return (
     <div
       onClick={toggleHandler}
-      className={`relative flex items-center w-20 h-10 p-1 rounded-full cursor-pointer transition-colors 
-      ${isDarkMode ? "bg-gray-700" : "bg-white"} ${className}`}
+      className={`relative flex items-center w-[88px] h-10 p-1 rounded-full cursor-pointer transition-colors 
+      ${isDarkMode ? "bg-[#293036C2]" : "bg-white"} ${className}`}
     >
       {/* 햇빛 아이콘 */}
       <IoSunny
@@ -37,7 +37,7 @@ const ModeToggle: React.FC<Props> = ({ className, onClick }) => {
       {/* 토글 버튼 */}
       <div
         className={`absolute w-8 h-8 bg-[#7AD154] rounded-full shadow-md transform transition-transform 
-        ${isDarkMode ? "translate-x-10" : "translate-x-0"}`}
+        ${isDarkMode ? "translate-x-12" : "translate-x-0"}`}
       />
     </div>
   );

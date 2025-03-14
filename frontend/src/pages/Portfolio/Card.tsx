@@ -19,7 +19,7 @@ const Card: React.FC<Props> = ({ className, title, style, imgSrc, period }) => {
       )}
     >
       <div className="">
-        <p className="font-orbitronMedium text-xl mb-2 tracking-wider">
+        <p className="font-orbitronRegular text-xl mb-2 tracking-widest">
           {title}
         </p>
       </div>

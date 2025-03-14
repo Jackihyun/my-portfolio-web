@@ -17,14 +17,14 @@ const SideProfile: React.FC<Props> = ({ className }) => {
     <div className="fixed top-0 left-0 w-[400px] h-full p-14 pr-0 z-50">
       <div
         className={cn(
-          "bg-white/50 border border-gray-300 backdrop-blur size-full rounded-[32px] flex flex-col items-start p-8",
+          "bg-white/50 dark:bg-[#1A1A2380] border border-gray-300 dark:border-[#1A1A2380] backdrop-blur size-full rounded-[32px] flex flex-col items-start p-8",
           className
         )}
       >
         <p className="font-orbitronMedium xl:text-4xl text-3xl text-[#7AD154]">
           Jackihyun
         </p>
-        <p className="font-orbitronRegular text-black/50 dark:text-gray-100 text-[14px] font-medium">
+        <p className="font-orbitronRegular text-black/50 dark:text-[#FAFAFC] text-[14px] font-medium">
           Frontend Developer
         </p>
         <div className="w-full h-48 px-5 pt-5 mt-4 border border-black/10 rounded-[30px]">
@@ -32,37 +32,33 @@ const SideProfile: React.FC<Props> = ({ className }) => {
         </div>
         <div className="flex flex-col flex-1 text-left font-orbitronRegular w-full mt-5 gap-4">
           <div>
-            <p className="text-[#7AD154] dark:text-gray-300 text-xs font-light">
-              Name
-            </p>
-            <p className="text-black dark:text-gray-100 text- font-medium">
+            <p className="text-[#7AD154]  text-xs font-light">Name</p>
+            <p className="text-black dark:text-[#FAFAFC] text-lg font-medium">
               Kihyun Park
             </p>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#7AD154] dark:text-gray-300 font-light text-sm">
+            <span className="text-[#7AD154]  font-light text-sm">
               Studied in,
             </span>
             <div className="flex flex-col">
-              <span className="text-black dark:text-gray-100 text-lg font-medium">
+              <span className="text-black dark:text-[#FAFAFC] text-lg font-medium">
                 Computer Eng.
               </span>
-              <span className="text-black dark:text-gray-100 text-lg font-medium">
+              <span className="text-black dark:text-[#FAFAFC] text-lg font-medium">
                 MyongJi Univ.
               </span>
             </div>
           </div>
           <div>
-            <p className="text-[#7AD154] dark:text-gray-300 text-sm font-light">
-              Tech
-            </p>
-            <div className="flex mt-1 gap-2 text-black dark:text-gray-100 text-lg font-medium">
+            <p className="text-[#7AD154] text-sm font-light">Tech</p>
+            <div className="flex mt-1 gap-2 text-black dark:text-[#FAFAFC] text-lg font-medium">
               <FaHtml5 className="size-5" />
               <FaCss3Alt className="size-5" />
               <IoLogoJavascript className="size-5" />
               <RiTailwindCssFill className="size-5" />
             </div>
-            <div className="flex mt-1 gap-2 text-black dark:text-gray-100 text-lg font-medium">
+            <div className="flex mt-1 gap-2 text-black dark:text-[#FAFAFC] text-lg font-medium">
               <RiSvelteFill className="size-5" />
               <FaReact className="size-5" />
               <SiTypescript className="size-5" />
@@ -70,21 +66,19 @@ const SideProfile: React.FC<Props> = ({ className }) => {
             </div>
           </div>
           <div>
-            <p className="text-[#7AD154] dark:text-gray-300 text-sm font-light">
-              Based in,
-            </p>
-            <p className="text-black dark:text-gray-100 text-lg font-medium">
+            <p className="text-[#7AD154] text-sm font-light">Based in,</p>
+            <p className="text-black dark:text-[#FAFAFC] text-lg font-medium">
               Seoul, Korea
             </p>
           </div>
         </div>
-        <div className="flex w-full justify-start gap-7">
+        <div className="flex w-full justify-start gap-7 ">
           {[
             <LuGithub className="size-full" />,
             <FaInstagram className="size-full" />,
             <BiLogoGmail className="size-full" />,
           ].map((it) => (
-            <div className="size-10 flex justify-center items-center p-1.5 bg-white border border-[#7AD154] dark:border-zinc-800 dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-all cursor-pointer active:scale-90">
+            <div className="size-10 flex justify-center items-center p-1.5 bg-white border border-[#7AD154] dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-all cursor-pointer active:scale-90 dark:text-[#FAFAFC]">
               {it}
             </div>
           ))}

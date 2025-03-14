@@ -23,8 +23,8 @@ export default function Header() {
     setIsDarkMode(!isDarkMode);
   };
   return (
-    <div className="flex sticky top-14 items-center justify-between backdrop-blur-3xl">
-      <div className="grid grid-cols-4 w-full rounded-xl font-orbitronRegular text-xl  overflow-hidden">
+    <div className="flex sticky top-14 items-center justify-between ">
+      <div className="flex justify-between w-full pr-24 font-orbitronRegular text-xl overflow-hidden">
         {[
           {
             onClick: () => setSelectedTab("Home"),
@@ -45,9 +45,9 @@ export default function Header() {
         ].map((it) => (
           <div
             className={cn(
-              "text-[#202020] hover:text-[#7AD154] dark:text-gray-400  dark:hover:text-white cursor-pointer ",
+              "text-[#202020] backdrop-blur-3xl bg-white/10 dark:bg-[#293036C2]/5 rounded-xl px-4 py-1 hover:text-[#7AD154] dark:hover:text-[#7AD154] dark:text-[#FAFAFC] cursor-pointer ",
               {
-                "text-[#7AD154] font-orbitronExtrabold text-2xl dark:text-white":
+                "text-[#7AD154] dark:text-[#7AD154] font-orbitronExtrabold text-2xl":
                   selectedTab === it.text,
               }
             )}
@@ -57,7 +57,7 @@ export default function Header() {
           </div>
         ))}
       </div>
-      <div>
+      <div className="flex justify-end">
         <ModeToggle onClick={handleModeChange} />
       </div>
     </div>
