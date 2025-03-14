@@ -18,11 +18,6 @@ type SpinningTextProps = {
   };
 };
 
-const BASE_TRANSITION = {
-  repeat: Infinity,
-  ease: "linear",
-};
-
 const BASE_ITEM_VARIANTS = {
   hidden: {
     opacity: 1,
@@ -37,9 +32,7 @@ export function SpinningText({
   duration = 10,
   style,
   className,
-  reverse = false,
   radius = 5,
-  transition,
   variants,
 }: SpinningTextProps) {
   if (typeof children !== "string" && !Array.isArray(children)) {
@@ -55,12 +48,6 @@ export function SpinningText({
 
   const letters = children.split("");
   letters.push(" ");
-
-  const finalTransition = {
-    ...BASE_TRANSITION,
-    ...transition,
-    duration: (transition as { duration?: number })?.duration ?? duration,
-  };
 
   // useAnimation 컨트롤을 사용하여 애니메이션을 제어합니다.
   const controls = useAnimation();
@@ -134,7 +121,9 @@ export function SpinningText({
       // onUpdate를 통해 현재 회전 각도를 추적합니다.
       onUpdate={(latest) => {
         if (latest.rotate !== undefined) {
-          setAngle(latest.rotate);
+          if (typeof latest.rotate === "number") {
+            setAngle(latest.rotate);
+          }
         }
       }}
     >
