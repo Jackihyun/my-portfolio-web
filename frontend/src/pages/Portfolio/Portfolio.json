@@ -1,15 +1,15 @@
 [
   {
     "title": "KyungHee University<br/>Graduation Fashion<br/>Show Website",
-    "imgSrc": "",
-    "period": "2021.05 - 2021.06",
+    "imgSrc": "/src/assets/imgs/khuImg.png",
+    "period": "2024.3 - 2024.08",
     "bgColor": "#FFB167",
     "textColor": "white"
   },
   {
     "title": "Barojob<br/>Website",
-    "imgSrc": "",
-    "period": "2021.06 - 2021.07",
+    "imgSrc": "/src/assets/imgs/barojobImg.png",
+    "period": "2025.01 ~ in progress",
     "bgColor": "#F4F4F4",
     "textColor": "#376FFF"
   }

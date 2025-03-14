@@ -7,12 +7,32 @@ import { LuGithub } from "react-icons/lu";
 import { SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiNextjsFill, RiSvelteFill, RiTailwindCssFill } from "react-icons/ri";
+import { FiCamera } from "react-icons/fi";
 
 type Props = {
   className?: string;
 };
 
 const SideProfile: React.FC<Props> = ({ className }) => {
+  const socialLinks = [
+    {
+      icon: <LuGithub className="size-full" />,
+      url: "https://github.com/Jackihyun",
+    },
+    {
+      icon: <FaInstagram className="size-full" />,
+      url: "https://instagram.com/ki_hyunida",
+    },
+    {
+      icon: <BiLogoGmail className="size-full" />,
+      url: "mailto:pkhjack2325@gmail.com",
+    },
+    {
+      icon: <FiCamera className="size-full" />,
+      url: "https://instagram.com/by_kihyun_",
+    },
+  ];
+
   return (
     <div className="fixed top-0 left-0 w-[400px] h-full p-14 pr-0 z-50">
       <div
@@ -28,17 +48,17 @@ const SideProfile: React.FC<Props> = ({ className }) => {
           Frontend Developer
         </p>
         <div className="w-full h-48 px-5 pt-5 mt-4 border border-black/10 rounded-[30px]">
-          <img src={profileSrc} className="size-full object-contain  " />
+          <img src={profileSrc} className="size-full object-contain" />
         </div>
         <div className="flex flex-col flex-1 text-left font-orbitronRegular w-full mt-5 gap-4">
           <div>
-            <p className="text-[#7AD154]  text-xs font-light">Name</p>
+            <p className="text-[#7AD154] text-xs font-light">Name</p>
             <p className="text-black dark:text-[#FAFAFC] text-lg font-medium">
               Kihyun Park
             </p>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#7AD154]  font-light text-sm">
+            <span className="text-[#7AD154] font-light text-sm">
               Studied in,
             </span>
             <div className="flex flex-col">
@@ -72,15 +92,17 @@ const SideProfile: React.FC<Props> = ({ className }) => {
             </p>
           </div>
         </div>
-        <div className="flex w-full justify-start gap-7 ">
-          {[
-            <LuGithub className="size-full" />,
-            <FaInstagram className="size-full" />,
-            <BiLogoGmail className="size-full" />,
-          ].map((it) => (
-            <div className="size-10 flex justify-center items-center p-1.5 bg-white border border-[#7AD154] dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-all cursor-pointer active:scale-90 dark:text-[#FAFAFC]">
-              {it}
-            </div>
+        <div className="flex w-full justify-center gap-8">
+          {socialLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="size-10 flex justify-center items-center p-1.5 bg-white border border-[#7AD154] dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-all cursor-pointer active:scale-90 dark:text-[#FAFAFC]"
+            >
+              {link.icon}
+            </a>
           ))}
         </div>
       </div>

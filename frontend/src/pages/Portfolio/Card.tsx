@@ -1,4 +1,5 @@
 import { cn } from "@/utils/classname";
+import React from "react";
 
 type Props = {
   className?: string;
@@ -13,12 +14,11 @@ const Card: React.FC<Props> = ({ className, title, style, imgSrc, period }) => {
     <div
       style={style}
       className={cn(
-        `flex flex-col size-[500px] rounded-3xl shadow-lg py-7 px-9`,
-
+        "flex flex-col size-[30vw] relative rounded-3xl shadow-lg py-7 px-9 ",
         className
       )}
     >
-      <div className="">
+      <div>
         <p className="font-orbitronRegular text-xl mb-2 tracking-widest">
           {title}
         </p>
@@ -26,9 +26,9 @@ const Card: React.FC<Props> = ({ className, title, style, imgSrc, period }) => {
       <img
         src={imgSrc}
         alt="project"
-        className="size-[530px] object-cover rounded-[40px]"
+        className="size-[20vw] m-auto pb-5 object-contain"
       />
-      <div>
+      <div className="absolute bottom-5 right-5">
         <p className="text-right font-orbitronRegular text-[15px] mt-2">
           {period}
         </p>

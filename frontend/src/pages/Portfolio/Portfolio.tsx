@@ -10,7 +10,7 @@ type Props = {
 const Portfolio: React.FC<Props> = ({ className }) => {
   return (
     <div className={cn("w-full flex flex-col", className)}>
-      <div className="text-left tracking-wide gap-2 flex flex-col text-[#303030] font-orbitronMedium text-3xl">
+      <div className="text-left tracking-wide gap-2 flex flex-col text-[#303030] dark:text-[#FAFAFC] font-orbitronMedium text-3xl">
         <p>Welcome to my portfolio! 👨🏻‍💻</p>
         <p>Check out my projects</p>
       </div>
