@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion, Transition, Variants } from "motion/react";
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useEffect, useRef, useState } from "react";
 
 type SpinningTextProps = {
   children: string | string[];
@@ -37,7 +37,7 @@ export function SpinningText({
   duration = 10,
   style,
   className,
-  reverse = false,
+  reverse = false, // 기존 reverse prop은 초기값으로 사용하지만, 이후 스크롤 이벤트에 의해 덮어집니다.
   radius = 5,
   transition,
   variants,
@@ -47,7 +47,7 @@ export function SpinningText({
   }
 
   if (Array.isArray(children)) {
-    // Validate all elements are strings
+    // 배열의 모든 요소가 문자열인지 검증
     if (!children.every((child) => typeof child === "string")) {
       throw new Error("all elements in children array must be strings");
     }
@@ -63,12 +63,34 @@ export function SpinningText({
     duration: (transition as { duration?: number })?.duration ?? duration,
   };
 
-  const containerVariants = {
-    visible: { rotate: reverse ? -360 : 360 },
+  // 스크롤 방향 상태: 1은 스크롤 다운, -1은 스크롤 업
+  const [scrollDir, setScrollDir] = useState(1);
+  const prevScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > prevScrollY.current) {
+        // 스크롤 다운
+        setScrollDir(1);
+      } else if (currentScrollY < prevScrollY.current) {
+        // 스크롤 업
+        setScrollDir(-1);
+      }
+      prevScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 스크롤 방향에 따라 회전 방향을 결정합니다.
+  const containerVariants: Variants = {
+    visible: { rotate: scrollDir === -1 ? -360 : 360 },
     ...variants?.container,
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     ...BASE_ITEM_VARIANTS,
     ...variants?.item,
   };

@@ -5,16 +5,25 @@ type Props = {
   className?: string;
   title: React.ReactNode;
   style?: React.CSSProperties;
+  onClick?: () => void;
   imgSrc: string;
   period: string;
 };
 
-const Card: React.FC<Props> = ({ className, title, style, imgSrc, period }) => {
+const Card: React.FC<Props> = ({
+  className,
+  title,
+  style,
+  onClick,
+  imgSrc,
+  period,
+}) => {
   return (
     <div
       style={style}
+      onClick={onClick}
       className={cn(
-        "flex flex-col size-[30vw] relative rounded-3xl shadow-lg py-7 px-9 ",
+        "flex flex-col cursor-pointer hover:scale-105 duration-300 size-[30vw] relative rounded-3xl shadow-lg py-7 px-9 ",
         className
       )}
     >

@@ -4,6 +4,7 @@ import Header from "./Header";
 import SideProfile from "./SideProfile";
 import Portfolio from "@/pages/Portfolio/Portfolio";
 import About from "@/pages/About/About";
+import { Element } from "react-scroll";
 import { SpinningText } from "@/components/magicui/spinning-text";
 
 type Props = {
@@ -17,17 +18,27 @@ const Layout: React.FC<Props> = ({ className }) => {
       <div className="flex flex-col pl-[400px] size-full">
         <Header />
         <main className="flex-1 flex-col w-full h-full">
-          <div id="Home">
+          <Element name="Home">
             <Home className="mt-[40vh]" />
-          </div>
-          <div id="Portfolio">
+          </Element>
+          <Element name="Portfolio">
             <Portfolio className="mt-[25vh]" />
-          </div>
-          <div id="About">
+          </Element>
+          <Element name="About">
             <About className="mt-[25vh]" />
+          </Element>
+          <Element name="Contact">
+            {/* 여기에 Contact 컴포넌트를 추가하거나, 해당 섹션의 내용을 넣으세요 */}
+          </Element>
+          <div className="fixed bottom-32 right-32 z-50">
+            <SpinningText
+              radius={4}
+              duration={4}
+              className="text-lg text-[#303030] dark:text-[#FAFAFC] font-orbitronRegular"
+            >
+              Scroll Down • Scroll Up •
+            </SpinningText>
           </div>
-          <div id="Contact">{/* 추후 Contact 컴포넌트나 섹션 추가 */}</div>
-          <SpinningText className="">Scroll down</SpinningText>
         </main>
       </div>
     </div>

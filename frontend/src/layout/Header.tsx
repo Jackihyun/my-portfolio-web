@@ -1,12 +1,11 @@
 import ModeToggle from "@/components/ModeToggle";
-import { cn } from "@/utils/classname";
+import { Link, scrollSpy } from "react-scroll";
 import { useState, useEffect } from "react";
 
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
-  const [selectedTab, setSelectedTab] = useState("Home");
 
   useEffect(() => {
     if (isDarkMode) {
@@ -18,42 +17,38 @@ export default function Header() {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 scrollSpy 업데이트
+    scrollSpy.update();
+  }, []);
+
   const handleModeChange = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  // 각 탭의 스크롤 위치를 직접 지정합니다.
   const tabs = [
-    { text: "Home", scrollTop: 0 },
-    { text: "Portfolio", scrollTop: 800 },
-    { text: "About", scrollTop: 1600 },
-    { text: "Contact", scrollTop: 2400 },
+    { text: "Home" },
+    { text: "Portfolio" },
+    { text: "About" },
+    { text: "Contact" },
   ];
 
-  const scrollToSection = (scrollTop: number) => {
-    window.scrollTo({ top: scrollTop, behavior: "smooth" });
-  };
-
   return (
-    <div className="flex sticky top-14 items-center justify-between">
+    <div className="flex sticky z-[120] top-14 items-center justify-between">
       <div className="flex justify-between w-full pr-24 font-orbitronRegular text-xl overflow-hidden">
         {tabs.map((tab) => (
-          <div
+          <Link
             key={tab.text}
-            className={cn(
-              "text-[#202020] backdrop-blur-3xl bg-white/10 dark:bg-[#293036C2]/5 rounded-xl px-4 py-1 hover:text-[#7AD154] dark:hover:text-[#7AD154] dark:text-[#FAFAFC] cursor-pointer",
-              {
-                "text-[#7AD154] dark:text-[#7AD154] font-orbitronExtrabold text-2xl":
-                  selectedTab === tab.text,
-              }
-            )}
-            onClick={() => {
-              setSelectedTab(tab.text);
-              scrollToSection(tab.scrollTop);
-            }}
+            activeClass="!text-green-1 !font-bold dark:!text-green-1"
+            to={tab.text}
+            spy={true}
+            smooth={true}
+            offset={tab.text === "Home" ? 70 : -10} // Home은 스크롤 맨위이므로 offset 0 적용
+            duration={500}
+            className="text-[#202020] backdrop-blur-3xl bg-white/10 dark:bg-[#293036C2]/5 rounded-xl px-4 py-1 hover:text-green-1 dark:hover:text-green-1 dark:text-[#FAFAFC] cursor-pointer"
           >
             {tab.text}
-          </div>
+          </Link>
         ))}
       </div>
       <div className="flex justify-end">

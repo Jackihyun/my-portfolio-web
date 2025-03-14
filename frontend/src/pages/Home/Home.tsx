@@ -16,7 +16,7 @@ const Home: React.FC<Props> = ({ className }) => {
 
   return (
     <div className={cn("w-full", className)}>
-      <div className="flex flex-col text-nowrap text-[#303030] dark:text-white font-orbitronMedium text-[50px] ">
+      <div className="flex flex-col text-nowrap text-[#303030] dark:text-white font-orbitronRegular text-[45px] ">
         <p>Nice to meet you! 👋</p>
         <p>I'm Jackihyun,</p>
         <p>Frontend developer based in Seoul</p>
