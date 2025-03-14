@@ -73,16 +73,16 @@ const SideProfile: React.FC<Props> = ({ className }) => {
           <div>
             <p className="text-[#7AD154] text-sm font-light">Tech</p>
             <div className="flex mt-1 gap-2 text-black dark:text-[#FAFAFC] text-lg font-medium">
-              <FaHtml5 className="size-5" />
-              <FaCss3Alt className="size-5" />
-              <IoLogoJavascript className="size-5" />
-              <RiTailwindCssFill className="size-5" />
+              <FaHtml5 className="size-6" />
+              <FaCss3Alt className="size-6" />
+              <IoLogoJavascript className="size-6" />
+              <RiTailwindCssFill className="size-6" />
             </div>
             <div className="flex mt-1 gap-2 text-black dark:text-[#FAFAFC] text-lg font-medium">
-              <RiSvelteFill className="size-5" />
-              <FaReact className="size-5" />
-              <SiTypescript className="size-5" />
-              <RiNextjsFill className="size-5" />
+              <RiSvelteFill className="size-6" />
+              <FaReact className="size-6" />
+              <SiTypescript className="size-6" />
+              <RiNextjsFill className="size-6" />
             </div>
           </div>
           <div>

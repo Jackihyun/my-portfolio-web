@@ -35,7 +35,7 @@ const Card: React.FC<Props> = ({
       <img
         src={imgSrc}
         alt="project"
-        className="size-[20vw] m-auto pb-5 object-contain"
+        className="size-[15vw] m-auto pb-5 object-contain"
       />
       <div className="absolute bottom-5 right-5">
         <p className="text-right font-orbitronRegular text-[15px] mt-2">

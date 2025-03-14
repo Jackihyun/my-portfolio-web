@@ -10,7 +10,7 @@ const ModeToggle: React.FC<Props> = ({ className, onClick, isDarkMode }) => {
   return (
     <div
       onClick={onClick}
-      className={`relative flex items-center w-[88px] h-10 p-1 rounded-full cursor-pointer transition-colors 
+      className={`relative flex items-center w-[88px] h-10 p-1 rounded-full cursor-pointer transition-colors
       ${isDarkMode ? "bg-green-1" : "bg-white"} ${className}`}
     >
       {/* 햇빛 아이콘 */}
