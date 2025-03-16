@@ -13,7 +13,7 @@ const Contact: React.FC<Props> = ({ className }) => {
 
   return (
     <div className={cn("w-full flex flex-col", className)}>
-      <p className="font-orbitronRegular tracking-wider mb-14 text-3xl dark:text-[#FAFAFC] text-[#303030]">
+      <p className="font-orbitron-regular tracking-wider mb-14 text-3xl dark:text-[#FAFAFC] text-[#303030]">
         Thank you for visiting!
         <br />
         Feel free to reach me out 👋
@@ -23,7 +23,7 @@ const Contact: React.FC<Props> = ({ className }) => {
           onClick={scrollToTop}
           className="absolute top-10 left-10 text-white size-11 mb-20 stroke-white cursor-pointer"
         />
-        <div className="flex flex-col cursor-pointer gap-3 mb-10 font-orbitronRegular tracking-widest text-xl">
+        <div className="flex flex-col cursor-pointer gap-3 mb-10 font-orbitron-regular tracking-widest text-xl">
           <a href="mailto:pkhjack2325@gmail.com" target="_blank">
             📨 pkhjack2325@gmail.com
           </a>
@@ -35,7 +35,7 @@ const Contact: React.FC<Props> = ({ className }) => {
           </a>
         </div>
         <div className="w-full border border-[#083400]"></div>
-        <p className="font-orbitronRegular mt-2 text-right text-sm tracking-wider">
+        <p className="font-orbitron-regular mt-2 text-right text-sm tracking-wider">
           Copyright ⓒ 2025. Jackihyun. All Rights Reserved.
         </p>
       </div>

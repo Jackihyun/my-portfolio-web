@@ -27,7 +27,7 @@ const Card: React.FC<Props> = ({
         className
       )}
     >
-      <p className="absolute top-5 left-7 font-orbitronRegular text-xl mb-2 tracking-widest">
+      <p className="absolute top-5 left-7 font-orbitron-regular text-xl mb-2 tracking-widest">
         {title}
       </p>
       <img
@@ -36,7 +36,7 @@ const Card: React.FC<Props> = ({
         className="w-full m-auto object-contain"
       />
       <div className="absolute bottom-5 right-5">
-        <p className="text-right font-orbitronRegular text-[15px]">{period}</p>
+        <p className="text-right font-orbitron-regular text-[15px]">{period}</p>
       </div>
     </div>
   );

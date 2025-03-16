@@ -9,12 +9,12 @@ type Props = {
 const About: React.FC<Props> = ({ className }) => {
   return (
     <div className={cn("w-full flex flex-col", className)}>
-      <p className="font-orbitronRegular text-[#303030] dark:text-[#FAFAFC] text-xl">
+      <p className="font-orbitron-regular text-[#303030] dark:text-[#FAFAFC] text-xl">
         Let me introduce myself 🗣️
       </p>
 
       <div className="mt-10">
-        <p className="font-orbitronRegular text-3xl text-[#202020] dark:text-[#FAFAFC]">
+        <p className="font-orbitron-regular text-3xl text-[#202020] dark:text-[#FAFAFC]">
           🗂️ Projects
         </p>
         <Box className="flex w-full flex-col text-lg gap-2">
@@ -45,7 +45,7 @@ const About: React.FC<Props> = ({ className }) => {
         </Box>
       </div>
       <div className="mt-10">
-        <p className="font-orbitronRegular text-3xl text-[#303030] dark:text-[#FAFAFC]">
+        <p className="font-orbitron-regular text-3xl text-[#303030] dark:text-[#FAFAFC]">
           🏫 Education
         </p>
         <Box className="flex gap-4 text-nowrap font-pretendard text-lg">
@@ -58,7 +58,7 @@ const About: React.FC<Props> = ({ className }) => {
         </Box>
       </div>
       <div className="mt-10">
-        <p className="font-orbitronRegular text-3xl text-[#303030] dark:text-[#FAFAFC]">
+        <p className="font-orbitron-regular text-3xl text-[#303030] dark:text-[#FAFAFC]">
           📨️ Cover letter
         </p>
         <Box className="font-pretendard flex flex-col gap-6">

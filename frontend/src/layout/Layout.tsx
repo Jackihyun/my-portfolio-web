@@ -35,7 +35,7 @@ const Layout: React.FC<Props> = ({ className }) => {
             <SpinningText
               radius={4}
               duration={4}
-              className="text-lg text-[#303030] dark:text-[#FAFAFC] font-orbitronRegular"
+              className="text-lg text-[#303030] dark:text-[#FAFAFC] font-orbitron-regular"
             >
               Scroll Down • Scroll Up •
             </SpinningText>

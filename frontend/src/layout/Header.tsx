@@ -56,11 +56,11 @@ export default function Header() {
 
   return (
     <div className="flex sticky z-[120] top-14 items-center justify-between">
-      <div className="flex justify-between w-full pr-24 font-orbitronRegular tracking-widest text-xl overflow-hidden">
+      <div className="flex justify-between w-full pr-24 font-orbitron-regular tracking-widest text-xl overflow-hidden">
         {tabs.map((tab) => (
           <Link
             key={tab.text}
-            activeClass="!text-green-1 !font-orbitronMedium dark:!text-green-1"
+            activeClass="!text-green-1 !font-orbitron-medium dark:!text-green-1"
             to={tab.text}
             spy={true}
             smooth={true}
