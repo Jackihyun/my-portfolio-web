@@ -6,9 +6,12 @@ import imageMapping from "../../utils/imageMapping";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 type Props = {
   className?: string;
@@ -42,12 +45,50 @@ const Portfolio: React.FC<Props> = ({ className }) => {
               />
             </DialogTrigger>
             <DialogContent>
-              <DialogHeader>Hi</DialogHeader>
+              <DialogHeader className="flex flex-col">
+                <div
+                  className="font-orbitron-medium text-3xl"
+                  style={{ color: project.modalColor }}
+                >
+                  Project
+                </div>
+                <DialogTitle className="font-orbitron-medium text-2xl text-[#303030]">
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: project.modalTitle || "",
+                    }}
+                  />
+                </DialogTitle>
+                <DialogDescription>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: project.modalText || "",
+                    }}
+                  />
+                  <InteractiveHoverButton
+                    style={{
+                      color: project.modalColor,
+                      backgroundColor: project.modalColor,
+                      opacity: 0.2,
+                    }}
+                    className="
+                  >
+                    www.khucnt.kr
+                  </InteractiveHoverButton>
+                  <div>
+                    <p>⦁ 프로젝트 역할 / 기여도 </p>
+                  </div>
+                </DialogDescription>
+              </DialogHeader>
+              {/* 추가적인 프로젝트 상세 정보 */}
+              <div>
+                {/* 예시: 기술 스택, 링크 등 */}
+                <img></img>
+              </div>
             </DialogContent>
           </Dialog>
         ))}
       </div>
-      {/* 선택한 프로젝트가 있으면 모달 표시 */}
     </div>
   );
 };

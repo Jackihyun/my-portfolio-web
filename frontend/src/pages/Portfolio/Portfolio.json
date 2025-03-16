@@ -4,7 +4,10 @@
     "imgSrc": "src/assets/imgs/khucnt.png",
     "period": "2024/03 ~ 2024/08",
     "bgColor": "#FFB167",
-    "textColor": "white"
+    "textColor": "white",
+    "modalTitle": "KyungHee University<br/>Graduation Fashion Show Website",
+    "modalText": "경희대학교 의상학과 졸업작품 패션쇼 웹사이트<br/>2024.03 ~ 2024.08 (5개월)",
+    "modalColor": "#FFA24A"
   },
   {
     "title": "Barojob<br/>Website",
