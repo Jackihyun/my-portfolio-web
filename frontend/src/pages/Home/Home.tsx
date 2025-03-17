@@ -28,6 +28,7 @@ const Home: React.FC<Props> = ({ className }) => {
       </div>
       <InteractiveHoverButton
         onClick={onClick}
+        dotBgClassName="bg-green-1"
         className="font-orbitron-medium text-nowrap tracking-widest hover:font-orbitron-semibold text-2xl px-9 py-3 text-green-1 border hover:bg-green-1 dark:bg-green-1/20 hover:text-white border-green-1 rounded-3xl mt-10"
       >
         Check out my works!
