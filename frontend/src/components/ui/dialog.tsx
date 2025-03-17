@@ -4,6 +4,11 @@ import { XIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+interface CustomDialogContentProps
+  extends React.ComponentProps<typeof DialogPrimitive.Content> {
+  closeIconStyle?: React.CSSProperties;
+}
+
 function Dialog({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
@@ -47,8 +52,9 @@ function DialogOverlay({
 function DialogContent({
   className,
   children,
+  closeIconStyle,
   ...props
-}: React.ComponentProps<typeof DialogPrimitive.Content>) {
+}: CustomDialogContentProps) {
   return (
     <DialogPortal data-slot="dialog-portal">
       <DialogOverlay />
@@ -61,7 +67,10 @@ function DialogContent({
         {...props}
       >
         {children}
-        <DialogPrimitive.Close className="ring-offset-background data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-10">
+        <DialogPrimitive.Close
+          className="ring-offset-background cursor-pointer data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-10"
+          style={closeIconStyle}
+        >
           <XIcon />
           <span className="sr-only">Close</span>
         </DialogPrimitive.Close>

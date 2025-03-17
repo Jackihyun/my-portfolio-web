@@ -44,7 +44,7 @@ const Portfolio: React.FC<Props> = ({ className }) => {
                 }}
               />
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent closeIconStyle={{ color: project.closeIconColor }}>
               <DialogHeader className="flex flex-col">
                 <div
                   className="font-orbitron-medium text-3xl"
@@ -59,19 +59,22 @@ const Portfolio: React.FC<Props> = ({ className }) => {
                     }}
                   />
                 </DialogTitle>
-                <DialogDescription>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: project.modalText || "",
-                    }}
-                  />
+                <DialogDescription className="flex flex-col">
+                  <div className="mb-5">
+                    <p className="font-pretendard text text-[#919191] text-lg">
+                      {project.modalText}
+                    </p>
+                    <p className="font-pretendard text-[#919191] text-[15px]">
+                      {project.modalPeriod}
+                    </p>
+                  </div>
+
                   <InteractiveHoverButton
                     style={{
                       color: project.modalColor,
-                      backgroundColor: project.modalColor,
-                      opacity: 0.2,
+                      opacity: 0.8,
                     }}
-                    className="
+                    className="w-50"
                   >
                     www.khucnt.kr
                   </InteractiveHoverButton>
@@ -80,7 +83,6 @@ const Portfolio: React.FC<Props> = ({ className }) => {
                   </div>
                 </DialogDescription>
               </DialogHeader>
-              {/* 추가적인 프로젝트 상세 정보 */}
               <div>
                 {/* 예시: 기술 스택, 링크 등 */}
                 <img></img>
