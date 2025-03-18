@@ -30,6 +30,11 @@
     "period": "2023/12 ~ 2024/03",
     "bgColor": "#F4F4F4",
     "textColor": "white",
-    "modalColor": "#FF4A3E"
+    "modalColor": "#FF4A3E",
+    "modalImgSrcs": [
+      "src/assets/imgs/Ao1.png",
+      "src/assets/imgs/AO.png",
+      "src/assets/imgs/AO.png"
+    ]
   }
 ]

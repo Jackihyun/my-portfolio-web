@@ -23,6 +23,16 @@ interface PortfolioModalProps {
   };
 }
 
+const imgs = {
+  Srcs: [
+    "src/assets/imgs/AO1.png",
+    "src/assets/imgs/AO2.png",
+    "src/assets/imgs/AO3.png",
+    "src/assets/imgs/AO4.png",
+    "src/assets/imgs/AO5.png",
+  ],
+};
+
 const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
   return (
     <Dialog>
@@ -40,50 +50,51 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
       </DialogTrigger>
       <DialogContent
         closeIconStyle="text-[#FF4A3E] p-2"
-        className="p-10 !rounded-none md:!rounded-[30px]"
+        className="p-10 md:!rounded-[30px] overflow-y-auto max-h-[90vh]"
       >
-        <DialogHeader className="flex flex-col">
-          <div
-            className="font-orbitron-medium text-3xl"
-            style={{ color: data.modalColor }}
-          >
-            Project
-          </div>
-          <DialogTitle className="font-orbitron-regular text-xl text-[#303030] dark:text-white">
-            <p>
-              FireAO
-              <br />
-              Study Website
-            </p>
-          </DialogTitle>
-        </DialogHeader>
-        <DialogDescription className="">
-          {/* 왼쪽: 설명 및 버튼 */}
-          <div className="w-full md:w-1/2 whitespace-nowrap">
-            <p className="font-pretendard text-lg text-[#919191] dark:text-[#B5B5B5]">
-              명지대학교 컴퓨터공학과 스터디 FireAO 웹사이트
-            </p>
-            <p className="font-pretendard text-[15px] text-[#919191] dark:text-[#B5B5B5]">
-              {data.period} (2개월)
-            </p>
-          </div>
-        </DialogDescription>
-        <div className="w-full overflow-hidden">
-          <div className="md:flex overflow-x-scroll">
-            <div className="flex flex-col whitespace-nowrap w-fit">
+        {/* 모달 내부 내용 */}
+        <div className="flex flex-col md:flex-row">
+          {/* 왼쪽 열: 기존 내용 */}
+          <div className="w-full md:w-1/2">
+            <DialogHeader className="flex flex-col">
+              <div
+                className="font-orbitron-medium text-3xl"
+                style={{ color: data.modalColor }}
+              >
+                Project
+              </div>
+              <DialogTitle className="font-orbitron-regular text-xl text-[#303030] dark:text-white">
+                <p>
+                  FireAO
+                  <br />
+                  Study Website
+                </p>
+              </DialogTitle>
+            </DialogHeader>
+            <DialogDescription>
+              <div className="whitespace-nowrap">
+                <p className="font-pretendard text-lg text-[#919191] dark:text-[#B5B5B5]">
+                  명지대학교 컴퓨터공학과 스터디 FireAO 웹사이트
+                </p>
+                <p className="font-pretendard text-[15px] text-[#919191] dark:text-[#B5B5B5]">
+                  {data.period} (2개월)
+                </p>
+              </div>
+            </DialogDescription>
+            <div className="mt-4">
               <InteractiveHoverButton
                 onClick={() =>
                   window.open("https://github.com/Jackihyun/AO-WEB")
                 }
                 transitionClassName="group-hover:translate-x-0"
                 dotBgClassName="bg-[#FF4A3E] size-1.5"
-                className="flex mt-4 justify-center items-center w-fit text-[13px] bg-[#FF4A3E]/20 text-[#FF4A3E] border border-[#FF4A3E] text-nowrap tracking-widest font-pretendard"
+                className="flex justify-center items-center w-fit text-[13px] bg-[#FF4A3E]/20 text-[#FF4A3E] border border-[#FF4A3E] tracking-widest font-pretendard"
               >
                 깃허브(배포 종료)
               </InteractiveHoverButton>
               <div className="mt-10">
                 <div className="flex items-center gap-3 font-pretendard">
-                  <div className=" bg-[#FF4A3E] rounded-full size-[7px]"></div>
+                  <div className="bg-[#FF4A3E] rounded-full size-[7px]"></div>
                   <p className="text-[19px] text-[#FF4A3E]">
                     프로젝트 역할 / 기여도
                   </p>
@@ -94,7 +105,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
               </div>
               <div className="mt-5">
                 <div className="flex items-center gap-3 font-pretendard">
-                  <div className=" bg-[#FF4A3E] rounded-full size-[7px]"></div>
+                  <div className="bg-[#FF4A3E] rounded-full size-[7px]"></div>
                   <p className="text-[19px] text-[#FF4A3E]">스택</p>
                 </div>
                 <span className="font-pretendard text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
@@ -103,7 +114,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
               </div>
               <div className="mt-5">
                 <div className="flex items-center gap-3 font-pretendard">
-                  <div className=" bg-[#FF4A3E] rounded-full size-[7px]"></div>
+                  <div className="bg-[#FF4A3E] rounded-full size-[7px]"></div>
                   <p className="text-[19px] text-[#FF4A3E]">프로젝트 개요</p>
                 </div>
                 <div className="font-pretendard text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
@@ -122,10 +133,35 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
               </div>
             </div>
-            {/* 오른쪽: 이미지 + 영상 오버레이 */}
-            <div className="flex items-center justify-start md:justify-end w-full min-w-[600px] mt-10 md:mt-0 flex-1">
-              <div className="w-[300px] md:min-w-[600px] md:w-[600px] relative">
-                <img src={data.modalImgSrc} alt="Monitor" className="" />
+          </div>
+          {/* 오른쪽 열: 이미지 그리드 */}
+          <div className="w-full md:w-1/2 flex-1 flex items-start justify-start">
+            <div className="overflow-y-auto">
+              <div className="grid">
+                {/* 첫 번째 행: 2개 이미지 */}
+                <div className="grid grid-cols-2">
+                  {imgs.Srcs.slice(0, 2).map((src, index) => (
+                    <div key={index} className="relative flex justify-center">
+                      <img
+                        src={src}
+                        alt={`Ao ${index + 1}`}
+                        className="w-30 h-60 md:w-[150px] md:h-[300px]"
+                      />
+                    </div>
+                  ))}
+                </div>
+                {/* 두 번째 행: 3개 이미지 */}
+                <div className="grid grid-cols-3 gap-2 mt-2">
+                  {imgs.Srcs.slice(2).map((src, index) => (
+                    <div key={index} className="relative">
+                      <img
+                        src={src}
+                        alt={`Ao ${index + 3}`}
+                        className="w-30 h-60 md:w-[150px] md:h-[300px]"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
