@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Card from "./Card";
+import imageMapping from "@/utils/imageMapping";
 
 interface PortfolioModalProps {
   data: {
@@ -17,16 +18,19 @@ interface PortfolioModalProps {
     period: string;
     bgColor: string;
     textColor: string;
+    modalColor: string;
+    modalImgSrc: string;
   };
 }
 
-const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
+const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Card
-          title={data.title}
-          imgSrc={data.imgSrc}
+          className="mb-5"
+          title={<span dangerouslySetInnerHTML={{ __html: data.title }} />}
+          imgSrc={imageMapping[data.imgSrc]}
           period={data.period}
           style={{
             color: data.textColor,
@@ -34,72 +38,101 @@ const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
           }}
         />
       </DialogTrigger>
-      <DialogContent closeIconStyle={{ color: data.textColor }}>
+      <DialogContent
+        closeIconStyle="text-[#FF4A3E] p-2"
+        className="p-10 !rounded-none md:!rounded-[30px]"
+      >
         <DialogHeader className="flex flex-col">
           <div
             className="font-orbitron-medium text-3xl"
-            style={{ color: data.textColor }}
+            style={{ color: data.modalColor }}
           >
             Project
           </div>
-          <DialogTitle
-            className="font-orbitron-medium text-2xl"
-            style={{ color: "#303030" }}
-          >
-            FIREAO
+          <DialogTitle className="font-orbitron-regular text-xl text-[#303030] dark:text-white">
+            <p>
+              FireAO
+              <br />
+              Study Website
+            </p>
           </DialogTitle>
-          <DialogDescription className="flex flex-col">
-            <div className="flex">
-              {/* 왼쪽: 설명 및 버튼 */}
-              <div className="w-1/2 p-4">
-                <p
-                  className="font-pretendard text-lg"
-                  style={{ color: "#919191" }}
-                >
-                  FIREAO 프로젝트에 대한 설명이 들어갑니다.
-                </p>
-                <p
-                  className="font-pretendard text-[15px]"
-                  style={{ color: "#919191" }}
-                >
-                  Duration: {data.period}
-                </p>
-                <InteractiveHoverButton
-                  style={{
-                    background: data.bgColor,
-                    color: data.textColor,
-                    borderColor: data.textColor,
-                  }}
-                  dotBgClassName={data.textColor}
-                  className="w-50 text-nowrap tracking-widest font-orbitron-regular px-2 hover:bg-opacity-80 hover:text-white"
-                >
-                  www.fireao.com
-                </InteractiveHoverButton>
+        </DialogHeader>
+        <DialogDescription className="">
+          {/* 왼쪽: 설명 및 버튼 */}
+          <div className="w-full md:w-1/2 whitespace-nowrap">
+            <p className="font-pretendard text-lg text-[#919191] dark:text-[#B5B5B5]">
+              명지대학교 컴퓨터공학과 스터디 FireAO 웹사이트
+            </p>
+            <p className="font-pretendard text-[15px] text-[#919191] dark:text-[#B5B5B5]">
+              {data.period} (2개월)
+            </p>
+          </div>
+        </DialogDescription>
+        <div className="w-full overflow-hidden">
+          <div className="md:flex overflow-x-scroll">
+            <div className="flex flex-col whitespace-nowrap w-fit">
+              <InteractiveHoverButton
+                onClick={() =>
+                  window.open("https://github.com/Jackihyun/AO-WEB")
+                }
+                transitionClassName="group-hover:translate-x-0"
+                dotBgClassName="bg-[#FF4A3E] size-1.5"
+                className="flex mt-4 justify-center items-center w-fit text-[13px] bg-[#FF4A3E]/20 text-[#FF4A3E] border border-[#FF4A3E] text-nowrap tracking-widest font-pretendard"
+              >
+                깃허브(배포 종료)
+              </InteractiveHoverButton>
+              <div className="mt-10">
+                <div className="flex items-center gap-3 font-pretendard">
+                  <div className=" bg-[#FF4A3E] rounded-full size-[7px]"></div>
+                  <p className="text-[19px] text-[#FF4A3E]">
+                    프로젝트 역할 / 기여도
+                  </p>
+                </div>
+                <span className="font-pretendard text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                  프론트엔드 개발 / 50%
+                </span>
               </div>
-              {/* 오른쪽: 3개의 이미지 */}
-              <div className="w-1/2 p-4 grid grid-cols-3 gap-2">
-                <img
-                  src={data.imgSrc}
-                  alt="FIREAO image 1"
-                  className="w-full h-auto"
-                />
-                <img
-                  src="/path/to/project4-img2.jpg"
-                  alt="FIREAO image 2"
-                  className="w-full h-auto"
-                />
-                <img
-                  src="/path/to/project4-img3.jpg"
-                  alt="FIREAO image 3"
-                  className="w-full h-auto"
-                />
+              <div className="mt-5">
+                <div className="flex items-center gap-3 font-pretendard">
+                  <div className=" bg-[#FF4A3E] rounded-full size-[7px]"></div>
+                  <p className="text-[19px] text-[#FF4A3E]">스택</p>
+                </div>
+                <span className="font-pretendard text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                  JavaScript, Svelte, TailwindCSS
+                </span>
+              </div>
+              <div className="mt-5">
+                <div className="flex items-center gap-3 font-pretendard">
+                  <div className=" bg-[#FF4A3E] rounded-full size-[7px]"></div>
+                  <p className="text-[19px] text-[#FF4A3E]">프로젝트 개요</p>
+                </div>
+                <div className="font-pretendard text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                  <p>
+                    명지대학교 컴퓨터공학과 스터디 Fire AO 모바일 웹 개발
+                    프로젝트에
+                    <br /> 프론트엔드 개발자로 참여했습니다.
+                    <br />
+                    &#183; 스크롤 및 터치 이벤트에 따라 인터렉티브하게 변화하는
+                    화면
+                    <br />
+                    &#183; 스터디 소개 및 아카이브 페이지 개발
+                    <br />
+                    &#183; 라이트 모드 / 다크 모드 구현
+                  </p>
+                </div>
               </div>
             </div>
-          </DialogDescription>
-        </DialogHeader>
+            {/* 오른쪽: 이미지 + 영상 오버레이 */}
+            <div className="flex items-center justify-start md:justify-end w-full min-w-[600px] mt-10 md:mt-0 flex-1">
+              <div className="w-[300px] md:min-w-[600px] md:w-[600px] relative">
+                <img src={data.modalImgSrc} alt="Monitor" className="" />
+              </div>
+            </div>
+          </div>
+        </div>
       </DialogContent>
     </Dialog>
   );
 };
 
-export default PortfolioModal4;
+export default PortfolioModal1;

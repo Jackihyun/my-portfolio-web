@@ -75,7 +75,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 onClick={() => window.open("https://www.khucnt.kr")}
                 transitionClassName="group-hover:translate-x-0"
                 dotBgClassName="bg-[#FFA24A] dark:bg-[#87EA5C] size-1.5"
-                className="flex mt-4 justify-center items-center w-fit text-[13px] bg-[#FFA24A]/20 text-[#FFA24A] border border-[#FFA24A] dark:border-[#87EA5C] text-nowrap tracking-widest font-orbitron-regular"
+                className="flex mt-4 justify-center items-center w-fit text-[13px] bg-[#FFA24A]/20 dark:bg-[#87EA5C]/20 text-[#FFA24A] border border-[#FFA24A] dark:border-[#87EA5C] text-nowrap tracking-widest font-orbitron-regular"
               >
                 www.khucnt.kr
               </InteractiveHoverButton>
@@ -98,7 +98,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                   </p>
                 </div>
                 <span className="font-pretendard text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                  HTML, CSS, JavaScript, React.js, TailwindCSS
+                  JavaScript, React.js, TailwindCSS
                 </span>
               </div>
               <div className="mt-5">
