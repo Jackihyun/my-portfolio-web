@@ -22,7 +22,8 @@
     "period": "2024/07 ~ in progress",
     "bgColor": "#F4F4F4",
     "textColor": "#3FD100",
-    "modalColor": "#7AD154"
+    "modalColor": "#7AD154",
+    "modalImgSrc": "src/assets/imgs/blog2.png"
   },
   {
     "title": "FIREAO<br/>Study Website",

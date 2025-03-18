@@ -40,7 +40,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
       </DialogTrigger>
       <DialogContent
         closeIconStyle="text-[#7AD154] p-2"
-        className="p-10 !rounded-none md:!rounded-[30px]"
+        className="p-10 md:!rounded-[30px] overflow-y-auto max-h-[90vh]"
       >
         <DialogHeader className="flex flex-col">
           <div
@@ -65,7 +65,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
           </div>
         </DialogDescription>
         <div className="w-full overflow-hidden">
-          <div className="md:flex overflow-x-scroll">
+          <div className="md:flex overflow-x-scroll overflow-y-scroll">
             <div className="flex flex-col whitespace-nowrap w-fit">
               <InteractiveHoverButton
                 onClick={() =>
@@ -117,9 +117,9 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
               </div>
             </div>
             {/* 오른쪽: 이미지 + 영상 오버레이 */}
-            <div className="flex items-center justify-start md:justify-end w-full min-w-[600px] mt-10 md:mt-0 flex-1">
-              <div className="w-[300px] md:min-w-[600px] md:w-[600px] relative">
-                <img src={data.modalImgSrc} alt="Monitor" className="" />
+            <div className="flex items-center justify-start md:justify-center mt-10 md:mt-0 flex-1">
+              <div className="relative">
+                <img src={data.modalImgSrc} alt="blog" className="w-[300px]" />
               </div>
             </div>
           </div>

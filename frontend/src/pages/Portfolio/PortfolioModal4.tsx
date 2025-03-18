@@ -63,7 +63,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
               >
                 Project
               </div>
-              <DialogTitle className="font-orbitron-regular text-xl text-[#303030] dark:text-white">
+              <DialogTitle className="font-orbitron-regular mb-2 text-xl text-[#303030] dark:text-white">
                 <p>
                   FireAO
                   <br />
