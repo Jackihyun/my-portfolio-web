@@ -10,6 +10,7 @@ import {
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
+import blogImg from "@/assets/imgs/blog2.png";
 
 interface PortfolioModalProps {
   data: {
@@ -116,10 +117,9 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
               </div>
             </div>
-            {/* 오른쪽: 이미지 + 영상 오버레이 */}
             <div className="flex items-center justify-start md:justify-center mt-10 md:mt-0 flex-1">
               <div className="relative">
-                <img src={data.modalImgSrc} alt="blog" className="w-[300px]" />
+                <img src={blogImg} alt="blog" className="w-[300px]" />
               </div>
             </div>
           </div>

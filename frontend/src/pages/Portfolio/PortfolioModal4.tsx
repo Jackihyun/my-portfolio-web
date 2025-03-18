@@ -10,6 +10,11 @@ import {
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
+import AO1 from "@/assets/imgs/AO1.png";
+import AO2 from "@/assets/imgs/AO2.png";
+import AO3 from "@/assets/imgs/AO3.png";
+import AO4 from "@/assets/imgs/AO4.png";
+import AO5 from "@/assets/imgs/AO5.png";
 
 interface PortfolioModalProps {
   data: {
@@ -24,13 +29,7 @@ interface PortfolioModalProps {
 }
 
 const imgs = {
-  Srcs: [
-    "src/assets/imgs/AO1.png",
-    "src/assets/imgs/AO2.png",
-    "src/assets/imgs/AO3.png",
-    "src/assets/imgs/AO4.png",
-    "src/assets/imgs/AO5.png",
-  ],
+  Srcs: [AO1, AO2, AO3, AO4, AO5],
 };
 
 const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {

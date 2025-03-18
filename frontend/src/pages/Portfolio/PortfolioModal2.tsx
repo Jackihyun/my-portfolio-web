@@ -10,6 +10,9 @@ import {
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
+import login from "@/assets/imgs/login.png";
+import baromain from "@/assets/imgs/baromain.png";
+import baroVideo from "@/assets/videos/baroSignup.mov";
 
 interface PortfolioModalProps {
   data: {
@@ -24,7 +27,7 @@ interface PortfolioModalProps {
 }
 
 const imgs = {
-  Srcs: ["src/assets/imgs/baromain.png", "src/assets/imgs/login.png"],
+  Srcs: [login, baromain],
 };
 
 const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
@@ -126,7 +129,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                     회원가입 과정
                   </p>
                   <video
-                    src="/src/assets/videos/baroSignup.mov"
+                    src={baroVideo}
                     className="w-[110px] md:w-[180px] h-fit border border-[#618DFF] rounded-md p-2"
                     autoPlay
                     loop

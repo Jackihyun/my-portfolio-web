@@ -10,6 +10,8 @@ import {
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
+import videoFrame from "@/assets/imgs/videoFrame.png";
+import video from "@/assets/videos/khuVideo.mov";
 
 interface PortfolioModalProps {
   data: {
@@ -127,9 +129,9 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
             {/* 오른쪽: 이미지 + 영상 오버레이 */}
             <div className="flex items-center justify-start md:justify-end w-full min-w-[600px] mt-10 md:mt-0 flex-1">
               <div className="w-[300px] md:min-w-[600px] md:w-[600px] relative">
-                <img src={data.modalImgSrc} alt="Monitor" className="" />
+                <img src={videoFrame} alt="Monitor" className="" />
                 <video
-                  src="/src/assets/videos/khuVideo.mov"
+                  src={video}
                   autoPlay
                   loop
                   muted
