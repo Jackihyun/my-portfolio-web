@@ -14,7 +14,8 @@
     "period": "2025/01 ~ in progress",
     "bgColor": "#618DFF",
     "textColor": "white",
-    "modalColor": "#4A7BFF"
+    "modalColor": "#4A7BFF",
+    "modalImgSrc": "src/assets/imgs/login.png"
   },
   {
     "title": "Jack's Blog<br/>Website",
@@ -32,10 +33,6 @@
     "bgColor": "#F4F4F4",
     "textColor": "white",
     "modalColor": "#FF4A3E",
-    "modalImgSrcs": [
-      "src/assets/imgs/Ao1.png",
-      "src/assets/imgs/AO.png",
-      "src/assets/imgs/AO.png"
-    ]
+    "modalImgSrc": ""
   }
 ]

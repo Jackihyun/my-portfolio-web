@@ -23,6 +23,10 @@ interface PortfolioModalProps {
   };
 }
 
+const imgs = {
+  Srcs: ["src/assets/imgs/baromain.png", "src/assets/imgs/login.png"],
+};
+
 const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
   return (
     <Dialog>
@@ -40,7 +44,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
       </DialogTrigger>
       <DialogContent
         closeIconStyle="text-[#618DFF] p-2"
-        className="p-10 !rounded-none md:!rounded-[30px]"
+        className="p-10 md:!rounded-[30px]"
       >
         <DialogHeader className="flex flex-col">
           <div
@@ -115,9 +119,40 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
               </div>
             </div>
             {/* 오른쪽: 이미지 + 영상 오버레이 */}
-            <div className="flex items-center justify-start md:justify-end w-full min-w-[600px] mt-10 md:mt-0 flex-1">
-              <div className="w-[300px] md:min-w-[600px] md:w-[600px] relative">
-                <img src={data.modalImgSrc} alt="Monitor" className="" />
+            <div className="flex items-center justify-start md:justify-end w-full mt-10 md:mt-0 md:ml-10 flex-1">
+              <div className="w-[350px] md:min-w-[600px] md:w-[600px] relative flex gap-2 ">
+                <div className="flex flex-col items-center">
+                  <p className="font-pretendard mb-1 text-xs text-[#919191]">
+                    회원가입 과정
+                  </p>
+                  <video
+                    src="/src/assets/videos/baroSignup.mov"
+                    className="w-[110px] md:w-[180px] h-fit border border-[#618DFF] rounded-md p-2"
+                    autoPlay
+                    loop
+                    muted
+                  />
+                </div>
+                <div className="flex flex-col items-center">
+                  <p className="font-pretendard mb-1 text-xs text-[#919191]">
+                    로그인 페이지
+                  </p>
+                  <img
+                    src={imgs.Srcs[1]}
+                    alt="login"
+                    className="w-[110px] md:w-[180px] h-fit border border-[#618DFF] rounded-md p-2"
+                  />
+                </div>
+                <div className="flex flex-col items-center">
+                  <p className="font-pretendard mb-1 text-xs text-[#919191]">
+                    메인 페이지
+                  </p>
+                  <img
+                    src={imgs.Srcs[0]}
+                    alt="main"
+                    className="w-[110px] md:w-[180px] h-fit border border-[#618DFF] rounded-md p-2"
+                  />
+                </div>
               </div>
             </div>
           </div>
