@@ -69,7 +69,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
           </div>
         </DialogDescription>
         <div className="w-full overflow-hidden">
-          <div className="md:flex overflow-x-scroll">
+          <div className="md:flex overflow-x-auto">
             <div className="flex flex-col whitespace-nowrap w-fit">
               <InteractiveHoverButton
                 // onClick={() => window.open("https://www.khucnt.kr")}
