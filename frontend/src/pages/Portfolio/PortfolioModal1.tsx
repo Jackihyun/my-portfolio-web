@@ -74,7 +74,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
           <div className="md:flex overflow-x-auto">
             <div className="flex flex-col whitespace-nowrap w-fit">
               <InteractiveHoverButton
-                onClick={() => window.open("https://www.khucnt.kr")}
+                onClick={() => window.open("https://www.khucnt.kr", "_blank")}
                 transitionClassName="group-hover:translate-x-0"
                 dotBgClassName="bg-[#FFA24A] dark:bg-[#87EA5C] size-1.5"
                 className="flex mt-4 justify-center items-center w-fit text-[13px] bg-[#FFA24A]/20 dark:bg-[#87EA5C]/20 text-[#FFA24A] border border-[#FFA24A] dark:border-[#87EA5C] text-nowrap tracking-widest font-orbitron-regular"

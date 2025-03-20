@@ -70,7 +70,10 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
             <div className="flex flex-col whitespace-nowrap w-fit">
               <InteractiveHoverButton
                 onClick={() =>
-                  window.open("https://my-blog-mauve-five.vercel.app/")
+                  window.open(
+                    "https://my-blog-mauve-five.vercel.app/",
+                    "_blank"
+                  )
                 }
                 transitionClassName="group-hover:translate-x-0"
                 dotBgClassName="bg-[#7AD154] size-1.5"

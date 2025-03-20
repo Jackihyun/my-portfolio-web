@@ -82,14 +82,12 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
             </DialogDescription>
             <div className="mt-4">
               <InteractiveHoverButton
-                onClick={() =>
-                  window.open("https://github.com/Jackihyun/AO-WEB")
-                }
+                onClick={() => window.open("https://www.fireao.pro", "_blank")}
                 transitionClassName="group-hover:translate-x-0"
                 dotBgClassName="bg-[#FF4A3E] size-1.5"
-                className="flex justify-center items-center w-fit text-[13px] bg-[#FF4A3E]/20 text-[#FF4A3E] border border-[#FF4A3E] tracking-widest font-pretendard"
+                className="flex justify-center items-center w-fit text-[13px] bg-[#FF4A3E]/20 text-[#FF4A3E] border border-[#FF4A3E] tracking-widest font-orbitron-regular"
               >
-                깃허브(배포 종료)
+                www.fireao.pro
               </InteractiveHoverButton>
               <div className="mt-10">
                 <div className="flex items-center gap-3 font-pretendard">
@@ -128,13 +126,18 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                     &#183; 스터디 소개 및 아카이브 페이지 개발
                     <br />
                     &#183; 라이트 모드 / 다크 모드 구현
+                    <br />
+                    <br />
+                    <span className="font-bold text-sm">
+                      * 추가 사항: 디자인이 바뀌어 페이지 구성이 변경되었습니다.
+                    </span>
                   </p>
                 </div>
               </div>
             </div>
           </div>
           {/* 오른쪽 열: 이미지 그리드 */}
-          <div className="w-full md:w-1/2 flex-1 flex items-start justify-start">
+          <div className="w-full mt-4 md:mt-0 md:w-1/2 flex-1 flex items-start justify-start">
             <div className="overflow-y-auto">
               <div className="grid">
                 {/* 첫 번째 행: 2개 이미지 */}
