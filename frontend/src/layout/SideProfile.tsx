@@ -41,14 +41,23 @@ const SideProfile: React.FC<Props> = ({ className }) => {
           className
         )}
       >
-        <p className="font-orbitron-medium xl:text-4xl text-3xl text-[#7AD154]">
+        <p className="font-orbitron-medium xl:text-4xl text-3xl text-[#7AD154] text-shadow-sm text-shadow-[#7AD154]/30">
           Jackihyun
         </p>
         <p className="font-orbitron-regular text-black/50 dark:text-[#FAFAFC] text-[14px] font-medium">
           Frontend Developer
         </p>
-        <div className="w-full h-48 px-5 pt-5 mt-4 border border-black/10 rounded-[30px]">
-          <img src={profileSrc} className="size-full object-contain" />
+        <div
+          className="w-full h-48 px-5 pt-5 mt-4 border border-black/10 rounded-[30px] relative overflow-hidden group bg-white/30 dark:bg-[#1A1A2380]/30 hover:bg-[#7AD154]/10 dark:hover:bg-[#1A1A2380] transition-all duration-500"
+          style={{
+            boxShadow:
+              "0 0 0 1px rgba(122, 209, 84, 0.3), 0 0 20px rgba(122, 209, 84, 0.15)",
+          }}
+        >
+          <img
+            src={profileSrc}
+            className="size-full object-contain relative z-10"
+          />
         </div>
         <div className="flex flex-col flex-1 text-left font-orbitron-regular w-full mt-5 gap-4">
           <div>
