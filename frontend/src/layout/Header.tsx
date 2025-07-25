@@ -1,4 +1,5 @@
 import ModeToggle from "@/components/ModeToggle";
+import HamburgerMenu from "@/components/HamburgerMenu";
 import { Link, scrollSpy } from "react-scroll";
 import { useState, useEffect, useMemo } from "react";
 
@@ -9,6 +10,7 @@ export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(
     () => localStorage.getItem("theme") === "dark"
   );
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -55,25 +57,52 @@ export default function Header() {
   };
 
   return (
-    <div className="flex sticky z-[120] top-14 items-center justify-between">
-      <div className="flex justify-between w-full pr-24 font-orbitron-regular tracking-widest text-xl overflow-hidden">
-        {tabs.map((tab) => (
-          <Link
-            key={tab.text}
-            activeClass="!text-green-1 !font-orbitron-medium dark:!text-green-1"
-            to={tab.text}
-            spy={true}
-            smooth={true}
-            offset={offsets[tab.text]}
-            duration={500}
-            className="text-[#202020] backdrop-blur-3xl bg-white/10 dark:bg-[#293036C2]/5 rounded-xl px-4 py-1 hover:text-green-1 dark:hover:text-green-1 dark:text-[#FAFAFC] cursor-pointer"
-          >
-            {tab.text}
-          </Link>
-        ))}
+    <div className="sticky z-[120] top-4 lg:top-14">
+      {/* 모바일 헤더 */}
+      <div className="lg:hidden backdrop-blur-lg bg-white/10 dark:bg-[#293036C2]/5 rounded-xl p-4 mb-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="font-orbitron-medium text-xl text-[#7AD154]">
+              Jackihyun
+            </h1>
+            <p className="font-orbitron-regular text-sm text-black/50 dark:text-[#FAFAFC]">
+              Frontend Developer
+            </p>
+          </div>
+          <div className="flex items-center gap-4">
+            {!isMenuOpen && (
+              <ModeToggle isDarkMode={isDarkMode} onClick={handleModeChange} />
+            )}
+            <HamburgerMenu
+              offsets={offsets}
+              isOpen={isMenuOpen}
+              onToggle={setIsMenuOpen}
+            />
+          </div>
+        </div>
       </div>
-      <div className="flex justify-end">
-        <ModeToggle isDarkMode={isDarkMode} onClick={handleModeChange} />
+
+      {/* PC 네비게이션 */}
+      <div className="hidden lg:flex items-center justify-between">
+        <div className="flex justify-between w-full pr-24 font-orbitron-regular tracking-widest text-xl overflow-hidden">
+          {tabs.map((tab) => (
+            <Link
+              key={tab.text}
+              activeClass="!text-green-1 !font-orbitron-medium dark:!text-green-1"
+              to={tab.text}
+              spy={true}
+              smooth={true}
+              offset={offsets[tab.text]}
+              duration={500}
+              className="text-[#202020] backdrop-blur-3xl bg-white/10 dark:bg-[#293036C2]/5 rounded-xl px-4 py-1 hover:text-green-1 dark:hover:text-green-1 dark:text-[#FAFAFC] cursor-pointer"
+            >
+              {tab.text}
+            </Link>
+          ))}
+        </div>
+        <div className="flex justify-end">
+          <ModeToggle isDarkMode={isDarkMode} onClick={handleModeChange} />
+        </div>
       </div>
     </div>
   );

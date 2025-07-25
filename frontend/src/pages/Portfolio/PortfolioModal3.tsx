@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -11,6 +11,8 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
 import blogImg from "@/assets/imgs/blog2.png";
+import { ImageSkeleton } from "@/components/ui/skeleton";
+import { cn } from "@/utils/classname";
 
 interface PortfolioModalProps {
   data: {
@@ -25,6 +27,18 @@ interface PortfolioModalProps {
 }
 
 const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
+  const [blogImageLoaded, setBlogImageLoaded] = useState(false);
+  const [blogImageError, setBlogImageError] = useState(false);
+
+  const handleBlogImageLoad = () => {
+    setBlogImageLoaded(true);
+  };
+
+  const handleBlogImageError = () => {
+    setBlogImageError(true);
+    setBlogImageLoaded(true);
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -41,31 +55,31 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
       </DialogTrigger>
       <DialogContent
         closeIconStyle="text-[#7AD154] p-2"
-        className="p-10 md:!rounded-[30px] overflow-y-auto max-h-[90vh]"
+        className="p-5 lg:p-10 md:!rounded-[30px] rounded-xl overflow-x-hidden overflow-y-auto max-h-[80vh] lg:max-h-[90vh]"
       >
         <DialogHeader className="flex flex-col">
           <div
-            className="font-orbitron-medium text-3xl"
+            className="font-orbitron-medium text-2xl lg:text-3xl"
             style={{ color: data.modalColor }}
           >
             Project
           </div>
-          <DialogTitle className="font-orbitron-regular text-xl text-[#303030] dark:text-white">
+          <DialogTitle className="font-orbitron-regular text-lg lg:text-xl text-[#303030] dark:text-white">
             <p>Jack's Blog</p>
           </DialogTitle>
         </DialogHeader>
         <DialogDescription className="">
           {/* 왼쪽: 설명 및 버튼 */}
           <div className="w-full md:w-1/2 whitespace-nowrap">
-            <p className="font-pretendard text-lg text-[#919191] dark:text-[#B5B5B5]">
+            <p className="font-pretendard text-sm lg:text-lg text-[#919191] dark:text-[#B5B5B5]">
               개인 블로그 웹사이트 프로젝트
             </p>
-            <p className="font-pretendard text-[15px] text-[#919191] dark:text-[#B5B5B5]">
+            <p className="font-pretendard text-xs lg:text-[15px] text-[#919191] dark:text-[#B5B5B5]">
               {data.period} (진행중)
             </p>
           </div>
         </DialogDescription>
-        <div className="w-full overflow-hidden">
+        <div className="w-full lg:overflow-hidden">
           <div className="md:flex overflow-x-auto overflow-y-auto">
             <div className="flex flex-col whitespace-nowrap w-fit">
               <InteractiveHoverButton
@@ -77,37 +91,39 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 }
                 transitionClassName="group-hover:translate-x-0"
                 dotBgClassName="bg-[#7AD154] size-1.5"
-                className="flex mt-4 justify-center items-center w-fit text-[13px] bg-[#7AD154]/20 text-[#7AD154] border border-[#7AD154] text-nowrap tracking-widest font-orbitron-regular"
+                className="flex mt-0 lg:mt-4 justify-center items-center w-fit text-xs lg:text-[13px] bg-[#7AD154]/20 text-[#7AD154] border border-[#7AD154] text-nowrap tracking-widest font-orbitron-regular"
               >
                 vercel.app
               </InteractiveHoverButton>
-              <div className="mt-10">
+              <div className="mt-5 lg:mt-10">
                 <div className="flex items-center gap-3 font-pretendard">
-                  <div className=" bg-[#7AD154] rounded-full size-[7px]"></div>
-                  <p className="text-[19px] text-[#7AD154]">
+                  <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
+                  <p className="text-sm lg:text-[19px] text-[#7AD154]">
                     프로젝트 역할 / 기여도
                   </p>
                 </div>
-                <span className="font-pretendard text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
                   프론트엔드 개발 / 90%
                 </span>
               </div>
-              <div className="mt-5">
+              <div className="mt-2 lg:mt-5">
                 <div className="flex items-center gap-3 font-pretendard">
-                  <div className=" bg-[#7AD154] rounded-full size-[7px]"></div>
-                  <p className="text-[19px] text-[#7AD154]">스택</p>
+                  <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
+                  <p className="text-sm lg:text-[19px] text-[#7AD154]">스택</p>
                 </div>
-                <span className="font-pretendard text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
                   TypeScript, Next.js, TailwindCSS
                 </span>
               </div>
-              <div className="mt-5">
+              <div className="mt-2 lg:mt-5">
                 <div className="flex items-center gap-3 font-pretendard">
-                  <div className=" bg-[#7AD154] rounded-full size-[7px]"></div>
-                  <p className="text-[19px] text-[#7AD154]">프로젝트 개요</p>
+                  <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
+                  <p className="text-sm lg:text-[19px] text-[#7AD154]">
+                    프로젝트 개요
+                  </p>
                 </div>
-                <div className="font-pretendard text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                  <p>
+                <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                  <p className="whitespace-pre-line">
                     개발하면서 얻은 지식이나 몰랐던 지식들 및 CS, 알고리즘 등을
                     기록하는 개인 블로그 웹사이트입니다.
                     <br />
@@ -120,9 +136,33 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-start md:justify-center mt-10 md:mt-0 flex-1">
-              <div className="relative">
-                <img src={blogImg} alt="blog" className="w-[300px]" />
+            <div className="flex items-center justify-center mt-5 md:mt-0 flex-1">
+              <div className="relative w-[200px] lg:w-[300px]">
+                {!blogImageLoaded && !blogImageError && (
+                  <ImageSkeleton
+                    className="w-[200px] lg:w-[300px]"
+                    aspectRatio="card"
+                  />
+                )}
+                {!blogImageError && (
+                  <img
+                    src={blogImg}
+                    alt="blog"
+                    className={cn(
+                      "w-[200px] lg:w-[300px] transition-opacity duration-300",
+                      blogImageLoaded ? "opacity-100" : "opacity-0"
+                    )}
+                    onLoad={handleBlogImageLoad}
+                    onError={handleBlogImageError}
+                  />
+                )}
+                {blogImageError && (
+                  <div className="w-[200px] lg:w-[300px] h-48 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-md">
+                    <span className="text-gray-400 dark:text-gray-600 text-sm">
+                      이미지를 불러올 수 없습니다
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           </div>

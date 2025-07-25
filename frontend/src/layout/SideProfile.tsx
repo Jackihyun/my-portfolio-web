@@ -34,7 +34,7 @@ const SideProfile: React.FC<Props> = ({ className }) => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-[400px] h-full p-14 pr-0 z-50">
+    <div className="hidden lg:block fixed top-0 left-0 w-[400px] h-full p-14 pr-0 z-50">
       <div
         className={cn(
           "bg-white/50 dark:bg-[#1A1A2380] border border-gray-300 dark:border-[#1A1A2380] backdrop-blur size-full rounded-[32px] flex flex-col items-start p-8",
