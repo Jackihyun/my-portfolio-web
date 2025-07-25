@@ -70,9 +70,6 @@ export default function HamburgerMenu({
       {isOpen && (
         <div className="lg:hidden fixed inset-0 bg-white dark:bg-[#1A1A23] z-[9999] flex flex-col items-center justify-center animate-in fade-in duration-300 -m-4 w-screen h-dvh">
           <div className="text-center space-y-8 animate-in slide-in-from-top duration-500">
-            <div className="font-orbitron-medium text-2xl text-[#7AD154] mb-12">
-              Menu
-            </div>
             <nav className="space-y-6">
               {tabs.map((tab) => (
                 <Link
