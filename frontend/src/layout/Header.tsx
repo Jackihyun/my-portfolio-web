@@ -1,7 +1,7 @@
 import ModeToggle from "@/components/ModeToggle";
-import HamburgerMenu from "@/components/HamburgerMenu";
 import { Link, scrollSpy } from "react-scroll";
 import { useState, useEffect, useMemo } from "react";
+import HamburgerMenu from "@/components/HamburgerMenu";
 
 // Tab 이름 타입 정의
 type TabName = "Home" | "Portfolio" | "About" | "Contact";
@@ -57,28 +57,30 @@ export default function Header() {
   };
 
   return (
-    <div className="sticky z-[120] top-4 lg:top-14">
+    <div className="sticky z-[120] top-4 lg:top-14 mb-4 p-4">
       {/* 모바일 헤더 */}
-      <div className="lg:hidden backdrop-blur-lg bg-white/10 dark:bg-[#293036C2]/5 rounded-xl p-4 mb-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="font-orbitron-medium text-xl text-[#7AD154]">
-              Jackihyun
-            </h1>
-            <p className="font-orbitron-regular text-sm text-black/50 dark:text-[#FAFAFC]">
-              Frontend Developer
-            </p>
+      <div className="lg:hidden flex items-center justify-between">
+        <div className="lg:hidden backdrop-blur-lg bg-white/10 dark:bg-[#293036C2]/5 rounded-xl">
+          <div className="flex items-center">
+            <div>
+              <h1 className="font-orbitron-medium text-xl text-[#7AD154]">
+                Jackihyun
+              </h1>
+              <p className="font-orbitron-regular text-sm text-black/50 dark:text-[#FAFAFC]">
+                Frontend Developer
+              </p>
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-            {!isMenuOpen && (
-              <ModeToggle isDarkMode={isDarkMode} onClick={handleModeChange} />
-            )}
-            <HamburgerMenu
-              offsets={offsets}
-              isOpen={isMenuOpen}
-              onToggle={setIsMenuOpen}
-            />
-          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          {!isMenuOpen && (
+            <ModeToggle isDarkMode={isDarkMode} onClick={handleModeChange} />
+          )}
+          <HamburgerMenu
+            offsets={offsets}
+            isOpen={isMenuOpen}
+            onToggle={setIsMenuOpen}
+          />
         </div>
       </div>
 

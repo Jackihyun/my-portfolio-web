@@ -68,7 +68,7 @@ export default function HamburgerMenu({
 
       {/* 전체 화면 오버레이 메뉴 */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 bg-white dark:bg-[#1A1A23] z-[9999] flex flex-col items-center justify-center animate-in fade-in duration-300 -m-4 w-screen h-dvh">
+        <div className="lg:hidden fixed inset-0 bg-white dark:bg-[#1A1A23] z-[9999] flex flex-col items-center justify-center animate-in fade-in duration-300 w-screen h-dvh">
           <div className="text-center space-y-8 animate-in slide-in-from-top duration-500">
             <nav className="space-y-6">
               {tabs.map((tab) => (
