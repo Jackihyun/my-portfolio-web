@@ -1,5 +1,14 @@
 [
   {
+    "title": "AI Diary Service<br/>Memoria",
+    "imgSrc": "src/assets/imgs/Memoria.png",
+    "period": "2025/03 ~ 2025/07",
+    "bgColor": "#39A580",
+    "textColor": "black",
+    "modalColor": "#39A580",
+    "modalImgSrc": "src/assets/imgs/Memoria.png"
+  },
+  {
     "title": "KyungHee University<br/>Graduation Fashion<br/>Show Website",
     "imgSrc": "src/assets/imgs/khucnt.png",
     "period": "2024/03 ~ 2024/07",

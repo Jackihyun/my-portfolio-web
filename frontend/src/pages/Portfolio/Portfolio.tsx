@@ -6,6 +6,7 @@ import PortfolioModal3 from "./PortfolioModal3";
 import PortfolioModal4 from "./PortfolioModal4";
 import portfolioData from "./Portfolio.json";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
+import PortfolioModal5 from "./PortfolioModal5";
 
 type Props = {
   className?: string;
@@ -35,18 +36,20 @@ const Portfolio: React.FC<Props> = ({ className }) => {
 
       {/* 모바일 버전 - 세로 스택 (기존 모달 그대로 사용) */}
       <div className="lg:hidden mt-6 space-y-6">
-        <PortfolioModal1 data={portfolioData[0]} />
-        <PortfolioModal2 data={portfolioData[1]} />
-        <PortfolioModal3 data={portfolioData[2]} />
-        <PortfolioModal4 data={portfolioData[3]} />
+        <PortfolioModal5 data={portfolioData[0]} />
+        <PortfolioModal1 data={portfolioData[1]} />
+        <PortfolioModal2 data={portfolioData[2]} />
+        <PortfolioModal3 data={portfolioData[3]} />
+        <PortfolioModal4 data={portfolioData[4]} />
       </div>
 
       {/* PC 버전 - 기존 그리드 */}
       <div className="hidden lg:grid grid-cols-2 mt-10 gap-6 ">
-        <PortfolioModal1 data={portfolioData[0]} />
-        <PortfolioModal2 data={portfolioData[1]} />
-        <PortfolioModal3 data={portfolioData[2]} />
-        <PortfolioModal4 data={portfolioData[3]} />
+        <PortfolioModal5 data={portfolioData[0]} />
+        <PortfolioModal1 data={portfolioData[1]} />
+        <PortfolioModal2 data={portfolioData[2]} />
+        <PortfolioModal3 data={portfolioData[3]} />
+        <PortfolioModal4 data={portfolioData[4]} />
       </div>
     </div>
   );
