@@ -35,12 +35,16 @@ const MobileSideProfile: React.FC<Props> = ({ className }) => {
 
   return (
     <div className={cn("lg:hidden w-full", className)}>
+      <div className="bg-white/50 w-fit mx-auto dark:bg-[#1A1A2380] border border-b-0 border-gray-300 dark:border-[#1A1A2380] backdrop-blur rounded-t-full pt-6 px-10">
+        {/* 프로필 이미지 */}
+        <img src={profileSrc} className="w-30 object-contain" />
+      </div>
       <div className="bg-white/50 dark:bg-[#1A1A2380] border border-gray-300 dark:border-[#1A1A2380] backdrop-blur rounded-2xl p-4">
-        <div className="flex items-start gap-4">
+        <div className="flex items-center gap-4">
           {/* 프로필 이미지 */}
-          <div className="w-20 h-20 border border-black/10 rounded-2xl p-2 flex-shrink-0">
+          {/* <div className="w-20 h-20 border border-black/10 rounded-2xl p-2 flex-shrink-0">
             <img src={profileSrc} className="w-full h-full object-contain" />
-          </div>
+          </div> */}
 
           {/* 프로필 정보 */}
           <div className="flex-1 space-y-3 font-orbitron-regular">
@@ -80,20 +84,19 @@ const MobileSideProfile: React.FC<Props> = ({ className }) => {
                 <RiNextjsFill className="size-4" />
               </div>
             </div>
-
-            <div className="flex gap-3">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="size-8 flex justify-center items-center p-1.5 bg-white border border-[#7AD154] dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-all cursor-pointer active:scale-90 dark:text-[#FAFAFC]"
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
+          </div>
+          <div className="flex flex-col gap-3">
+            {socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="size-8 flex justify-center items-center p-1.5 bg-white border border-[#7AD154] dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-all cursor-pointer active:scale-90 dark:text-[#FAFAFC]"
+              >
+                {link.icon}
+              </a>
+            ))}
           </div>
         </div>
       </div>
