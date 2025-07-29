@@ -112,8 +112,8 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
             </div>
           </DialogDescription>
           <div className="w-full mt-4 lg:mt-0 lg:overflow-hidden">
-            <div className="md:flex overflow-x-auto">
-              <div className="flex flex-col whitespace-nowrap w-fit">
+            <div className="flex flex-col md:flex-row overflow-x-auto">
+              <div className="flex flex-col whitespace-nowrap w-full md:w-fit order-2 md:order-1 justify-center items-center md:items-start mt-5 md:mt-0">
                 <InteractiveHoverButton
                   // onClick={() => window.open("바로잡")}
                   transitionClassName="group-hover:translate-x-0"
@@ -122,7 +122,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 >
                   배포x
                 </InteractiveHoverButton>
-                <div className="mt-5 lg:mt-10">
+                <div className="mt-5 lg:mt-10 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#618DFF] rounded-full size-[5px] lg:size-[7px]"></div>
                     <p className="text-sm lg:text-[19px] text-[#618DFF]">
@@ -133,7 +133,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                     프론트엔드 개발 / 50%
                   </span>
                 </div>
-                <div className="mt-2 lg:mt-5">
+                <div className="mt-2 lg:mt-5 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#618DFF] rounded-full size-[5px] lg:size-[7px]"></div>
                     <p className="text-sm lg:text-[19px] text-[#618DFF]">
@@ -144,7 +144,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                     TypeScript, React.js, TailwindCSS
                   </span>
                 </div>
-                <div className="mt-2 lg:mt-5">
+                <div className="mt-2 lg:mt-5 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#618DFF] rounded-full size-[5px] lg:size-[7px]"></div>
                     <p className="text-sm lg:text-[19px] text-[#618DFF]">
@@ -166,7 +166,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
               </div>
               {/* 오른쪽: 이미지 + 영상 오버레이 */}
-              <div className="flex items-center justify-start md:justify-end w-full mt-10 md:mt-0 md:ml-10 flex-1">
+              <div className="flex items-center justify-center md:justify-end w-full mt-5 md:mt-0 md:ml-10 flex-1 order-1 md:order-2">
                 <div className="w-[350px] md:min-w-[600px] md:w-[600px] relative flex gap-2 ">
                   <div className="flex flex-col items-center">
                     <p className="font-pretendard mb-1 text-xs lg:text-[15px] text-[#919191]">

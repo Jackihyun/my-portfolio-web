@@ -104,68 +104,9 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
             </div>
           </DialogDescription>
           <div className="w-full mt-4 lg:mt-0">
-            <div className="md:flex">
-              <div className="flex flex-col whitespace-nowrap w-fit">
-                <InteractiveHoverButton
-                  onClick={() =>
-                    window.open(
-                      "https://khu-cnt-web-3j8v.vercel.app/",
-                      "_blank"
-                    )
-                  }
-                  transitionClassName="group-hover:translate-x-0"
-                  dotBgClassName="bg-[#FFA24A] dark:bg-[#87EA5C] size-1.5"
-                  className="flex mt-0 lg:mt-4 justify-center items-center w-fit text-xs lg:text-[13px] bg-[#FFA24A]/20 dark:bg-[#87EA5C]/20 text-[#FFA24A] border border-[#FFA24A] dark:border-[#87EA5C] text-nowrap tracking-widest font-orbitron-regular"
-                >
-                  khu-cnt-vercel
-                </InteractiveHoverButton>
-                <div className="mt-5 lg:mt-10">
-                  <div className="flex items-center gap-3 font-pretendard">
-                    <div className=" bg-[#FFA24A] dark:bg-[#87EA5C] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#FFA24A] dark:text-[#87EA5C]">
-                      프로젝트 역할 / 기여도
-                    </p>
-                  </div>
-                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    프론트엔드 개발 / 90%
-                  </span>
-                </div>
-                <div className="mt-2 lg:mt-5">
-                  <div className="flex items-center gap-3 font-pretendard">
-                    <div className=" bg-[#FFA24A] dark:bg-[#87EA5C] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#FFA24A] dark:text-[#87EA5C]">
-                      스택
-                    </p>
-                  </div>
-                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    JavaScript, React.js, TailwindCSS
-                  </span>
-                </div>
-                <div className="mt-2 lg:mt-5">
-                  <div className="flex items-center gap-3 font-pretendard">
-                    <div className=" bg-[#FFA24A] dark:bg-[#87EA5C] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#FFA24A] dark:text-[#87EA5C]">
-                      프로젝트 개요
-                    </p>
-                  </div>
-                  <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    <p>
-                      제44회 경희대학교 의상학과 졸업작품 패션쇼의 공식 웹사이트
-                      <br />
-                      프론트엔드 개발을 담당했습니다. 패션쇼의 주요 정보를
-                      제공하고,
-                      <br />
-                      졸업 작품을 온라인 아카이브로 보존하는 역할을 합니다.
-                      <br />
-                      &#183; 다양한 디바이스(PC, 태블릿, 모바일)에서 최적화
-                      <br />
-                      &#183; 인터랙티브한 갤러리 제작
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="flex flex-col md:flex-row">
               {/* 오른쪽: 이미지 + 영상 오버레이 */}
-              <div className="flex items-center justify-start md:justify-end w-full min-w-[600px] mt-10 md:mt-0 flex-1">
+              <div className="flex items-center justify-center md:justify-end w-full min-w-[300px] md:min-w-[600px] mt-5 md:mt-0 flex-1 order-1 md:order-2">
                 <div className="w-[300px] md:min-w-[600px] md:w-[600px] relative">
                   {/* 비디오 프레임 이미지 스켈레톤 */}
                   {!videoFrameLoaded && !videoFrameError && (
@@ -205,6 +146,65 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                       className="absolute object-cover w-[220px] h-[125px] md:w-[440px] md:h-[245px] top-[4%] left-[15%]"
                     />
                   )}
+                </div>
+              </div>
+              <div className="flex flex-col whitespace-nowrap w-full md:w-fit order-2 md:order-1 justify-center items-center md:items-start mt-5 md:mt-0">
+                <InteractiveHoverButton
+                  onClick={() =>
+                    window.open(
+                      "https://khu-cnt-web-3j8v.vercel.app/",
+                      "_blank"
+                    )
+                  }
+                  transitionClassName="group-hover:translate-x-0"
+                  dotBgClassName="bg-[#FFA24A] size-1.5"
+                  className="flex mt-0 lg:mt-4 justify-center items-center w-fit text-xs lg:text-[13px] bg-[#FFA24A]/20 text-[#FFA24A] border border-[#FFA24A] text-nowrap tracking-widest font-orbitron-regular"
+                >
+                  khu-cnt-vercel
+                </InteractiveHoverButton>
+                <div className="mt-5 lg:mt-10 self-start">
+                  <div className="flex items-center gap-3 font-pretendard">
+                    <div className=" bg-[#FFA24A] rounded-full size-[5px] lg:size-[7px]"></div>
+                    <p className="text-sm lg:text-[19px] text-[#FFA24A]">
+                      프로젝트 역할 / 기여도
+                    </p>
+                  </div>
+                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                    프론트엔드 개발 / 90%
+                  </span>
+                </div>
+                <div className="mt-2 lg:mt-5 self-start">
+                  <div className="flex items-center gap-3 font-pretendard">
+                    <div className=" bg-[#FFA24A]  rounded-full size-[5px] lg:size-[7px]"></div>
+                    <p className="text-sm lg:text-[19px] text-[#FFA24A] ">
+                      스택
+                    </p>
+                  </div>
+                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                    JavaScript, React.js, TailwindCSS
+                  </span>
+                </div>
+                <div className="mt-2 lg:mt-5 self-start">
+                  <div className="flex items-center gap-3 font-pretendard">
+                    <div className=" bg-[#FFA24A] rounded-full size-[5px] lg:size-[7px]"></div>
+                    <p className="text-sm lg:text-[19px] text-[#FFA24A] ">
+                      프로젝트 개요
+                    </p>
+                  </div>
+                  <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                    <p>
+                      제44회 경희대학교 의상학과 졸업작품 패션쇼의 공식 웹사이트
+                      <br />
+                      프론트엔드 개발을 담당했습니다. 패션쇼의 주요 정보를
+                      제공하고,
+                      <br />
+                      졸업 작품을 온라인 아카이브로 보존하는 역할을 합니다.
+                      <br />
+                      &#183; 다양한 디바이스(PC, 태블릿, 모바일)에서 최적화
+                      <br />
+                      &#183; 인터랙티브한 갤러리 제작
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

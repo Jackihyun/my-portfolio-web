@@ -29,7 +29,15 @@ const PortfolioModal5: React.FC<PortfolioModalProps> = ({ data }) => {
       <DialogTrigger asChild>
         <Card
           className="mb-5"
-          title={<span dangerouslySetInnerHTML={{ __html: data.title }} />}
+          title={
+            <span>
+              <span className="font-sarina text-2xl lg:text-[35px]">
+                Memoria
+              </span>
+              <br />
+              <span dangerouslySetInnerHTML={{ __html: data.title }} />
+            </span>
+          }
           imgSrc={imageMapping[data.imgSrc]}
           period={data.period}
           style={{

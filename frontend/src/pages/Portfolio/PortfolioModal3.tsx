@@ -83,8 +83,8 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
             </div>
           </DialogDescription>
           <div className="w-full mt-4 lg:mt-0 lg:overflow-hidden">
-            <div className="md:flex overflow-x-auto overflow-y-auto">
-              <div className="flex flex-col whitespace-nowrap w-fit">
+            <div className="flex flex-col md:flex-row overflow-x-auto overflow-y-auto">
+              <div className="flex flex-col whitespace-nowrap w-full md:w-fit order-2 md:order-1 justify-center items-center md:items-start mt-5 md:mt-0">
                 <InteractiveHoverButton
                   onClick={() =>
                     window.open("https://blog.jackihyun.me/", "_blank")
@@ -95,7 +95,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 >
                   vercel.app
                 </InteractiveHoverButton>
-                <div className="mt-5 lg:mt-10">
+                <div className="mt-5 lg:mt-10 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
                     <p className="text-sm lg:text-[19px] text-[#7AD154]">
@@ -106,7 +106,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                     프론트엔드 개발 / 90%
                   </span>
                 </div>
-                <div className="mt-2 lg:mt-5">
+                <div className="mt-2 lg:mt-5 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
                     <p className="text-sm lg:text-[19px] text-[#7AD154]">
@@ -117,7 +117,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                     TypeScript, Next.js, TailwindCSS
                   </span>
                 </div>
-                <div className="mt-2 lg:mt-5">
+                <div className="mt-2 lg:mt-5 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
                     <p className="text-sm lg:text-[19px] text-[#7AD154]">
@@ -138,7 +138,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-center mt-5 md:mt-0 flex-1">
+              <div className="flex items-center justify-center mt-5 md:mt-0 flex-1 order-1 md:order-2">
                 <div className="relative w-[200px] lg:w-[300px]">
                   {!blogImageLoaded && !blogImageError && (
                     <ImageSkeleton

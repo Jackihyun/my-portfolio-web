@@ -88,9 +88,10 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
         <div className="flex-1 overflow-y-auto overflow-x-hidden">
           {/* 모달 내부 내용 */}
           <div className="flex flex-col md:flex-row">
-            {/* 왼쪽 열: 기존 내용 */}
-            <div className="w-full md:w-1/2">
-              <DialogDescription>
+            {/* 모바일에서는 순서대로, 데스크탑에서는 왼쪽 */}
+            <div className="w-full md:w-1/2 md:order-1">
+              {/* 소제목 */}
+              <DialogDescription className="">
                 <div className="whitespace-nowrap">
                   <p className="font-pretendard text-sm lg:text-lg text-[#919191] dark:text-[#B5B5B5]">
                     명지대학교 컴퓨터공학과 스터디 FireAO 웹사이트
@@ -100,7 +101,9 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                   </p>
                 </div>
               </DialogDescription>
-              <div className="mt-4 lg:mt-0">
+
+              {/* 데스크탑에서만 보이는 버튼과 텍스트 */}
+              <div className="hidden md:block mt-4 lg:mt-0">
                 <InteractiveHoverButton
                   onClick={() =>
                     window.open("https://github.com/Jackihyun/AO-WEB", "_blank")
@@ -161,8 +164,9 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
               </div>
             </div>
-            {/* 오른쪽 열: 이미지 그리드 */}
-            <div className="w-full mt-4 md:mt-0 md:w-1/2 flex-1 flex items-start justify-start">
+
+            {/* 이미지 그리드 */}
+            <div className="w-full mt-4 md:mt-0 md:w-1/2 flex-1 flex items-start justify-center md:justify-start md:order-2">
               <div className="overflow-y-auto">
                 <div className="grid">
                   {/* 첫 번째 행: 2개 이미지 */}
@@ -232,6 +236,66 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* 모바일에서만 보이는 버튼과 텍스트 */}
+            <div className="md:hidden flex flex-col items-center mt-4">
+              <InteractiveHoverButton
+                onClick={() =>
+                  window.open("https://github.com/Jackihyun/AO-WEB", "_blank")
+                }
+                transitionClassName="group-hover:translate-x-0"
+                dotBgClassName="bg-[#FF4A3E] size-1.5"
+                className="flex justify-center items-center w-fit text-xs lg:text-[13px] bg-[#FF4A3E]/20 text-[#FF4A3E] border border-[#FF4A3E] tracking-widest font-orbitron-regular"
+              >
+                베포 중단 - GitHub 연결
+              </InteractiveHoverButton>
+              <div className="mt-5 lg:mt-10 self-start w-full">
+                <div className="flex items-center gap-3 font-pretendard">
+                  <div className="bg-[#FF4A3E] rounded-full size-[5px] lg:size-[7px]"></div>
+                  <p className="text-sm lg:text-[19px] text-[#FF4A3E]">
+                    프로젝트 역할 / 기여도
+                  </p>
+                </div>
+                <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                  프론트엔드 개발 / 50%
+                </span>
+              </div>
+              <div className="mt-2 lg:mt-5 self-start w-full">
+                <div className="flex items-center gap-3 font-pretendard">
+                  <div className="bg-[#FF4A3E] rounded-full size-[5px] lg:size-[7px]"></div>
+                  <p className="text-sm lg:text-[19px] text-[#FF4A3E]">스택</p>
+                </div>
+                <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                  JavaScript, Svelte, TailwindCSS
+                </span>
+              </div>
+              <div className="mt-2 lg:mt-5 self-start w-full">
+                <div className="flex items-center gap-3 font-pretendard">
+                  <div className="bg-[#FF4A3E] rounded-full size-[5px] lg:size-[7px]"></div>
+                  <p className="text-sm lg:text-[19px] text-[#FF4A3E]">
+                    프로젝트 개요
+                  </p>
+                </div>
+                <div className="font-pretendard text-xs lg:text-[13px] px-5 text-[#303030] dark:text-[#D9D9D9]">
+                  <p>
+                    명지대학교 컴퓨터공학과 스터디 Fire AO 모바일 웹 개발
+                    프로젝트에 프론트엔드 개발자로 참여했습니다.
+                    <br />
+                    &#183; 스크롤 및 터치 이벤트에 따라 인터렉티브하게 변화하는
+                    화면
+                    <br />
+                    &#183; 스터디 소개 및 아카이브 페이지 개발
+                    <br />
+                    &#183; 라이트 모드 / 다크 모드 구현
+                    <br />
+                    <br />
+                  </p>
+                </div>
+                <span className="font-bold text-sm">
+                  * 추가 사항: 디자인이 바뀌어 페이지 구성이 변경되었습니다.
+                </span>
               </div>
             </div>
           </div>
