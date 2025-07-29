@@ -4,7 +4,7 @@
     "imgSrc": "src/assets/imgs/Memoria.png",
     "period": "2025/03 ~ 2025/07",
     "bgColor": "#39A580",
-    "textColor": "black",
+    "textColor": "white",
     "modalColor": "#39A580",
     "modalImgSrc": "src/assets/imgs/Memoria.png"
   },

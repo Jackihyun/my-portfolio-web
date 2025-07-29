@@ -44,10 +44,10 @@ export default function HamburgerMenu({
 
   return (
     <>
-      {/* 햄버거 아이콘 */}
+      {/* 햄버거 아이콘 - 원래 위치 유지 */}
       <button
         onClick={toggleMenu}
-        className="lg:hidden flex flex-col justify-center items-center w-6 h-6 space-y-1 relative z-[10000]"
+        className="lg:hidden flex flex-col justify-center items-center w-6 h-6 space-y-1 relative z-[10001]"
       >
         <span
           className={`block w-5 h-0.5 rounded-full bg-[#202020] dark:bg-[#FAFAFC] transition-all duration-300 ${
@@ -66,9 +66,9 @@ export default function HamburgerMenu({
         />
       </button>
 
-      {/* 전체 화면 오버레이 메뉴 */}
+      {/* 전체 화면 오버레이 메뉴 - 패딩 간섭 방지 */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 bg-white dark:bg-[#1A1A23] z-[9999] flex flex-col items-center justify-center animate-in fade-in duration-300 w-screen h-dvh">
+        <div className="lg:hidden fixed inset-0 bg-white dark:bg-[#1A1A23] z-[9998] flex flex-col items-center justify-center animate-in fade-in duration-300 w-dvw h-dvh -mx-4 md:-mx-20 -my-4 md:-my-14">
           <div className="text-center space-y-8 animate-in slide-in-from-top duration-500">
             <nav className="space-y-6">
               {tabs.map((tab) => (

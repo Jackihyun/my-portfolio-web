@@ -14,7 +14,7 @@ const About: React.FC<Props> = ({ className }) => {
         startOnView={true}
         duration={100}
         delay={300}
-        className="font-orbitron-regular text-[#303030] dark:text-[#FAFAFC] text-lg lg:text-3xl font-normal"
+        className="hidden lg:block font-orbitron-regular text-[#303030] dark:text-[#FAFAFC] text-lg lg:text-3xl font-normal"
       >
         Let me introduce myself 🗣️
       </TypingAnimation>
