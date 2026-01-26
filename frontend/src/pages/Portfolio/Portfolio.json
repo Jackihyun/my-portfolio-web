@@ -18,13 +18,13 @@
     "modalImgSrc": "src/assets/imgs/videoFrame.png"
   },
   {
-    "title": "Barojob<br/>Website",
+    "title": "Inteuk<br/>Website",
     "imgSrc": "src/assets/imgs/barojobImg.png",
     "period": "2025/01 ~ in progress",
     "bgColor": "#618DFF",
     "textColor": "white",
     "modalColor": "#4A7BFF",
-    "modalImgSrc": "src/assets/imgs/login.png"
+    "modalImgSrc": "src/assets/imgs/baro.png"
   },
   {
     "title": "Jack's Blog<br/>Website",

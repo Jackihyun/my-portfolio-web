@@ -93,7 +93,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                   dotBgClassName="bg-[#7AD154] size-1.5"
                   className="flex mt-0 lg:mt-4 justify-center items-center w-fit text-xs lg:text-[13px] bg-[#7AD154]/20 text-[#7AD154] border border-[#7AD154] text-nowrap tracking-widest font-orbitron-regular"
                 >
-                  vercel.app
+                  Jack's Blog
                 </InteractiveHoverButton>
                 <div className="mt-5 lg:mt-10 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
@@ -102,20 +102,11 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                       프로젝트 역할 / 기여도
                     </p>
                   </div>
-                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    프론트엔드 개발 / 90%
+                  <span className="font-pretendard  text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                    프론트엔드 개발 / 100%
                   </span>
-                </div>
-                <div className="mt-2 lg:mt-5 self-start">
-                  <div className="flex items-center gap-3 font-pretendard">
-                    <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#7AD154]">
-                      스택
-                    </p>
-                  </div>
-                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    TypeScript, Next.js, TailwindCSS
-                  </span>
+                  <br/>
+                  <span className="font-pretendard  text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">백엔드 개발 / 100%</span>
                 </div>
                 <div className="mt-2 lg:mt-5 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
@@ -139,10 +130,10 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
               </div>
               <div className="flex items-center justify-center mt-5 md:mt-0 flex-1 order-1 md:order-2">
-                <div className="relative w-[200px] lg:w-[300px]">
+                <div className="relative w-[280px] lg:w-[450px]">
                   {!blogImageLoaded && !blogImageError && (
                     <ImageSkeleton
-                      className="w-[200px] lg:w-[300px]"
+                      className="w-full"
                       aspectRatio="card"
                     />
                   )}
@@ -151,7 +142,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                       src={blogImg}
                       alt="blog"
                       className={cn(
-                        "w-[200px] lg:w-[300px] transition-opacity duration-300",
+                        "w-full h-auto transition-opacity duration-300 shadow-lg rounded-lg",
                         blogImageLoaded ? "opacity-100" : "opacity-0"
                       )}
                       onLoad={handleBlogImageLoad}
@@ -159,7 +150,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                     />
                   )}
                   {blogImageError && (
-                    <div className="w-[200px] lg:w-[300px] h-48 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-md">
+                    <div className="w-full aspect-video flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-md">
                       <span className="text-gray-400 dark:text-gray-600 text-sm">
                         이미지를 불러올 수 없습니다
                       </span>

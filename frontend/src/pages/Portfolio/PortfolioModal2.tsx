@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
+  DialogContent, DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
-import login from "@/assets/imgs/login.png";
-import baromain from "@/assets/imgs/baromain.png";
-import baroVideo from "@/assets/videos/baroSignup.mov";
+import useEmblaCarousel from "embla-carousel-react";
+import baro1 from "@/assets/imgs/바로.png";
+import baro2 from "@/assets/imgs/바로잡2.png";
+import baro3 from "@/assets/imgs/바로잡3.png";
+import baro4 from "@/assets/imgs/바로잡4.png";
 import { ImageSkeleton } from "@/components/ui/skeleton";
 import { cn } from "@/utils/classname";
 
@@ -28,45 +28,39 @@ interface PortfolioModalProps {
   };
 }
 
-const imgs = {
-  Srcs: [login, baromain],
-};
+const PortfolioModal2: React.FC<PortfolioModalProps> = ({ data }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [imagesLoaded, setImagesLoaded] = useState<{ [key: number]: boolean }>({});
 
-const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
-  const [imageLoaded, setImageLoaded] = useState<{ [key: number]: boolean }>(
-    {}
-  );
-  const [imageError, setImageError] = useState<{ [key: number]: boolean }>({});
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
 
   useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint (768px)
-    };
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    onSelect();
+  }, [emblaApi, onSelect]);
 
-    // 초기 체크
-    checkIsMobile();
-
-    // 윈도우 리사이즈 이벤트 리스너 추가
-    window.addEventListener("resize", checkIsMobile);
-
-    // 클린업
-    return () => window.removeEventListener("resize", checkIsMobile);
-  }, []);
+  const scrollTo = useCallback(
+    (index: number) => emblaApi && emblaApi.scrollTo(index),
+    [emblaApi]
+  );
 
   const handleImageLoad = (index: number) => {
-    setImageLoaded((prev) => ({ ...prev, [index]: true }));
+    setImagesLoaded((prev) => ({ ...prev, [index]: true }));
   };
 
-  const handleImageError = (index: number) => {
-    setImageError((prev) => ({ ...prev, [index]: true }));
-    setImageLoaded((prev) => ({ ...prev, [index]: true }));
-  };
-
-  const handleVideoLoad = () => {
-    setVideoLoaded(true);
-  };
+  const projectImages = [
+    { title: "로그인 페이지", src: baro1 },
+    { title: "지도 기능", src: baro2 },
+    { title: "구인 공고 기능", src: baro3 },
+    { title: "리뷰 기능 및 매칭내역", src: baro4 },
+  ];
 
   return (
     <Dialog>
@@ -84,181 +78,134 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
       </DialogTrigger>
       <DialogContent
         closeIconStyle="text-[#618DFF] p-2"
-        className="p-5 lg:p-10 md:!rounded-[30px] rounded-xl overflow-hidden max-h-[80vh] lg:max-h-[90vh] flex flex-col"
+        className="p-5 lg:p-10 md:!rounded-[30px] rounded-xl overflow-hidden max-h-[85vh] lg:max-h-[90vh] flex flex-col bg-white dark:bg-[#0F0F0F]"
       >
         <DialogHeader className="flex flex-col flex-shrink-0">
           <div
-            className="font-orbitron-medium text-2xl lg:text-3xl dark:text-[#87EA5C]"
+            className="font-orbitron-medium text-2xl lg:text-3xl dark:text-[#618DFF]"
             style={{ color: data.modalColor }}
           >
             Project
           </div>
           <DialogTitle className="font-orbitron-regular text-lg lg:text-xl text-[#303030] dark:text-white">
-            <p>Barojob Website</p>
+            <p>창업 프로젝트 Inteuk WebApp</p>
+            <p>2025/01 ~ in progress</p>
           </DialogTitle>
         </DialogHeader>
 
-        {/* 스크롤 가능한 영역 */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden">
-          <DialogDescription className="">
+        <div className="flex-1 overflow-y-auto md:overflow-hidden mt-4 lg:mt-8">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 lg:gap-12 h-full">
             {/* 왼쪽: 설명 및 버튼 */}
-            <div className="w-full md:w-1/2 whitespace-nowrap">
-              <p className="font-pretendard  text-sm lg:text-lg text-[#919191] dark:text-[#B5B5B5]">
-                창업 아이디어 프로젝트 '바로잡' 웹사이트
-              </p>
-              <p className="font-pretendard text-xs lg:text-[15px] text-[#919191] dark:text-[#B5B5B5]">
-                {data.period} (진행중)
-              </p>
-            </div>
-          </DialogDescription>
-          <div className="w-full mt-4 lg:mt-0 lg:overflow-hidden">
-            <div className="flex flex-col md:flex-row overflow-x-auto">
-              <div className="flex flex-col whitespace-nowrap w-full md:w-fit order-2 md:order-1 justify-center items-center md:items-start mt-5 md:mt-0">
+            <div className="flex flex-col w-full md:w-[280px] lg:w-[350px] flex-shrink-0 order-2 md:order-1 md:pt-4">
+              <div className="hidden md:block">
                 <InteractiveHoverButton
-                  // onClick={() => window.open("바로잡")}
+                  onClick={() =>
+                    window.open(
+                      "https://www.inteuk.com/",
+                      "_blank"
+                    )
+                  }
                   transitionClassName="group-hover:translate-x-0"
                   dotBgClassName="bg-[#618DFF] size-1.5"
-                  className="flex mt-0 lg:mt-4 justify-center items-center w-fit text-xs lg:text-[13px] bg-[#618DFF]/20 text-[#618DFF] border border-[#618DFF] text-nowrap tracking-widest font-orbitron-regular"
+                  className="flex justify-center items-center w-fit text-xs lg:text-[13px] bg-[#618DFF]/20 text-[#618DFF] border border-[#618DFF] text-nowrap tracking-widest font-orbitron-regular"
                 >
-                  배포x
+                  
+                  랜딩 페이지
                 </InteractiveHoverButton>
-                <div className="mt-5 lg:mt-10 self-start">
-                  <div className="flex items-center gap-3 font-pretendard">
-                    <div className=" bg-[#618DFF] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#618DFF]">
-                      프로젝트 역할 / 기여도
-                    </p>
-                  </div>
-                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    프론트엔드 개발 / 50%
-                  </span>
+              </div>
+              
+              <div className="mt-6 lg:mt-8 self-start">
+                <div className="flex items-center gap-2 font-pretendard">
+                  <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
+                  <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
+                    Role / Contribution
+                  </p>
                 </div>
-                <div className="mt-2 lg:mt-5 self-start">
-                  <div className="flex items-center gap-3 font-pretendard">
-                    <div className=" bg-[#618DFF] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#618DFF]">
-                      스택
-                    </p>
-                  </div>
-                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    TypeScript, React.js, TailwindCSS
-                  </span>
+                <span className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9]">
+                  Frontend Development / 70%
+                </span>
+              </div>
+
+              <div className="mt-4 lg:mt-6 self-start">
+                <div className="flex items-center gap-2 font-pretendard">
+                  <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
+                  <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
+                    Tech Stack
+                  </p>
                 </div>
-                <div className="mt-2 lg:mt-5 self-start">
-                  <div className="flex items-center gap-3 font-pretendard">
-                    <div className=" bg-[#618DFF] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#618DFF]">
-                      프로젝트 개요
-                    </p>
-                  </div>
-                  <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    <p>
-                      기존의 오프라인 인력사무소의 불편함을 해결하는 솔루션을
-                      제안하는
-                      <br /> 창업 아이디어 기획 프로젝트의 프론트엔드 개발자로
-                      참여하였습니다.
-                      <br />
-                      &#183; 회원가입 창 (인증번호, 사진 등록 등) 개발
-                      <br />
-                      &#183; 메인페이지, 지도 api 연동 등 개발
-                    </p>
-                  </div>
+                <span className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9]">
+                  TypeScript, React.js, TailwindCSS, Kakao Map API, Capacitor
+                </span>
+              </div>
+
+              <div className="mt-4 lg:mt-6 self-start">
+                <div className="flex items-center gap-2 font-pretendard">
+                  <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
+                  <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
+                    Overview
+                  </p>
+                </div>
+                <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] whitespace-normal leading-relaxed text-pretty">
+                  <p>
+                    기존의 오프라인 인력사무소의 불편함을 해결하는 솔루션을 제안하는 창업 아이디어 기획 프로젝트의 프론트엔드 개발자로 참여하였습니다.
+                    <br /><br />
+                    &#183; 회원가입 프로세스 (인증번호, 사진 등록 등) 구현
+                    <br />
+                    &#183; 메인페이지 개발 및 지도 API 연동
+                  </p>
                 </div>
               </div>
-              {/* 오른쪽: 이미지 + 영상 오버레이 */}
-              <div className="flex items-center justify-center md:justify-end w-full mt-5 md:mt-0 md:ml-10 flex-1 order-1 md:order-2">
-                <div className="w-[350px] md:min-w-[600px] md:w-[600px] relative flex gap-2 ">
-                  <div className="flex flex-col items-center">
-                    <p className="font-pretendard mb-1 text-xs lg:text-[15px] text-[#919191]">
-                      회원가입 과정
-                    </p>
-                    <div className="relative w-[110px] md:w-[180px]">
-                      {!videoLoaded && (
-                        <ImageSkeleton
-                          className="w-[110px] md:w-[180px] h-40 md:h-60 border border-[#618DFF] rounded-md"
-                          aspectRatio="video"
-                        />
-                      )}
-                      <video
-                        src={baroVideo}
-                        className={cn(
-                          "w-[110px] md:w-[180px] lg:h-fit object-cover border border-[#618DFF] rounded-md p-2 transition-opacity duration-300",
-                          videoLoaded ? "opacity-100" : "opacity-0"
+
+              <p className="mt-6 font-pretendard text-[11px] lg:text-xs text-[#919191] dark:text-[#B5B5B5] pl-4">
+                {data.period}
+              </p>
+            </div>
+
+            {/* 오른쪽: 캐로우셀 기반 이미지 슬라이더 */}
+            <div className="flex flex-col items-center w-full flex-grow order-1 md:order-2 h-full justify-center">
+              <div className="w-full max-w-[280px] md:max-w-[450px] lg:max-w-[500px] relative overflow-hidden bg-transparent" ref={emblaRef}>
+                <div className="flex">
+                  {projectImages.map((image, index) => (
+                    <div key={index} className="flex-[0_0_100%] min-w-0 flex flex-col items-center px-2">
+                      <div className="w-full flex justify-between items-center mb-3 px-1">
+                        <p className="font-orbitron-medium text-[9px] text-[#618DFF] opacity-60">0{index + 1}</p>
+                        <p className="font-pretendard font-semibold text-xs lg:text-sm text-[#618DFF]">
+                          {image.title}
+                        </p>
+                      </div>
+                      
+                      <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-black/20">
+                        {!imagesLoaded[index] && (
+                          <ImageSkeleton className="w-full h-full" aspectRatio="video" />
                         )}
-                        autoPlay={!isMobile}
-                        loop
-                        muted
-                        controls={isMobile}
-                        playsInline
-                        onLoadedData={handleVideoLoad}
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <p className="font-pretendard mb-1 text-xs lg:text-[15px] text-[#919191]">
-                      로그인 페이지
-                    </p>
-                    <div className="relative w-[110px] md:w-[180px]">
-                      {!imageLoaded[1] && !imageError[1] && (
-                        <ImageSkeleton
-                          className="w-[110px] h-40 md:h-60 md:w-[180px] border border-[#618DFF] rounded-md"
-                          aspectRatio="card"
-                        />
-                      )}
-                      {!imageError[1] && (
                         <img
-                          src={imgs.Srcs[1]}
-                          alt="login"
+                          src={image.src}
+                          alt={image.title}
                           className={cn(
-                            "w-[110px] md:w-[180px] lg:h-fit object-cover border border-[#618DFF] rounded-md p-2 transition-opacity duration-300",
-                            imageLoaded[1] ? "opacity-100" : "opacity-0"
+                            "w-full h-full object-contain transition-opacity duration-500",
+                            imagesLoaded[index] ? "opacity-100" : "opacity-0"
                           )}
-                          onLoad={() => handleImageLoad(1)}
-                          onError={() => handleImageError(1)}
+                          onLoad={() => handleImageLoad(index)}
                         />
-                      )}
-                      {imageError[1] && (
-                        <div className="w-[110px] md:w-[180px] h-32 border border-[#618DFF] rounded-md p-2 flex items-center justify-center bg-gray-200 dark:bg-gray-700">
-                          <span className="text-xs text-gray-500">
-                            이미지 오류
-                          </span>
-                        </div>
-                      )}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <p className="font-pretendard mb-1 text-xs lg:text-[15px] text-[#919191]">
-                      메인 페이지
-                    </p>
-                    <div className="relative w-[110px] md:w-[180px]">
-                      {!imageLoaded[0] && !imageError[0] && (
-                        <ImageSkeleton
-                          className="w-[110px] h-40 md:h-60 md:w-[180px] border border-[#618DFF] rounded-md"
-                          aspectRatio="card"
-                        />
-                      )}
-                      {!imageError[0] && (
-                        <img
-                          src={imgs.Srcs[0]}
-                          alt="main"
-                          className={cn(
-                            "w-[110px] md:w-[180px] lg:h-fit object-cover border border-[#618DFF] rounded-md p-2 transition-opacity duration-300",
-                            imageLoaded[0] ? "opacity-100" : "opacity-0"
-                          )}
-                          onLoad={() => handleImageLoad(0)}
-                          onError={() => handleImageError(0)}
-                        />
-                      )}
-                      {imageError[0] && (
-                        <div className="w-[110px] md:w-[180px] h-32 border border-[#618DFF] rounded-md p-2 flex items-center justify-center bg-gray-200 dark:bg-gray-700">
-                          <span className="text-xs text-gray-500">
-                            이미지 오류
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  ))}
                 </div>
+              </div>
+
+              {/* 캐로우셀 네비게이션 점(Dots) */}
+              <div className="flex gap-2 mt-4 lg:mt-6">
+                {scrollSnaps.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`size-1.5 lg:size-2 rounded-full transition-all duration-300 ${
+                      selectedIndex === index 
+                        ? "bg-[#618DFF] w-4 lg:w-5" 
+                        : "bg-[#618DFF]/20"
+                    }`}
+                    onClick={() => scrollTo(index)}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -268,4 +215,4 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
   );
 };
 
-export default PortfolioModal1;
+export default PortfolioModal2;

@@ -37,7 +37,7 @@ const About: React.FC<Props> = ({ className }) => {
           <div className="flex w-full gap-4 font-pretendard">
             <p className="w-32 lg:w-44 text-nowrap">2025.01 - 진행중</p>
             <p className="flex-1">
-              온라인 인력 사무소 웹사이트 '바로잡'
+              온라인 인력 사무소 웹사이트 'Inteuk'
               <br />
               <span className="text-xs lg:text-sm text-[#919191]">
                 FE 개발 (진행중)
