@@ -10,7 +10,7 @@ import {
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
-import blogImg from "@/assets/imgs/blog2.png";
+import blogImg from "@/assets/imgs/blog2.webp";
 import { ImageSkeleton } from "@/components/ui/skeleton";
 import { cn } from "@/utils/classname";
 
@@ -125,6 +125,8 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                       &#183; 방명록 기능 개발
                       <br />
                       &#183; Next.js를 사용하여 SSR 과 SEO 최적화 적용
+                      <br />
+                      &#183; 프론트는 Next.js, 백엔드는 Spring Boot를 사용하여 배포
                     </p>
                   </div>
                 </div>

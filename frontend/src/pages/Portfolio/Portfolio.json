@@ -24,16 +24,16 @@
     "bgColor": "#618DFF",
     "textColor": "white",
     "modalColor": "#4A7BFF",
-    "modalImgSrc": "src/assets/imgs/baro.png"
+    "modalImgSrc": "src/assets/imgs/baro.webp"
   },
   {
     "title": "Jack's Blog<br/>Website",
-    "imgSrc": "src/assets/imgs/blog.png",
+    "imgSrc": "src/assets/imgs/blog.webp",
     "period": "2024/07 ~ in progress",
     "bgColor": "#F4F4F4",
     "textColor": "#3FD100",
     "modalColor": "#7AD154",
-    "modalImgSrc": "src/assets/imgs/blog2.png"
+    "modalImgSrc": "src/assets/imgs/blog2.webp"
   },
   {
     "title": "FIREAO<br/>Study Website",

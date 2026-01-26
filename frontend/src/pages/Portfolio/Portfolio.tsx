@@ -1,12 +1,14 @@
 import { cn } from "@/utils/classname";
-import React from "react";
-import PortfolioModal1 from "./PortfolioModal1";
-import PortfolioModal2 from "./PortfolioModal2";
-import PortfolioModal3 from "./PortfolioModal3";
-import PortfolioModal4 from "./PortfolioModal4";
+import React, { Suspense, lazy } from "react";
 import portfolioData from "./Portfolio.json";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
-import PortfolioModal5 from "./PortfolioModal5";
+
+// 모달 컴포넌트들을 지연 로딩(Lazy Load)으로 변경
+const PortfolioModal1 = lazy(() => import("./PortfolioModal1"));
+const PortfolioModal2 = lazy(() => import("./PortfolioModal2"));
+const PortfolioModal3 = lazy(() => import("./PortfolioModal3"));
+const PortfolioModal4 = lazy(() => import("./PortfolioModal4"));
+const PortfolioModal5 = lazy(() => import("./PortfolioModal5"));
 
 type Props = {
   className?: string;
@@ -34,23 +36,26 @@ const Portfolio: React.FC<Props> = ({ className }) => {
         </TypingAnimation>
       </div>
 
-      {/* 모바일 버전 - 세로 스택 (기존 모달 그대로 사용) */}
-      <div className="lg:hidden mt-6 space-y-6">
-        <PortfolioModal5 data={portfolioData[0]} />
-        <PortfolioModal3 data={portfolioData[3]} />
-        <PortfolioModal2 data={portfolioData[2]} />
-        <PortfolioModal1 data={portfolioData[1]} />
-        <PortfolioModal4 data={portfolioData[4]} />
-      </div>
+      {/* 로딩 중 표시될 Fallback (필요시 커스텀 가능) */}
+      <Suspense fallback={<div className="w-full h-20 animate-pulse bg-gray-100 dark:bg-gray-800 rounded-xl mt-6" />}>
+        {/* 모바일 버전 - 세로 스택 */}
+        <div className="lg:hidden mt-6 space-y-6">
+          <PortfolioModal5 data={portfolioData[0]} />
+          <PortfolioModal3 data={portfolioData[3]} />
+          <PortfolioModal2 data={portfolioData[2]} />
+          <PortfolioModal1 data={portfolioData[1]} />
+          <PortfolioModal4 data={portfolioData[4]} />
+        </div>
 
-      {/* PC 버전 - 기존 그리드 */}
-      <div className="hidden lg:grid grid-cols-2 mt-10 gap-6 ">
-        <PortfolioModal5 data={portfolioData[0]} />
-        <PortfolioModal3 data={portfolioData[3]} />
-        <PortfolioModal2 data={portfolioData[2]} />
-        <PortfolioModal1 data={portfolioData[1]} />
-        <PortfolioModal4 data={portfolioData[4]} />
-      </div>
+        {/* PC 버전 - 기존 그리드 */}
+        <div className="hidden lg:grid grid-cols-2 mt-10 gap-6 ">
+          <PortfolioModal5 data={portfolioData[0]} />
+          <PortfolioModal3 data={portfolioData[3]} />
+          <PortfolioModal2 data={portfolioData[2]} />
+          <PortfolioModal1 data={portfolioData[1]} />
+          <PortfolioModal4 data={portfolioData[4]} />
+        </div>
+      </Suspense>
     </div>
   );
 };
