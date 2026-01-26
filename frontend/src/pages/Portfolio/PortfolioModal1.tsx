@@ -11,7 +11,7 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
 import videoFrame from "@/assets/imgs/videoFrame.png";
-import video from "@/assets/videos/khuVideo.mov";
+import video from "@/assets/videos/khuVideo.mp4";
 import { ImageSkeleton } from "@/components/ui/skeleton";
 import { cn } from "@/utils/classname";
 
@@ -141,6 +141,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                       autoPlay={!isMobile}
                       loop
                       muted
+                      preload="metadata"
                       controls={isMobile}
                       playsInline
                       className="absolute object-cover w-[220px] h-[125px] md:w-[440px] md:h-[245px] top-[4%] left-[15%]"

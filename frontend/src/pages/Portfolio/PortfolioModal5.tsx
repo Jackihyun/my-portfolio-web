@@ -212,15 +212,16 @@ const PortfolioModal5: React.FC<PortfolioModalProps> = ({ data }) => {
                         
                         {/* Screen Content */}
                         <div className="rounded-[1.6rem] lg:rounded-[2.2rem] overflow-hidden w-full h-full bg-black">
-                          <video
-                            ref={(el) => (videoRefs.current[index] = el)}
-                            src={video.src}
-                            loop
-                            muted
-                            controls={isMobile}
-                            playsInline
-                            className="w-full h-full object-contain bg-black"
-                          />
+                                 <video
+                                   ref={(el) => (videoRefs.current[index] = el)}
+                                   src={video.src}
+                                   loop
+                                   muted
+                                   preload="metadata"
+                                   controls={isMobile}
+                                   playsInline
+                                   className="w-full h-full object-contain bg-black"
+                                 />
                         </div>
                       </div>
                     </div>
