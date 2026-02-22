@@ -10,7 +10,7 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
 import useEmblaCarousel from "embla-carousel-react";
-import diaryVideo from "@/assets/videos/일기장 생성.mp4";
+import diaryVideo from "@/assets/videos/일기장 생성.mp4";
 import aiCharacterVideo from "@/assets/videos/AI 캐릭터 생성 + 일기 작성 + 캐릭터 편지 + 댓글 영상.mp4";
 import aiLetterVideo from "@/assets/videos/AI편지, 음악.mp4";
 
