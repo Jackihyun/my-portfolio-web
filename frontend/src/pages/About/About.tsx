@@ -25,13 +25,11 @@ const About: React.FC<Props> = ({ className }) => {
         </p>
         <Box className="flex w-full flex-col text-sm lg:text-lg gap-2">
           <div className="flex w-full gap-4 font-pretendard">
-            <p className="w-32 lg:w-44 text-nowrap">2026.01 - 진행중</p>
+            <p className="w-32 lg:w-44 text-nowrap">2025.10 - 2026.02</p>
             <p className="flex-1">
               투자 시뮬레이션 학습 플랫폼 'Finvibe'
               <br />
-              <span className="text-xs lg:text-sm text-[#919191]">
-                FE 개발
-              </span>
+              <span className="text-xs lg:text-sm text-[#919191]">FE 개발</span>
             </p>
           </div>
           <div className="flex w-full gap-4 font-pretendard">
@@ -49,9 +47,7 @@ const About: React.FC<Props> = ({ className }) => {
             <p className="flex-1">
               온라인 인력 사무소 웹사이트 'Inteuk'
               <br />
-              <span className="text-xs lg:text-sm text-[#919191]">
-                FE 개발 (진행중)
-              </span>
+              <span className="text-xs lg:text-sm text-[#919191]">FE 개발</span>
             </p>
           </div>
           <div className="flex w-full gap-4 font-pretendard">
@@ -94,7 +90,9 @@ const About: React.FC<Props> = ({ className }) => {
             <p>
               삼성 청년 AI 아카데미 15기
               <br />
-              <span className="text-xs lg:text-sm text-[#919191]">교육 진행중</span>
+              <span className="text-xs lg:text-sm text-[#919191]">
+                교육 진행중
+              </span>
             </p>
           </div>
         </Box>
