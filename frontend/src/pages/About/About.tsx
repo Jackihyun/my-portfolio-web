@@ -25,6 +25,16 @@ const About: React.FC<Props> = ({ className }) => {
         </p>
         <Box className="flex w-full flex-col text-sm lg:text-lg gap-2">
           <div className="flex w-full gap-4 font-pretendard">
+            <p className="w-32 lg:w-44 text-nowrap">2026.01 - 진행중</p>
+            <p className="flex-1">
+              투자 시뮬레이션 학습 플랫폼 'Finvibe'
+              <br />
+              <span className="text-xs lg:text-sm text-[#919191]">
+                FE 개발
+              </span>
+            </p>
+          </div>
+          <div className="flex w-full gap-4 font-pretendard">
             <p className="w-32 lg:w-44 text-nowrap">2025.03 - 2025.07</p>
             <p className="flex-1">
               AI 일기 플랫폼 '메모리아' - [캡스톤 디자인 금상]

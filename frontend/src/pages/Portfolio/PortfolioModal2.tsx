@@ -127,31 +127,7 @@ const PortfolioModal2: React.FC<PortfolioModalProps> = ({ data }) => {
                 <div className="flex items-center gap-2 font-pretendard">
                   <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
                   <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
-                    Role / Contribution
-                  </p>
-                </div>
-                <span className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9]">
-                  Frontend Development / 70%
-                </span>
-              </div>
-
-              <div className="mt-4 lg:mt-6 self-start">
-                <div className="flex items-center gap-2 font-pretendard">
-                  <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
-                  <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
-                    Tech Stack
-                  </p>
-                </div>
-                <span className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9]">
-                  TypeScript, React.js, TailwindCSS, Kakao Map API, Capacitor
-                </span>
-              </div>
-
-              <div className="mt-4 lg:mt-6 self-start">
-                <div className="flex items-center gap-2 font-pretendard">
-                  <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
-                  <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
-                    Overview
+                    프로젝트 소개
                   </p>
                 </div>
                 <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
@@ -166,9 +142,34 @@ const PortfolioModal2: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
               </div>
 
-              <p className="mt-5 font-pretendard text-[11px] lg:text-xs text-[#919191] dark:text-[#B5B5B5] pl-4">
-                {data.period}
-              </p>
+              <div className="mt-4 lg:mt-6 self-start">
+                <div className="flex items-center gap-2 font-pretendard">
+                  <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
+                  <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
+                    내가 기여한 부분
+                  </p>
+                </div>
+                <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                  <p>Frontend Development / 70%</p>
+                  <p className="mt-1">- 지도 기반 탐색 화면 UI/UX 설계 및 연동</p>
+                  <p>- 회원가입/인증/프로필 등록 단계별 플로우 구현</p>
+                  <p>- 공고 조회, 매칭 내역, 리뷰 기능의 사용자 흐름 개선</p>
+                </div>
+              </div>
+
+              <div className="mt-4 lg:mt-6 self-start">
+                <div className="flex items-center gap-2 font-pretendard">
+                  <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
+                  <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
+                    사용 기술
+                  </p>
+                </div>
+                <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                  <p>TypeScript, React.js, TailwindCSS</p>
+                  <p>Kakao Map API, Capacitor</p>
+                </div>
+              </div>
+
             </div>
 
             <div className="order-1 xl:order-2 flex flex-col items-center w-full justify-start xl:justify-start">

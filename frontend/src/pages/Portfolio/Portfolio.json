@@ -1,5 +1,14 @@
 [
   {
+    "title": "Finvibe<br/>Investment Simulation<br/>Platform",
+    "imgSrc": "src/assets/imgs/FinVibe_대표 이미지.webp",
+    "period": "2025.10 ~ 2026.02",
+    "bgColor": "#17346B",
+    "textColor": "#EAF1FF",
+    "modalColor": "#17346B",
+    "modalImgSrc": "src/assets/imgs/FinVibe_대표 이미지.webp"
+  },
+  {
     "title": "AI Diary Service<br/>Website",
     "imgSrc": "src/assets/imgs/Memoria.png",
     "period": "2025/03 ~ 2025/07",
@@ -20,7 +29,7 @@
   {
     "title": "Inteuk<br/>Website",
     "imgSrc": "src/assets/imgs/barojobImg.png",
-    "period": "2025/01 ~ in progress",
+    "period": "2025/01 ~ 2026.01",
     "bgColor": "#618DFF",
     "textColor": "white",
     "modalColor": "#4A7BFF",

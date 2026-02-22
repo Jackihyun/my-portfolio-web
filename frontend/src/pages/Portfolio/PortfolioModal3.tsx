@@ -78,7 +78,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 개인 블로그 웹사이트 프로젝트
               </p>
               <p className="font-pretendard text-xs lg:text-[15px] text-[#919191] dark:text-[#B5B5B5]">
-                {data.period} (진행중)
+                개인 블로그 웹사이트 프로젝트
               </p>
             </div>
           </DialogDescription>
@@ -98,22 +98,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 <div className="mt-5 lg:mt-10 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#7AD154]">
-                      프로젝트 역할 / 기여도
-                    </p>
-                  </div>
-                  <span className="font-pretendard  text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    프론트엔드 개발 / 100%
-                  </span>
-                  <br/>
-                  <span className="font-pretendard  text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">백엔드 개발 / 100%</span>
-                </div>
-                <div className="mt-2 lg:mt-5 self-start">
-                  <div className="flex items-center gap-3 font-pretendard">
-                    <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#7AD154]">
-                      프로젝트 개요
-                    </p>
+                    <p className="text-sm lg:text-[19px] text-[#7AD154]">프로젝트 소개</p>
                   </div>
                   <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
                     <p className="whitespace-pre-line">
@@ -128,6 +113,29 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                       <br />
                       &#183; 프론트는 Next.js, 백엔드는 Spring Boot를 사용하여 배포
                     </p>
+                  </div>
+                </div>
+                <div className="mt-2 lg:mt-5 self-start">
+                  <div className="flex items-center gap-3 font-pretendard">
+                    <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
+                    <p className="text-sm lg:text-[19px] text-[#7AD154]">내가 기여한 부분</p>
+                  </div>
+                  <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                    <p>프론트엔드 개발 / 100%</p>
+                    <p>백엔드 개발 / 100%</p>
+                    <p className="mt-1">- 포스트 목록/카테고리 필터/상세 페이지 UI 구현</p>
+                    <p>- 방명록 기능 및 콘텐츠 관리 흐름 구현</p>
+                    <p>- SSR/SEO 최적화를 위한 라우팅 및 메타데이터 구조 설계</p>
+                  </div>
+                </div>
+                <div className="mt-2 lg:mt-5 self-start">
+                  <div className="flex items-center gap-3 font-pretendard">
+                    <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
+                    <p className="text-sm lg:text-[19px] text-[#7AD154]">사용 기술</p>
+                  </div>
+                  <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                    <p>Next.js, TypeScript, TailwindCSS</p>
+                    <p>Spring Boot, MySQL, SEO/SSR 최적화</p>
                   </div>
                 </div>
               </div>

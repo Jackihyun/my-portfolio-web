@@ -147,32 +147,7 @@ const PortfolioModal5: React.FC<PortfolioModalProps> = ({ data }) => {
                 <div className="flex items-center gap-2 font-pretendard">
                   <div className="bg-[#39A580] dark:bg-[#6EE7B7] rounded-full size-[5px]"></div>
                   <p className="text-sm lg:text-[17px] text-[#39A580] dark:text-[#6EE7B7] font-medium">
-                    Role / Contribution
-                  </p>
-                </div>
-                <span className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9]">
-                  Frontend Development / 60%
-                </span>
-              </div>
-
-              <div className="mt-4 lg:mt-6 self-start">
-                <div className="flex items-center gap-2 font-pretendard">
-                  <div className="bg-[#2D8A66] dark:bg-[#34D399] rounded-full size-[5px]"></div>
-                  <p className="text-sm lg:text-[17px] text-[#2D8A66] dark:text-[#34D399] font-medium">
-                    Tech Stack
-                  </p>
-                </div>
-                <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                  <p>TypeScript, React.js, TailwindCSS, Tanstack Query</p>
-                  <p>LLM API, Stable Diffusion API, Yue AI</p>
-                </div>
-              </div>
-
-              <div className="mt-4 lg:mt-6 self-start">
-                <div className="flex items-center gap-2 font-pretendard">
-                  <div className="bg-[#2D8A66] dark:bg-[#34D399] rounded-full size-[5px]"></div>
-                  <p className="text-sm lg:text-[17px] text-[#2D8A66] dark:text-[#34D399] font-medium">
-                    Overview
+                    프로젝트 소개
                   </p>
                 </div>
                 <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
@@ -185,9 +160,34 @@ const PortfolioModal5: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
               </div>
 
-              <p className="mt-5 font-pretendard text-[11px] lg:text-xs text-[#919191] dark:text-[#B5B5B5] pl-4">
-                {data.period}
-              </p>
+              <div className="mt-4 lg:mt-6 self-start">
+                <div className="flex items-center gap-2 font-pretendard">
+                  <div className="bg-[#2D8A66] dark:bg-[#34D399] rounded-full size-[5px]"></div>
+                  <p className="text-sm lg:text-[17px] text-[#2D8A66] dark:text-[#34D399] font-medium">
+                    내가 기여한 부분
+                  </p>
+                </div>
+                <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                  <p>Frontend Development / 60%</p>
+                  <p className="mt-1">- AI 결과 시각화 대시보드 및 일기 작성 UI 설계/구현</p>
+                  <p>- 캐릭터/편지/음악 생성 플로우를 연결한 사용자 여정 구성</p>
+                  <p>- 사용자 피드백 기반 인터랙션/가독성 개선</p>
+                </div>
+              </div>
+
+              <div className="mt-4 lg:mt-6 self-start">
+                <div className="flex items-center gap-2 font-pretendard">
+                  <div className="bg-[#2D8A66] dark:bg-[#34D399] rounded-full size-[5px]"></div>
+                  <p className="text-sm lg:text-[17px] text-[#2D8A66] dark:text-[#34D399] font-medium">
+                    사용 기술
+                  </p>
+                </div>
+                <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                  <p>TypeScript, React.js, TailwindCSS, Tanstack Query</p>
+                  <p>LLM API, Stable Diffusion API, Yue AI</p>
+                </div>
+              </div>
+
             </div>
 
             <div className="order-1 xl:order-2 flex flex-col items-center justify-center w-full">
