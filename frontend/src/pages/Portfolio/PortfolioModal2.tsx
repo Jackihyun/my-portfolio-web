@@ -10,10 +10,10 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
 import useEmblaCarousel from "embla-carousel-react";
-import baro1 from "@/assets/imgs/바로.webp";
-import baro2 from "@/assets/imgs/바로잡2.webp";
-import baro3 from "@/assets/imgs/바로잡3.webp";
-import baro4 from "@/assets/imgs/바로잡4.webp";
+import baro1 from "@/assets/imgs/barojob1.webp";
+import baro2 from "@/assets/imgs/barojob2.webp";
+import baro3 from "@/assets/imgs/barojob3.webp";
+import baro4 from "@/assets/imgs/barojob4.webp";
 import { ImageSkeleton } from "@/components/ui/skeleton";
 import { cn } from "@/utils/classname";
 

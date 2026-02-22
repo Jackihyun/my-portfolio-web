@@ -1,12 +1,12 @@
 [
   {
     "title": "Finvibe<br/>Investment Simulation<br/>Platform",
-    "imgSrc": "src/assets/imgs/FinVibe_대표 이미지.webp",
+    "imgSrc": "src/assets/imgs/finvibe-cover.webp",
     "period": "2025.10 ~ 2026.02",
     "bgColor": "#17346B",
     "textColor": "#EAF1FF",
     "modalColor": "#17346B",
-    "modalImgSrc": "src/assets/imgs/FinVibe_대표 이미지.webp"
+    "modalImgSrc": "src/assets/imgs/finvibe-cover.webp"
   },
   {
     "title": "AI Diary Service<br/>Website",
