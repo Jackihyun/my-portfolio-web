@@ -104,10 +104,10 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
             <div className="flex flex-col xl:grid xl:grid-cols-[minmax(250px,340px)_minmax(0,1fr)] gap-6">
               {/* 오른쪽: 이미지 + 영상 오버레이 */}
               <div className="flex items-center justify-center w-full mt-0 order-1 xl:order-2">
-                <div className="w-[300px] md:w-[600px] max-w-full relative">
+                <div className="w-[300px] md:w-[600px] max-w-full relative aspect-[1634/1043]">
                   {/* 비디오 프레임 이미지 스켈레톤 */}
                   {!videoFrameLoaded && !videoFrameError && (
-                    <ImageSkeleton className="w-full" aspectRatio="video" />
+                    <ImageSkeleton className="absolute inset-0 w-full h-full" />
                   )}
 
                   {!videoFrameError && (
@@ -115,7 +115,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                       src={videoFrame}
                       alt="Monitor"
                       className={cn(
-                        "transition-opacity duration-300",
+                        "absolute inset-0 w-full h-full object-contain transition-opacity duration-300",
                         videoFrameLoaded ? "opacity-100" : "opacity-0"
                       )}
                       onLoad={handleVideoFrameLoad}

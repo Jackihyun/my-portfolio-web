@@ -140,11 +140,10 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
               </div>
               <div className="flex items-center justify-center mt-5 md:mt-0 flex-1 order-1 md:order-2">
-                <div className="relative w-[280px] lg:w-[450px]">
+                <div className="relative w-[280px] lg:w-[450px] aspect-[2122/1924]">
                   {!blogImageLoaded && !blogImageError && (
                     <ImageSkeleton
-                      className="w-full"
-                      aspectRatio="card"
+                      className="absolute inset-0 w-full h-full rounded-lg"
                     />
                   )}
                   {!blogImageError && (
@@ -152,7 +151,7 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                       src={blogImg}
                       alt="blog"
                       className={cn(
-                        "w-full h-auto transition-opacity duration-300 shadow-lg rounded-lg",
+                        "absolute inset-0 w-full h-full object-cover transition-opacity duration-300 shadow-lg rounded-lg",
                         blogImageLoaded ? "opacity-100" : "opacity-0"
                       )}
                       onLoad={handleBlogImageLoad}
