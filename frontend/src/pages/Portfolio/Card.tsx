@@ -31,19 +31,19 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
         style={style}
         onClick={onClick}
         className={cn(
-          "flex flex-col cursor-pointer hover:scale-105 duration-150 w-full h-[20vh] lg:size-[30vw] relative rounded-3xl shadow-md overflow-hidden",
+          "flex flex-col cursor-pointer hover:scale-[1.02] duration-200 w-full min-h-[180px] sm:min-h-[200px] lg:min-h-[250px] aspect-[16/10] lg:aspect-square relative rounded-3xl shadow-md overflow-hidden",
           className
         )}
       >
-        <p className="absolute top-5 left-7 font-orbitron-regular text-sm lg:text-xl mb-2 tracking-widest z-10">
+        <p className="absolute top-4 left-4 sm:top-5 sm:left-6 lg:top-6 lg:left-7 font-orbitron-regular text-xs sm:text-sm lg:text-lg mb-2 tracking-wide z-10 leading-tight">
           {title}
         </p>
 
         {/* 이미지 컨테이너 */}
-        <div className="relative w-full h-full lg:p-22 flex items-center justify-center">
+        <div className="relative w-full h-full px-3 pb-4 pt-12 sm:pt-14 lg:px-8 lg:pb-6 lg:pt-20 flex items-center justify-center">
           {!imageLoaded && !imageError && (
             <ImageSkeleton
-              className="w-[20vw] lg:w-full m-auto"
+              className="w-full h-full m-auto"
               aspectRatio="card"
             />
           )}
@@ -53,7 +53,7 @@ const Card = React.forwardRef<HTMLDivElement, Props>(
               src={imgSrc}
               alt="project"
               className={cn(
-                "w-28 lg:w-full ml-auto mr-5 my-auto p-2 rounded-xl lg:p-0 lg:m-auto lg:h-fit object-cover transition-opacity duration-300",
+                "w-[56%] max-w-[150px] sm:max-w-[180px] md:max-w-[200px] lg:w-[64%] lg:max-w-[220px] mx-auto rounded-xl object-contain transition-opacity duration-300",
                 imageLoaded ? "opacity-100" : "opacity-0"
               )}
               onLoad={handleImageLoad}

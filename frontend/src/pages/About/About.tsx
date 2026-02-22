@@ -70,15 +70,23 @@ const About: React.FC<Props> = ({ className }) => {
         <p className="font-orbitron-regular text-xl lg:text-3xl text-[#303030] dark:text-[#FAFAFC]">
           🏫 Education
         </p>
-        <Box className="flex gap-4 text-nowrap font-pretendard text-sm lg:text-lg">
-          <p className="w-32 lg:w-44">2020.03 - 재학중</p>
-          <p>
-            명지대학교 컴퓨터공학과
-            <br />
-            <span className="text-xs lg:text-sm text-[#919191]">
-              2026.02 졸업예정
-            </span>
-          </p>
+        <Box className="flex w-full flex-col gap-3 font-pretendard text-sm lg:text-lg">
+          <div className="flex w-full gap-4">
+            <p className="w-32 lg:w-44 text-nowrap">2020.03 - 2026.02</p>
+            <p>
+              명지대학교 컴퓨터공학과
+              <br />
+              <span className="text-xs lg:text-sm text-[#919191]">졸업</span>
+            </p>
+          </div>
+          <div className="flex w-full gap-4">
+            <p className="w-32 lg:w-44 text-nowrap">2026.01 - ing</p>
+            <p>
+              삼성 청년 AI 아카데미 15기
+              <br />
+              <span className="text-xs lg:text-sm text-[#919191]">교육 진행중</span>
+            </p>
+          </div>
         </Box>
       </div>
       <div className="mt-6 lg:mt-10">
