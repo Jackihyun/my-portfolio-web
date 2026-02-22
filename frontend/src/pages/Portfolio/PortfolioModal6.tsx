@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -10,14 +9,13 @@ import {
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Card from "./Card";
 import imageMapping from "@/utils/imageMapping";
-import AO1 from "@/assets/imgs/AO1.png";
-import AO2 from "@/assets/imgs/AO2.png";
-import AO3 from "@/assets/imgs/AO3.png";
-import AO4 from "@/assets/imgs/AO4.png";
-import AO5 from "@/assets/imgs/AO5.png";
-import useEmblaCarousel from "embla-carousel-react";
 import { ImageSkeleton } from "@/components/ui/skeleton";
 import { cn } from "@/utils/classname";
+import useEmblaCarousel from "embla-carousel-react";
+import finvibeMain from "@/assets/imgs/finvibeMain.webp";
+import finvibeChart from "@/assets/imgs/finvibeChart.webp";
+import finvibeChallenge from "@/assets/imgs/finvibeChallenge.webp";
+import finvibeAI from "@/assets/imgs/finvibeAI.webp";
 
 interface PortfolioModalProps {
   data: {
@@ -32,19 +30,18 @@ interface PortfolioModalProps {
 }
 
 const projectImages = [
-  { title: "메인 화면", src: AO1 },
-  { title: "아카이브 화면", src: AO2 },
-  { title: "스터디 소개", src: AO3 },
-  { title: "라이트/다크 모드", src: AO4 },
-  { title: "상세 인터랙션", src: AO5 },
+  { title: "메인 대시보드", src: finvibeMain },
+  { title: "자산 차트", src: finvibeChart },
+  { title: "챌린지", src: finvibeChallenge },
+  { title: "AI 학습", src: finvibeAI },
 ];
 
-const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
+const PortfolioModal6: React.FC<PortfolioModalProps> = ({ data }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [imageLoaded, setImageLoaded] = useState<{ [key: number]: boolean }>({});
-  const [imageError, setImageError] = useState<{ [key: number]: boolean }>({});
+  const [imagesLoaded, setImagesLoaded] = useState<{ [key: number]: boolean }>({});
+  const [imagesError, setImagesError] = useState<{ [key: number]: boolean }>({});
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -76,12 +73,12 @@ const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
   }, [emblaApi]);
 
   const handleImageLoad = (index: number) => {
-    setImageLoaded((prev) => ({ ...prev, [index]: true }));
+    setImagesLoaded((prev) => ({ ...prev, [index]: true }));
   };
 
   const handleImageError = (index: number) => {
-    setImageError((prev) => ({ ...prev, [index]: true }));
-    setImageLoaded((prev) => ({ ...prev, [index]: true }));
+    setImagesError((prev) => ({ ...prev, [index]: true }));
+    setImagesLoaded((prev) => ({ ...prev, [index]: true }));
   };
 
   return (
@@ -99,8 +96,8 @@ const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
         />
       </DialogTrigger>
       <DialogContent
-        closeIconStyle="text-[#FF4A3E] p-2"
-        className="p-4 sm:p-6 lg:p-8 md:!rounded-[30px] rounded-xl overflow-hidden h-[88vh] lg:h-[90vh] max-h-[92vh] flex flex-col"
+        closeIconStyle="text-[#17346B] p-2"
+        className="p-4 sm:p-6 lg:p-8 md:!rounded-[30px] rounded-xl overflow-hidden max-h-[90vh] flex flex-col bg-white dark:bg-[#0F0F0F]"
       >
         <DialogHeader className="flex flex-col flex-shrink-0">
           <div
@@ -110,95 +107,90 @@ const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
             Project
           </div>
           <DialogTitle className="font-orbitron-regular text-lg lg:text-xl text-[#303030] dark:text-white">
-            <p>
-              FireAO
-              <br />
-              Study Website
-            </p>
+            Finvibe
           </DialogTitle>
         </DialogHeader>
 
-        <div className="mt-3 lg:mt-5 flex-1 min-h-0 overflow-y-auto pr-1">
-          <div className="flex flex-col gap-6 xl:grid xl:grid-cols-[minmax(240px,320px)_minmax(0,1fr)] xl:gap-8">
+        <div className="mt-3 lg:mt-5 overflow-y-auto pr-1">
+          <div className="flex flex-col gap-6 xl:grid xl:grid-cols-[minmax(250px,340px)_minmax(0,1fr)] xl:gap-8">
             <div className="order-2 xl:order-1 flex flex-col">
-              <DialogDescription>
-                <div>
-                  <p className="font-pretendard text-sm lg:text-lg text-[#919191] dark:text-[#B5B5B5]">
-                    명지대학교 컴퓨터공학과 스터디 FireAO 웹사이트
-                  </p>
-                  <p className="font-pretendard text-xs lg:text-[15px] text-[#919191] dark:text-[#B5B5B5]">
-                    명지대학교 컴퓨터공학과 스터디 프로젝트
-                  </p>
-                </div>
-              </DialogDescription>
-
               <InteractiveHoverButton
                 onClick={() =>
-                  window.open("https://github.com/Jackihyun/AO-WEB", "_blank")
+                  window.open("https://github.com/DEPth-FinVibe/FinVibe-fe", "_blank")
                 }
                 transitionClassName="group-hover:translate-x-0"
-                dotBgClassName="bg-[#FF4A3E] size-1.5"
-                className="mt-4 flex justify-center items-center w-fit text-xs lg:text-[13px] bg-[#FF4A3E]/20 text-[#FF4A3E] border border-[#FF4A3E] tracking-widest font-orbitron-regular"
+                dotBgClassName="bg-current size-1.5"
+                className="flex justify-center items-center w-fit text-xs lg:text-[13px] text-nowrap tracking-widest font-orbitron-regular"
+                style={{
+                  backgroundColor: `${data.modalColor}20`,
+                  color: data.modalColor,
+                  border: `1px solid ${data.modalColor}`,
+                }}
               >
-                배포 중단 - GitHub 연결
+                GitHub
               </InteractiveHoverButton>
 
-              <div className="mt-5 lg:mt-7">
+              <div className="mt-5 lg:mt-7 self-start">
                 <div className="flex items-center gap-2 font-pretendard">
-                  <div className="bg-[#FF4A3E] rounded-full size-[5px]"></div>
-                  <p className="text-sm lg:text-[17px] text-[#FF4A3E] font-medium">
+                  <div className="rounded-full size-[5px]" style={{ backgroundColor: data.modalColor }}></div>
+                  <p className="text-sm lg:text-[17px] font-medium" style={{ color: data.modalColor }}>
                     프로젝트 소개
                   </p>
                 </div>
-                <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                  <p>
-                    명지대학교 컴퓨터공학과 스터디 FireAO 모바일 웹 개발 프로젝트에
-                    프론트엔드 개발자로 참여했습니다.
-                  </p>
-                  <p className="mt-2">
-                    스크롤 및 터치 이벤트에 따라 인터렉티브하게 변화하는 화면,
-                    스터디 소개 및 아카이브 페이지를 구현했습니다.
-                  </p>
-                  <p className="mt-2">
-                    추가 사항: 디자인이 바뀌어 페이지 구성이 변경되었습니다.
-                  </p>
-                </div>
+                <ul className="font-pretendard text-xs lg:text-[13px] pl-4 mt-1 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                  <li>- 가상 자산 기반 투자 시뮬레이션 서비스</li>
+                  <li>- 투자 수준/이해도 기반 개인화 학습 콘텐츠 제공</li>
+                  <li>- 성과+과정 중심 챌린지로 투자 습관 형성 유도</li>
+                  <li>- 실시간 경제 뉴스 요약과 토론 기능으로 판단 역량 강화</li>
+                </ul>
               </div>
 
-              <div className="mt-4 lg:mt-6">
+              <div className="mt-4 lg:mt-6 self-start">
                 <div className="flex items-center gap-2 font-pretendard">
-                  <div className="bg-[#FF4A3E] rounded-full size-[5px]"></div>
-                  <p className="text-sm lg:text-[17px] text-[#FF4A3E] font-medium">
+                  <div className="rounded-full size-[5px]" style={{ backgroundColor: data.modalColor }}></div>
+                  <p className="text-sm lg:text-[17px] font-medium" style={{ color: data.modalColor }}>
                     내가 기여한 부분
                   </p>
                 </div>
-                <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                  <p>Frontend Development / 50%</p>
-                  <p className="mt-1">- 스크롤/터치 이벤트 기반 인터랙션 화면 설계 및 구현</p>
-                  <p>- 아카이브/소개 섹션 반응형 UI 및 컴포넌트 구조화</p>
-                  <p>- 다크모드 전환 및 스타일 시스템 정리</p>
+                <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed space-y-3 mt-1">
+                  <p>
+                    1) 자산 조회 UI/UX 구조 설계 및 렌더링 체감 개선: 상태 분리
+                    설계, 전환 시 깜빡임 최소화, 차트 중심 정보 구조 최적화
+                  </p>
+                  <p>
+                    2) 클라이언트 데이터 아키텍처 및 상태 관리 고도화: React
+                    Query 표준화, Zustand 기반 전역 상태 경량화, axios API 계층
+                    일원화
+                  </p>
+                  <p>
+                    3) 협업 생산성과 품질 관리 체계 구축: Storybook 기반 컴포넌트
+                    개발 문화 정착, ESLint + TypeScript 규칙으로 코드 품질 유지
+                  </p>
                 </div>
               </div>
 
-              <div className="mt-4 lg:mt-6">
+              <div className="mt-4 lg:mt-6 self-start">
                 <div className="flex items-center gap-2 font-pretendard">
-                  <div className="bg-[#FF4A3E] rounded-full size-[5px]"></div>
-                  <p className="text-sm lg:text-[17px] text-[#FF4A3E] font-medium">
+                  <div className="rounded-full size-[5px]" style={{ backgroundColor: data.modalColor }}></div>
+                  <p className="text-sm lg:text-[17px] font-medium" style={{ color: data.modalColor }}>
                     사용 기술
                   </p>
                 </div>
-                <span className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9]">
-                  JavaScript, Svelte, TailwindCSS
-                </span>
+                <ul className="font-pretendard text-xs lg:text-[13px] pl-4 mt-1 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                  <li>- TypeScript, React 19</li>
+                  <li>- TanStack React Query, Zustand</li>
+                  <li>- Storybook, lightweight-charts</li>
+                </ul>
               </div>
+
             </div>
 
-            <div className="order-1 xl:order-2 flex flex-col items-center w-full">
+            <div className="order-1 xl:order-2 flex flex-col items-center w-full justify-start">
               <p className="mb-2 text-[11px] lg:text-xs font-pretendard text-[#6A6A6A] dark:text-[#B8B8B8]">
                 Swipe or use arrows to explore
               </p>
               <div
-                className="w-full max-w-[clamp(220px,46vw,360px)] overflow-hidden"
+                className="w-full max-w-[320px] md:max-w-[560px] xl:max-w-[620px] overflow-hidden"
                 ref={emblaRef}
               >
                 <div className="flex">
@@ -208,31 +200,31 @@ const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
                       className="flex-[0_0_100%] min-w-0 flex flex-col items-center px-2"
                     >
                       <div className="w-full flex justify-between items-center mb-3 px-1">
-                        <p className="font-orbitron-medium text-[9px] text-[#FF4A3E] opacity-60">
+                        <p className="font-orbitron-medium text-[9px] opacity-80" style={{ color: data.modalColor }}>
                           {String(index + 1).padStart(2, "0")}
                         </p>
-                        <p className="font-pretendard font-semibold text-xs lg:text-sm text-[#FF4A3E]">
+                        <p className="font-pretendard font-semibold text-xs lg:text-sm min-h-5" style={{ color: data.modalColor }}>
                           {image.title}
                         </p>
                       </div>
 
-                      <div className="relative w-full aspect-[3/5] rounded-xl overflow-hidden border border-[#FF4A3E]/20 bg-[#FFF5F4] dark:bg-black/20">
-                        {!imageLoaded[index] && !imageError[index] && (
-                          <ImageSkeleton className="w-full h-full" aspectRatio="card" />
+                      <div className="relative w-full aspect-[16/10] min-h-[190px] md:min-h-[240px] rounded-xl overflow-hidden bg-gray-50 dark:bg-black/20" style={{ border: `1px solid ${data.modalColor}33` }}>
+                        {!imagesLoaded[index] && !imagesError[index] && (
+                          <ImageSkeleton className="w-full h-full" aspectRatio="video" />
                         )}
-                        {!imageError[index] && (
+                        {!imagesError[index] && (
                           <img
                             src={image.src}
                             alt={image.title}
                             className={cn(
-                              "w-full h-full object-contain transition-opacity duration-300",
-                              imageLoaded[index] ? "opacity-100" : "opacity-0"
+                              "w-full h-full object-contain transition-opacity duration-500",
+                              imagesLoaded[index] ? "opacity-100" : "opacity-0"
                             )}
                             onLoad={() => handleImageLoad(index)}
                             onError={() => handleImageError(index)}
                           />
                         )}
-                        {imageError[index] && (
+                        {imagesError[index] && (
                           <div className="w-full h-full flex items-center justify-center text-xs text-gray-500">
                             이미지를 불러올 수 없습니다
                           </div>
@@ -247,7 +239,8 @@ const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
                 <button
                   type="button"
                   onClick={scrollPrev}
-                  className="h-10 px-3 rounded-full border border-[#FF4A3E]/50 text-[#FF4A3E] text-xs font-orbitron-regular hover:bg-[#FF4A3E]/10 transition-colors"
+                  className="h-10 px-3 rounded-full text-xs font-orbitron-regular transition-colors"
+                  style={{ border: `1px solid ${data.modalColor}`, color: data.modalColor }}
                 >
                   Prev
                 </button>
@@ -258,9 +251,10 @@ const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
                       key={index}
                       className={`size-2 rounded-full transition-all duration-300 ${
                         selectedIndex === index
-                          ? "bg-[#FF4A3E] w-5"
-                          : "bg-[#FF4A3E]/20"
+                          ? "w-5"
+                          : ""
                       }`}
+                      style={{ backgroundColor: selectedIndex === index ? data.modalColor : `${data.modalColor}55` }}
                       onClick={() => scrollTo(index)}
                     />
                   ))}
@@ -269,7 +263,8 @@ const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
                 <button
                   type="button"
                   onClick={scrollNext}
-                  className="h-10 px-3 rounded-full border border-[#FF4A3E]/50 text-[#FF4A3E] text-xs font-orbitron-regular hover:bg-[#FF4A3E]/10 transition-colors"
+                  className="h-10 px-3 rounded-full text-xs font-orbitron-regular transition-colors"
+                  style={{ border: `1px solid ${data.modalColor}`, color: data.modalColor }}
                 >
                   Next
                 </button>
@@ -286,4 +281,4 @@ const PortfolioModal4: React.FC<PortfolioModalProps> = ({ data }) => {
   );
 };
 
-export default PortfolioModal4;
+export default PortfolioModal6;

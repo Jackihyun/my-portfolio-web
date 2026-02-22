@@ -92,22 +92,19 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
 
         {/* 스크롤 가능한 영역 */}
         <div className="flex-1 overflow-y-auto overflow-x-hidden mt-0 lg:mt-4">
-          <DialogDescription className="">
+          <DialogDescription>
             {/* 왼쪽: 설명 및 버튼 */}
-            <div className="w-full md:w-1/2 whitespace-nowrap">
+            <div className="w-full">
               <p className="font-pretendard text-sm lg:text-lg text-[#919191] dark:text-[#B5B5B5]">
                 경희대학교 의상학과 졸업작품 패션쇼 웹사이트
-              </p>
-              <p className="font-pretendard text-xs lg:text-[15px] text-[#919191] dark:text-[#B5B5B5]">
-                {data.period} (5개월)
               </p>
             </div>
           </DialogDescription>
           <div className="w-full mt-4 lg:mt-0">
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col xl:grid xl:grid-cols-[minmax(250px,340px)_minmax(0,1fr)] gap-6">
               {/* 오른쪽: 이미지 + 영상 오버레이 */}
-              <div className="flex items-center justify-center md:justify-end w-full min-w-[300px] md:min-w-[600px] mt-5 md:mt-0 flex-1 order-1 md:order-2">
-                <div className="w-[300px] md:min-w-[600px] md:w-[600px] relative">
+              <div className="flex items-center justify-center w-full mt-0 order-1 xl:order-2">
+                <div className="w-[300px] md:w-[600px] max-w-full relative">
                   {/* 비디오 프레임 이미지 스켈레톤 */}
                   {!videoFrameLoaded && !videoFrameError && (
                     <ImageSkeleton className="w-full" aspectRatio="video" />
@@ -144,12 +141,12 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                       preload="metadata"
                       controls={isMobile}
                       playsInline
-                      className="absolute object-cover w-[220px] h-[125px] md:w-[440px] md:h-[245px] top-[4%] left-[15%]"
+                      className="absolute object-cover w-[220px] h-[125px] md:w-[440px] md:h-[245px] top-[5%] md:top-[4.5%] left-[15%] md:left-[15%]"
                     />
                   )}
                 </div>
               </div>
-              <div className="flex flex-col whitespace-nowrap w-full md:w-fit order-2 md:order-1 justify-center items-center md:items-start mt-5 md:mt-0">
+              <div className="flex flex-col w-full order-2 xl:order-1 justify-center items-start mt-1">
                 <InteractiveHoverButton
                   onClick={() =>
                     window.open(
@@ -166,45 +163,40 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                 <div className="mt-5 lg:mt-10 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#FFA24A] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#FFA24A]">
-                      프로젝트 역할 / 기여도
+                    <p className="text-sm lg:text-[19px] text-[#FFA24A] ">프로젝트 소개</p>
+                  </div>
+                  <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
+                    <p>
+                      제44회 경희대학교 의상학과 졸업작품 패션쇼의 공식 웹사이트입니다.
+                      패션쇼의 핵심 정보 전달과 작품 아카이브를 동시에 제공하는 구조로
+                      설계했습니다.
+                    </p>
+                    <p className="mt-2">
+                      다양한 디바이스에서 동일한 브랜드 경험을 전달하도록 반응형
+                      레이아웃과 인터랙티브한 작품 갤러리 흐름을 구성했습니다.
                     </p>
                   </div>
-                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    프론트엔드 개발 / 90%
-                  </span>
-                </div>
-                <div className="mt-2 lg:mt-5 self-start">
-                  <div className="flex items-center gap-3 font-pretendard">
-                    <div className=" bg-[#FFA24A]  rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#FFA24A] ">
-                      스택
-                    </p>
-                  </div>
-                  <span className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    JavaScript, React.js, TailwindCSS
-                  </span>
                 </div>
                 <div className="mt-2 lg:mt-5 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#FFA24A] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#FFA24A] ">
-                      프로젝트 개요
-                    </p>
+                    <p className="text-sm lg:text-[19px] text-[#FFA24A]">내가 기여한 부분</p>
                   </div>
-                  <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
-                    <p>
-                      제44회 경희대학교 의상학과 졸업작품 패션쇼의 공식 웹사이트
-                      <br />
-                      프론트엔드 개발을 담당했습니다. 패션쇼의 주요 정보를
-                      제공하고,
-                      <br />
-                      졸업 작품을 온라인 아카이브로 보존하는 역할을 합니다.
-                      <br />
-                      &#183; 다양한 디바이스(PC, 태블릿, 모바일)에서 최적화
-                      <br />
-                      &#183; 인터랙티브한 갤러리 제작
-                    </p>
+                  <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                    <p>프론트엔드 개발 / 90%</p>
+                    <p className="mt-1">- 메인/소개/아카이브 페이지 UI 구현 및 반응형 최적화</p>
+                    <p>- 모니터 프레임 기반 영상 섹션 인터랙션 구현</p>
+                    <p>- 작품 탐색 경험을 높이기 위한 갤러리 구조 개선</p>
+                  </div>
+                </div>
+                <div className="mt-2 lg:mt-5 self-start">
+                  <div className="flex items-center gap-3 font-pretendard">
+                    <div className=" bg-[#FFA24A]  rounded-full size-[5px] lg:size-[7px]"></div>
+                    <p className="text-sm lg:text-[19px] text-[#FFA24A] ">사용 기술</p>
+                  </div>
+                  <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                    <p>JavaScript, React.js, TailwindCSS</p>
+                    <p>Vercel (배포), 반응형 레이아웃 설계</p>
                   </div>
                 </div>
               </div>
