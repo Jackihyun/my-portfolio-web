@@ -6,7 +6,12 @@ import { BiLogoGmail } from "react-icons/bi";
 import { LuGithub } from "react-icons/lu";
 import { SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
-import { RiNextjsFill, RiSvelteFill, RiTailwindCssFill } from "react-icons/ri";
+import {
+  RiArticleLine,
+  RiNextjsFill,
+  RiSvelteFill,
+  RiTailwindCssFill,
+} from "react-icons/ri";
 import { FiCamera } from "react-icons/fi";
 
 type Props = {
@@ -14,6 +19,17 @@ type Props = {
 };
 
 const SideProfile: React.FC<Props> = ({ className }) => {
+  const techStack = [
+    { name: "HTML5", icon: <FaHtml5 className="size-6" /> },
+    { name: "CSS3", icon: <FaCss3Alt className="size-6" /> },
+    { name: "JavaScript", icon: <IoLogoJavascript className="size-6" /> },
+    { name: "Tailwind CSS", icon: <RiTailwindCssFill className="size-6" /> },
+    { name: "Svelte", icon: <RiSvelteFill className="size-6" /> },
+    { name: "React", icon: <FaReact className="size-6" /> },
+    { name: "TypeScript", icon: <SiTypescript className="size-6" /> },
+    { name: "Next.js", icon: <RiNextjsFill className="size-6" /> },
+  ];
+
   const socialLinks = [
     {
       icon: <LuGithub className="size-full" />,
@@ -82,17 +98,20 @@ const SideProfile: React.FC<Props> = ({ className }) => {
           </div>
           <div>
             <p className="text-[#7AD154] text-sm font-light">Tech</p>
-            <div className="flex mt-1 gap-2 text-black dark:text-[#FAFAFC] text-lg font-medium">
-              <FaHtml5 className="size-6" />
-              <FaCss3Alt className="size-6" />
-              <IoLogoJavascript className="size-6" />
-              <RiTailwindCssFill className="size-6" />
-            </div>
-            <div className="flex mt-1 gap-2 text-black dark:text-[#FAFAFC] text-lg font-medium">
-              <RiSvelteFill className="size-6" />
-              <FaReact className="size-6" />
-              <SiTypescript className="size-6" />
-              <RiNextjsFill className="size-6" />
+            <div className="mt-2 flex flex-wrap gap-2 text-black dark:text-[#FAFAFC] text-lg font-medium">
+              {techStack.map((tech) => (
+                <div
+                  key={tech.name}
+                  title={tech.name}
+                  aria-label={tech.name}
+                  className="group relative flex size-10 items-center justify-center rounded-xl border border-black/10 bg-white/70 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#7AD154]/70 hover:bg-[#7AD154]/10 dark:border-white/10 dark:bg-white/5 dark:hover:bg-[#7AD154]/10"
+                >
+                  {tech.icon}
+                  <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 rounded-full border border-[#7AD154]/40 bg-[#111111] px-2.5 py-1 text-[10px] tracking-wide text-white opacity-0 shadow-lg transition-all duration-200 group-hover:-translate-y-1 group-hover:opacity-100 dark:bg-[#7AD154] dark:text-[#111111]">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
           <div>
@@ -102,6 +121,15 @@ const SideProfile: React.FC<Props> = ({ className }) => {
             </p>
           </div>
         </div>
+        <a
+          href="https://blog.jackihyun.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-5 flex w-full items-center justify-center gap-2 rounded-xl border border-[#7AD154] bg-white px-4 py-3 font-orbitron-regular text-sm tracking-[0.2em] text-[#111111] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#7AD154]/10 dark:bg-zinc-800 dark:text-[#FAFAFC] dark:hover:bg-zinc-700"
+        >
+          <RiArticleLine className="size-4" />
+          BLOG
+        </a>
         <div className="flex w-full justify-center gap-8">
           {socialLinks.map((link, index) => (
             <a
