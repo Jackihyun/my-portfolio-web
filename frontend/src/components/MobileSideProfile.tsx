@@ -28,10 +28,13 @@ const SideProfile: React.FC<Props> = ({ className }) => {
         >
           <img
             src={backgroundSrc}
+            alt=""
+            aria-hidden="true"
             className="size-full object-cover absolute top-0 left-0 z-0 opacity-80 dark:opacity-40 "
           />
           <img
             src={profileSrc}
+            alt="Jackihyun profile"
             className="size-full object-contain relative z-10"
           />
         </div>

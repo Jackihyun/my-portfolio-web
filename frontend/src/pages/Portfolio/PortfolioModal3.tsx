@@ -87,7 +87,11 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
               <div className="flex flex-col whitespace-nowrap w-full md:w-fit order-2 md:order-1 justify-center items-center md:items-start mt-5 md:mt-0">
                 <InteractiveHoverButton
                   onClick={() =>
-                    window.open("https://blog.jackihyun.me/", "_blank")
+                    window.open(
+                      "https://blog.jackihyun.com/",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
                   }
                   transitionClassName="group-hover:translate-x-0"
                   dotBgClassName="bg-[#7AD154] size-1.5"

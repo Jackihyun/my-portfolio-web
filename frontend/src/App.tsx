@@ -7,7 +7,7 @@ function App() {
     <div className="h-full">
       <Router />
       <div className="fixed top-0 left-0 -z-50 flex size-full scale-120">
-        <img src={backSrc} />
+        <img src={backSrc} alt="" aria-hidden="true" />
       </div>
     </div>
   );

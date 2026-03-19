@@ -56,6 +56,7 @@ const SideProfile: React.FC<Props> = ({ className }) => {
         >
           <img
             src={profileSrc}
+            alt="Jackihyun profile"
             className="size-full object-contain relative z-10"
           />
         </div>

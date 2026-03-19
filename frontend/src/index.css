@@ -43,11 +43,6 @@ body {
   @apply dark:bg-[#111111] bg-[#e7ebf3];
 }
 
-@font-face {
-  font-family: "Sarina";
-  src: url("../src/assets/fonts/Sarina/Sarina-Regular.ttf") format("truetype");
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;

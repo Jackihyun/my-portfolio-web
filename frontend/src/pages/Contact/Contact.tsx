@@ -8,6 +8,8 @@ type Props = {
 };
 
 const Contact: React.FC<Props> = ({ className }) => {
+  const currentYear = new Date().getFullYear();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -39,19 +41,31 @@ const Contact: React.FC<Props> = ({ className }) => {
           className="absolute top-6 lg:top-10 left-6 lg:left-10 text-white size-8 lg:size-11 mb-20 stroke-white cursor-pointer"
         />
         <div className="flex flex-col cursor-pointer gap-2 lg:gap-3 mb-6 lg:mb-10 font-orbitron-regular tracking-widest text-sm lg:text-xl text-black">
-          <a href="mailto:pkhjack2325@gmail.com" target="_blank">
+          <a
+            href="mailto:pkhjack2325@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             📨 pkhjack2325@gmail.com
           </a>
-          <a href="https://instagram.com/ki_hyunida" target="_blank">
+          <a
+            href="https://instagram.com/ki_hyunida"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             📸 IG. @ki_hyunida
           </a>
-          <a href="https://github.com/Jackihyun" target="_blank">
+          <a
+            href="https://github.com/Jackihyun"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             💻 Github
           </a>
         </div>
         <div className="w-full border border-[#083400]"></div>
         <p className="font-orbitron-regular mt-2 text-right text-xs lg:text-sm tracking-wider text-black">
-          Copyright ⓒ 2025. Jackihyun. All Rights Reserved.
+          Copyright ⓒ {currentYear}. Jackihyun. All Rights Reserved.
         </p>
       </div>
     </div>
