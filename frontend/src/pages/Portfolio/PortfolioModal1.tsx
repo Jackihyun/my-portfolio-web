@@ -24,6 +24,11 @@ interface PortfolioModalProps {
     textColor: string;
     modalColor: string;
     modalImgSrc: string;
+    kicker?: string;
+    role?: string;
+    summary?: string;
+    highlights?: string[];
+    tags?: string[];
   };
 }
 
@@ -64,6 +69,11 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
           title={<span dangerouslySetInnerHTML={{ __html: data.title }} />}
           imgSrc={imageMapping[data.imgSrc]}
           period={data.period}
+          kicker={data.kicker}
+          role={data.role}
+          summary={data.summary}
+          highlights={data.highlights}
+          tags={data.tags}
           style={{
             color: data.textColor,
             backgroundColor: data.bgColor,

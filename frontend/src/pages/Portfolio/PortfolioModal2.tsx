@@ -26,6 +26,11 @@ interface PortfolioModalProps {
     textColor: string;
     modalColor: string;
     modalImgSrc: string;
+    kicker?: string;
+    role?: string;
+    summary?: string;
+    highlights?: string[];
+    tags?: string[];
   };
 }
 
@@ -89,6 +94,11 @@ const PortfolioModal2: React.FC<PortfolioModalProps> = ({ data }) => {
           title={<span dangerouslySetInnerHTML={{ __html: data.title }} />}
           imgSrc={imageMapping[data.imgSrc]}
           period={data.period}
+          kicker={data.kicker}
+          role={data.role}
+          summary={data.summary}
+          highlights={data.highlights}
+          tags={data.tags}
           style={{
             color: data.textColor,
             backgroundColor: data.bgColor,
@@ -132,12 +142,12 @@ const PortfolioModal2: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
                 <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
                   <p>
-                    기존 오프라인 인력사무소의 불편함을 해결하기 위한 창업 아이디어
-                    프로젝트에 프론트엔드 개발자로 참여했습니다.
+                    건설 일용직 구인자와 근로자를 연결하는 위치 기반 하이브리드
+                    앱입니다.
                   </p>
                   <p className="mt-2">
-                    회원가입 프로세스(인증번호, 사진 등록), 메인페이지 개발,
-                    지도 API 연동을 담당했습니다.
+                    구인 요청 등록, 위치 설정, 매칭 내역, 리뷰, 푸시 알림 흐름을
+                    모바일 중심으로 구현했습니다.
                   </p>
                 </div>
               </div>
@@ -146,14 +156,15 @@ const PortfolioModal2: React.FC<PortfolioModalProps> = ({ data }) => {
                 <div className="flex items-center gap-2 font-pretendard">
                   <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
                   <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
-                    내가 기여한 부분
+                    Project Info
                   </p>
                 </div>
                 <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                  <p>Frontend Development / 70%</p>
-                  <p className="mt-1">- 지도 기반 탐색 화면 UI/UX 설계 및 연동</p>
-                  <p>- 회원가입/인증/프로필 등록 단계별 플로우 구현</p>
-                  <p>- 공고 조회, 매칭 내역, 리뷰 기능의 사용자 흐름 개선</p>
+                  <p>Team: FE 2 · BE 2 · Designer 1</p>
+                  <p>Role: Frontend Developer</p>
+                  <p>Stack: React · TypeScript · TanStack Query · Capacitor</p>
+                  <p>Kakao Map · FCM</p>
+                  <p>Award: 대학창업 아이디어 챌린지 본선 창의상</p>
                 </div>
               </div>
 
@@ -161,12 +172,19 @@ const PortfolioModal2: React.FC<PortfolioModalProps> = ({ data }) => {
                 <div className="flex items-center gap-2 font-pretendard">
                   <div className="bg-[#618DFF] rounded-full size-[5px]"></div>
                   <p className="text-sm lg:text-[17px] text-[#618DFF] font-medium">
-                    사용 기술
+                    문제 해결
                   </p>
                 </div>
                 <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                  <p>TypeScript, React.js, TailwindCSS</p>
-                  <p>Kakao Map API, Capacitor</p>
+                  <p>
+                    지도 드래그 중 Kakao Map 역지오코딩 요청이 연속 호출되며,
+                    이전 응답이 늦게 도착해 현재 위치와 다른 주소가 표시될 수
+                    있었습니다.
+                  </p>
+                  <p className="mt-2">
+                    요청마다 requestId를 부여하고 최신 요청과 일치하는 응답만
+                    상태에 반영해 위치 값 역전 현상을 방지했습니다.
+                  </p>
                 </div>
               </div>
 

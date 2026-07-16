@@ -26,6 +26,11 @@ interface PortfolioModalProps {
     textColor: string;
     modalColor: string;
     modalImgSrc: string;
+    kicker?: string;
+    role?: string;
+    summary?: string;
+    highlights?: string[];
+    tags?: string[];
   };
 }
 
@@ -89,6 +94,11 @@ const PortfolioModal6: React.FC<PortfolioModalProps> = ({ data }) => {
           title={<span dangerouslySetInnerHTML={{ __html: data.title }} />}
           imgSrc={imageMapping[data.imgSrc]}
           period={data.period}
+          kicker={data.kicker}
+          role={data.role}
+          summary={data.summary}
+          highlights={data.highlights}
+          tags={data.tags}
           style={{
             color: data.textColor,
             backgroundColor: data.bgColor,
@@ -137,12 +147,13 @@ const PortfolioModal6: React.FC<PortfolioModalProps> = ({ data }) => {
                     프로젝트 소개
                   </p>
                 </div>
-                <ul className="font-pretendard text-xs lg:text-[13px] pl-4 mt-1 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                  <li>- 가상 자산 기반 투자 시뮬레이션 서비스</li>
-                  <li>- 투자 수준/이해도 기반 개인화 학습 콘텐츠 제공</li>
-                  <li>- 성과+과정 중심 챌린지로 투자 습관 형성 유도</li>
-                  <li>- 실시간 경제 뉴스 요약과 토론 기능으로 판단 역량 강화</li>
-                </ul>
+                <div className="font-pretendard text-xs lg:text-[13px] pl-4 mt-1 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
+                  <p>
+                    가상자산 기반 실시간 투자 시뮬레이션 플랫폼입니다. 사용자가
+                    시세를 확인하고 매매를 실행한 뒤, 거래 이력과 포트폴리오
+                    변화까지 이어지는 흐름을 구현했습니다.
+                  </p>
+                </div>
               </div>
 
               <div className="mt-4 lg:mt-6 self-start">
@@ -154,17 +165,18 @@ const PortfolioModal6: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
                 <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed space-y-3 mt-1">
                   <p>
-                    1) 자산 조회 UI/UX 구조 설계 및 렌더링 체감 개선: 상태 분리
-                    설계, 전환 시 깜빡임 최소화, 차트 중심 정보 구조 최적화
+                    <b>서비스</b> 실시간으로 변하는 가상자산 시세를 보며
+                    매수·매도·예약 주문을 연습하고, 가상 포트폴리오 변화를
+                    확인하는 투자 시뮬레이션 플랫폼입니다.
                   </p>
                   <p>
-                    2) 클라이언트 데이터 아키텍처 및 상태 관리 고도화: React
-                    Query 표준화, Zustand 기반 전역 상태 경량화, axios API 계층
-                    일원화
+                    <b>기획 배경</b> 실제 투자 전에도 시세 변동과 매매 결과를
+                    안전하게 경험해볼 수 있어야 한다고 생각했습니다.
                   </p>
                   <p>
-                    3) 협업 생산성과 품질 관리 체계 구축: Storybook 기반 컴포넌트
-                    개발 문화 정착, ESLint + TypeScript 규칙으로 코드 품질 유지
+                    <b>담당</b> 대시보드, 시세 리스트, 종목 상세, 주문 패널,
+                    WebSocket 시세 연동, 차트 화면, 거래 상태 재동기화를
+                    구현했습니다.
                   </p>
                 </div>
               </div>
@@ -173,14 +185,35 @@ const PortfolioModal6: React.FC<PortfolioModalProps> = ({ data }) => {
                 <div className="flex items-center gap-2 font-pretendard">
                   <div className="rounded-full size-[5px]" style={{ backgroundColor: data.modalColor }}></div>
                   <p className="text-sm lg:text-[17px] font-medium" style={{ color: data.modalColor }}>
-                    사용 기술
+                    Project Info
                   </p>
                 </div>
                 <ul className="font-pretendard text-xs lg:text-[13px] pl-4 mt-1 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                  <li>- TypeScript, React 19</li>
-                  <li>- TanStack React Query, Zustand</li>
-                  <li>- Storybook, lightweight-charts</li>
+                  <li>- Team: FE 2 · BE 3 · PM 2 · Designer 1</li>
+                  <li>- Role: Frontend Developer</li>
+                  <li>- Stack: React · TypeScript · Vite · TanStack Query · Zustand</li>
+                  <li>- WebSocket · Lightweight Charts · Tailwind CSS</li>
                 </ul>
+              </div>
+
+              <div className="mt-4 lg:mt-6 self-start">
+                <div className="flex items-center gap-2 font-pretendard">
+                  <div className="rounded-full size-[5px]" style={{ backgroundColor: data.modalColor }}></div>
+                  <p className="text-sm lg:text-[17px] font-medium" style={{ color: data.modalColor }}>
+                    문제 해결
+                  </p>
+                </div>
+                <div className="font-pretendard text-xs lg:text-[13px] pl-4 mt-1 text-[#303030] dark:text-[#D9D9D9] leading-relaxed space-y-2">
+                  <p>
+                    매매 이후 거래 이력, 잔액, 포트폴리오가 각 화면에서 따로
+                    갱신되어 상태가 어긋날 수 있었습니다.
+                  </p>
+                  <p>
+                    trade / wallet / portfolio query를 분리하고, 매매 성공 후
+                    관련 query를 함께 invalidate해 서버 상태가 같은 흐름에서
+                    재동기화되도록 정리했습니다.
+                  </p>
+                </div>
               </div>
 
             </div>

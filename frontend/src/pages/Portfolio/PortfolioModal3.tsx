@@ -23,6 +23,11 @@ interface PortfolioModalProps {
     textColor: string;
     modalColor: string;
     modalImgSrc: string;
+    kicker?: string;
+    role?: string;
+    summary?: string;
+    highlights?: string[];
+    tags?: string[];
   };
 }
 
@@ -47,6 +52,11 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
           title={<span dangerouslySetInnerHTML={{ __html: data.title }} />}
           imgSrc={imageMapping[data.imgSrc]}
           period={data.period}
+          kicker={data.kicker}
+          role={data.role}
+          summary={data.summary}
+          highlights={data.highlights}
+          tags={data.tags}
           style={{
             color: data.textColor,
             backgroundColor: data.bgColor,
@@ -75,10 +85,10 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
             {/* 왼쪽: 설명 및 버튼 */}
             <div className="w-full md:w-1/2 whitespace-nowrap">
               <p className="font-pretendard text-sm lg:text-lg text-[#919191] dark:text-[#B5B5B5]">
-                개인 블로그 웹사이트 프로젝트
+                Lighthouse 모바일 성능 46점 → 98점 개선
               </p>
               <p className="font-pretendard text-xs lg:text-[15px] text-[#919191] dark:text-[#B5B5B5]">
-                개인 블로그 웹사이트 프로젝트
+                검색 모달과 사이드바를 지연 로딩한 개인 기술 블로그
               </p>
             </div>
           </DialogDescription>
@@ -106,40 +116,41 @@ const PortfolioModal1: React.FC<PortfolioModalProps> = ({ data }) => {
                   </div>
                   <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9]">
                     <p className="whitespace-pre-line">
-                      개발하면서 얻은 지식이나 몰랐던 지식들 및 CS, 알고리즘
-                      등을 기록하는 개인 블로그 웹사이트입니다.
+                      개발 기록, CS, 알고리즘 학습 내용을 운영하기 위해 만든
+                      개인 기술 블로그입니다.
                       <br />
-                      &#183; Post 목록 및 카테고리별 Post 필터링 기능 개발
-                      <br />
-                      &#183; 방명록 기능 개발
-                      <br />
-                      &#183; Next.js를 사용하여 SSR 과 SEO 최적화 적용
-                      <br />
-                      &#183; 프론트는 Next.js, 백엔드는 Spring Boot를 사용하여 배포
+                      정적 페이지가 아니라 검색, 댓글, 인증, SEO, 배포까지
+                      포함한 운영형 서비스로 구현했습니다.
                     </p>
                   </div>
                 </div>
                 <div className="mt-2 lg:mt-5 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#7AD154]">내가 기여한 부분</p>
+                    <p className="text-sm lg:text-[19px] text-[#7AD154]">Project Info</p>
                   </div>
                   <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                    <p>프론트엔드 개발 / 100%</p>
-                    <p>백엔드 개발 / 100%</p>
-                    <p className="mt-1">- 포스트 목록/카테고리 필터/상세 페이지 UI 구현</p>
-                    <p>- 방명록 기능 및 콘텐츠 관리 흐름 구현</p>
-                    <p>- SSR/SEO 최적화를 위한 라우팅 및 메타데이터 구조 설계</p>
+                    <p>Team: Personal Project</p>
+                    <p>Role: Full-stack / Frontend 중심</p>
+                    <p>Stack: Next.js · TypeScript · Spring Boot · NextAuth</p>
+                    <p>Infra: SQLite · Caddy · Cloudflare</p>
                   </div>
                 </div>
                 <div className="mt-2 lg:mt-5 self-start">
                   <div className="flex items-center gap-3 font-pretendard">
                     <div className=" bg-[#7AD154] rounded-full size-[5px] lg:size-[7px]"></div>
-                    <p className="text-sm lg:text-[19px] text-[#7AD154]">사용 기술</p>
+                    <p className="text-sm lg:text-[19px] text-[#7AD154]">문제 해결</p>
                   </div>
                   <div className="font-pretendard text-xs lg:text-[13px] pl-5 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                    <p>Next.js, TypeScript, TailwindCSS</p>
-                    <p>Spring Boot, MySQL, SEO/SSR 최적화</p>
+                    <p>
+                      검색 모달, 사이드바, 애니메이션 코드가 첫 진입 시 함께
+                      로드되어 모바일 초기 렌더링 성능이 낮았습니다.
+                    </p>
+                    <p className="mt-2">
+                      검색 모달과 사이드바를 dynamic import로 분리하고, 전역
+                      framer-motion 의존을 CSS 애니메이션으로 대체해 Lighthouse
+                      모바일 성능을 46점에서 98점으로 개선했습니다.
+                    </p>
                   </div>
                 </div>
               </div>

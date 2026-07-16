@@ -23,6 +23,11 @@ interface PortfolioModalProps {
     textColor: string;
     modalColor: string;
     modalImgSrc: string;
+    kicker?: string;
+    role?: string;
+    summary?: string;
+    highlights?: string[];
+    tags?: string[];
   };
 }
 
@@ -104,6 +109,11 @@ const PortfolioModal5: React.FC<PortfolioModalProps> = ({ data }) => {
           }
           imgSrc={imageMapping[data.imgSrc]}
           period={data.period}
+          kicker={data.kicker}
+          role={data.role}
+          summary={data.summary}
+          highlights={data.highlights}
+          tags={data.tags}
           style={{
             color: data.textColor,
             backgroundColor: data.bgColor,
@@ -152,11 +162,14 @@ const PortfolioModal5: React.FC<PortfolioModalProps> = ({ data }) => {
                 </div>
                 <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
                   <p>
-                    AI 기반 일기 작성 도우미 서비스 Memoria의 웹 인터페이스를 담당했습니다.
-                    AI 분석 결과 시각화 대시보드와 직관적인 일기 작성 UI를 구현했습니다.
+                    일기를 작성하면 AI가 감정 분석, 공감 댓글, 이미지와 음악
+                    추천을 제공하는 모바일 일기장 서비스입니다.
                   </p>
-                  <p className="mt-2">200명의 사용자를 대상으로 서비스를 제공하고, 피드백을 받았습니다.</p>
-                  <p className="mt-2">결과적으로, 캡스톤 디자인 프로젝트 금상을 수상했습니다.</p>
+                  <p className="mt-2">
+                    일기가 작성에서 끝나지 않고, AI의 공감 반응과 감정 흐름으로
+                    다시 돌아볼 수 있는 경험을 만들고자 했습니다.
+                  </p>
+                  <p className="mt-2">명지대학교 캡스톤 디자인 금상 수상 프로젝트입니다.</p>
                 </div>
               </div>
 
@@ -164,14 +177,14 @@ const PortfolioModal5: React.FC<PortfolioModalProps> = ({ data }) => {
                 <div className="flex items-center gap-2 font-pretendard">
                   <div className="bg-[#2D8A66] dark:bg-[#34D399] rounded-full size-[5px]"></div>
                   <p className="text-sm lg:text-[17px] text-[#2D8A66] dark:text-[#34D399] font-medium">
-                    내가 기여한 부분
+                    Project Info
                   </p>
                 </div>
                 <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                  <p>Frontend Development / 60%</p>
-                  <p className="mt-1">- AI 결과 시각화 대시보드 및 일기 작성 UI 설계/구현</p>
-                  <p>- 캐릭터/편지/음악 생성 플로우를 연결한 사용자 여정 구성</p>
-                  <p>- 사용자 피드백 기반 인터랙션/가독성 개선</p>
+                  <p>Team: FE 2 · BE 3</p>
+                  <p>Role: Frontend Developer</p>
+                  <p>Stack: React · TypeScript · Vite · TanStack Query · Zustand · SSE</p>
+                  <p>Award: 명지대학교 캡스톤 디자인 금상</p>
                 </div>
               </div>
 
@@ -179,12 +192,20 @@ const PortfolioModal5: React.FC<PortfolioModalProps> = ({ data }) => {
                 <div className="flex items-center gap-2 font-pretendard">
                   <div className="bg-[#2D8A66] dark:bg-[#34D399] rounded-full size-[5px]"></div>
                   <p className="text-sm lg:text-[17px] text-[#2D8A66] dark:text-[#34D399] font-medium">
-                    사용 기술
+                    문제 해결
                   </p>
                 </div>
                 <div className="font-pretendard text-xs lg:text-[13px] pl-4 text-[#303030] dark:text-[#D9D9D9] leading-relaxed">
-                  <p>TypeScript, React.js, TailwindCSS, Tanstack Query</p>
-                  <p>LLM API, Stable Diffusion API, Yue AI</p>
+                  <p>
+                    SSE 알림은 실시간으로 도착했지만, 뱃지와 알림 목록이 서로
+                    다른 타이밍에 갱신되어 사용자가 보는 상태가 어긋날 수
+                    있었습니다.
+                  </p>
+                  <p className="mt-2">
+                    뱃지는 Zustand로 즉시 반영하고, 알림 목록은 TanStack Query
+                    invalidate로 재조회해 빠른 반응성과 서버 정합성을
+                    분리했습니다.
+                  </p>
                 </div>
               </div>
 

@@ -28,15 +28,16 @@ const SideProfile: React.FC<Props> = ({ className }) => {
   ];
 
   return (
-    <div className="w-full h-full z-50 lg:hidden">
+    <div className="w-full h-full z-50 lg:hidden" data-cursor-exclude="true">
       <div
         className={cn(
-          "bg-white/50 dark:bg-black/50 border border-gray-300 dark:border-black/50 backdrop-blur size-full rounded-[20px] flex flex-col items-start px-6 py-4",
+          "relative overflow-hidden bg-white/45 dark:bg-black/50 border border-white/55 dark:border-white/10 backdrop-blur-2xl size-full rounded-[20px] flex flex-col items-start px-6 py-4 shadow-[0_20px_70px_rgba(0,0,0,0.12)]",
           className
         )}
       >
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.4),transparent_40%,rgba(122,209,84,0.08))]" />
         <div
-          className="w-full h-[20vh]  px-5 pt-5 mt-4 border border-black/10 rounded-[20px] relative overflow-hidden group bg-white/30 dark:bg-[#1A1A2380]/40  transition-all duration-500"
+          className="relative z-10 mt-4 h-[20vh] min-h-[160px] max-h-[190px] w-full shrink-0 overflow-hidden rounded-[20px] border border-white/40 bg-white/30 transition-all duration-500 group dark:bg-[#1A1A2380]/40"
           style={{
             boxShadow:
               "0 0 0 1px rgba(122, 209, 84, 0.3), 0 0 20px rgba(122, 209, 84, 0.15)",
@@ -46,15 +47,15 @@ const SideProfile: React.FC<Props> = ({ className }) => {
             src={backgroundSrc}
             alt=""
             aria-hidden="true"
-            className="size-full object-cover absolute top-0 left-0 z-0 opacity-80 dark:opacity-40 "
+            className="absolute inset-0 z-0 h-full w-full object-cover opacity-80 dark:opacity-40"
           />
           <img
             src={profileSrc}
             alt="Jackihyun profile"
-            className="size-full object-contain relative z-10"
+            className="absolute inset-x-5 bottom-0 z-10 mx-auto block h-[94%] w-auto max-w-[84%] object-contain"
           />
         </div>
-        <div className="flex flex-col flex-1 text-left font-orbitron-regular w-full mt-5 gap-4">
+        <div className="relative z-10 flex flex-col flex-1 text-left font-orbitron-regular w-full mt-5 gap-4">
           <div>
             <p className="text-[#7AD154] text-xs font-light">Name</p>
             <p className="text-black dark:text-[#FAFAFC] font-medium">
@@ -98,7 +99,7 @@ const SideProfile: React.FC<Props> = ({ className }) => {
           href="https://blog.jackihyun.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-[#7AD154] bg-white px-4 py-3 font-orbitron-regular text-xs tracking-[0.2em] text-[#111111] transition-all duration-200 active:scale-[0.98] dark:bg-zinc-800 dark:text-[#FAFAFC]"
+          className="relative z-10 mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-[#7AD154] bg-white px-4 py-3 font-orbitron-regular text-xs tracking-[0.2em] text-[#111111] transition-all duration-200 active:scale-[0.98] dark:bg-zinc-800 dark:text-[#FAFAFC]"
         >
           <RiArticleLine className="size-4" />
           BLOG
